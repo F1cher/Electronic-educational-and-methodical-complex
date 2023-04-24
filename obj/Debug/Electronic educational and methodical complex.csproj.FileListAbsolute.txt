@@ -1,0 +1,31 @@
+E:\Program Files\projects\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.exe.config
+E:\Program Files\projects\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.exe
+E:\Program Files\projects\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.pdb
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Authorization.resources
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Properties.Resources.resources
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.GenerateResource.cache
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.CoreCompileInputs.cache
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.exe
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.pdb
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Registration.resources
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Main.resources
+E:\Program Files\projects\Electronic educational and methodical complex\bin\Debug\DataBase.mdb
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.AssemblyReference.cache
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddLectures.resources
+E:\Program Files\projects\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddPredmet.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\DataBase.mdb
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.exe.config
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.exe
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.pdb
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.AssemblyReference.cache
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddGroups.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddLectures.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddPredmet.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Authorization.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Main.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Registration.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Properties.Resources.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.GenerateResource.cache
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.CoreCompileInputs.cache
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.exe
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.pdb
