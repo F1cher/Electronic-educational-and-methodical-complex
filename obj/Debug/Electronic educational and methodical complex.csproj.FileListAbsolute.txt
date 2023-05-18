@@ -19,7 +19,6 @@ C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical comple
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.pdb
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.AssemblyReference.cache
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddGroups.resources
-C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddLectures.resources
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddPredmet.resources
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Authorization.resources
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Main.resources
@@ -29,3 +28,6 @@ C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical comple
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.CoreCompileInputs.cache
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.exe
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.pdb
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Lectures.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Practical.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Tests.resources

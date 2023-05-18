@@ -50,7 +50,6 @@ namespace Electronic_educational_and_methodical_complex
                 }
             }
         }
-
         private void AddGroups_Load(object sender, EventArgs e)
         {
             GetGroups();
@@ -98,8 +97,7 @@ namespace Electronic_educational_and_methodical_complex
                 return;
             }
         }
-
-        private void btn_deleteusers_Click(object sender, EventArgs e)
+        private void btn_deletegroups_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить группу?", "Удалить группу", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)

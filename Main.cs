@@ -94,16 +94,14 @@ namespace Electronic_educational_and_methodical_complex
                 tabControl1.TabPages.Remove(tabPage4);
                 Add_groups.Visible = false;
                 Add_predmet.Visible = false;
-                btn_addfile.Visible = false;
-                btn_changefile.Visible = false;
-                btn_deletefile.Visible = false;
+                btn_uprlectures.Visible = false;
             }
         }
 
-        private void btn_addfile_Click(object sender, EventArgs e)
+        private void btn_uprlectures_Click(object sender, EventArgs e)
         {
-            AddLectures AddLectures = new AddLectures();
-            AddLectures.Show();
+            Lectures Lectures = new Lectures();
+            Lectures.Show();
         }
 
         private void add_predmet_Click(object sender, EventArgs e)
@@ -207,6 +205,18 @@ namespace Electronic_educational_and_methodical_complex
             txt_login.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             txt_pass.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             cmb_access.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+        }
+
+        private void btn_uprlpractical_Click(object sender, EventArgs e)
+        {
+            Practical Practical = new Practical();
+            Practical.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Tests Tests = new Tests();
+            Tests.Show();
         }
     }
 }

@@ -47,41 +47,43 @@ namespace Electronic_educational_and_methodical_complex
             this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataSet1 = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
             this.groupsTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.GroupsTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_fam
             // 
-            this.txt_fam.Location = new System.Drawing.Point(104, 29);
+            this.txt_fam.Location = new System.Drawing.Point(90, 12);
             this.txt_fam.Name = "txt_fam";
             this.txt_fam.Size = new System.Drawing.Size(138, 20);
             this.txt_fam.TabIndex = 0;
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(104, 67);
+            this.txt_name.Location = new System.Drawing.Point(90, 50);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(138, 20);
             this.txt_name.TabIndex = 1;
             // 
             // txt_otch
             // 
-            this.txt_otch.Location = new System.Drawing.Point(104, 105);
+            this.txt_otch.Location = new System.Drawing.Point(90, 88);
             this.txt_otch.Name = "txt_otch";
             this.txt_otch.Size = new System.Drawing.Size(138, 20);
             this.txt_otch.TabIndex = 2;
             // 
             // txt_login
             // 
-            this.txt_login.Location = new System.Drawing.Point(104, 193);
+            this.txt_login.Location = new System.Drawing.Point(90, 176);
             this.txt_login.Name = "txt_login";
             this.txt_login.Size = new System.Drawing.Size(138, 20);
             this.txt_login.TabIndex = 4;
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(104, 230);
+            this.txt_pass.Location = new System.Drawing.Point(90, 213);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(138, 20);
             this.txt_pass.TabIndex = 5;
@@ -89,7 +91,7 @@ namespace Electronic_educational_and_methodical_complex
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 32);
+            this.label1.Location = new System.Drawing.Point(28, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 6;
@@ -98,7 +100,7 @@ namespace Electronic_educational_and_methodical_complex
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 70);
+            this.label2.Location = new System.Drawing.Point(55, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 7;
@@ -107,7 +109,7 @@ namespace Electronic_educational_and_methodical_complex
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 108);
+            this.label3.Location = new System.Drawing.Point(30, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 8;
@@ -116,7 +118,7 @@ namespace Electronic_educational_and_methodical_complex
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 153);
+            this.label4.Location = new System.Drawing.Point(42, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 9;
@@ -125,7 +127,7 @@ namespace Electronic_educational_and_methodical_complex
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(60, 196);
+            this.label5.Location = new System.Drawing.Point(46, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 10;
@@ -134,7 +136,7 @@ namespace Electronic_educational_and_methodical_complex
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(53, 233);
+            this.label6.Location = new System.Drawing.Point(39, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 11;
@@ -142,7 +144,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_reg
             // 
-            this.btn_reg.Location = new System.Drawing.Point(104, 276);
+            this.btn_reg.Location = new System.Drawing.Point(90, 259);
             this.btn_reg.Name = "btn_reg";
             this.btn_reg.Size = new System.Drawing.Size(123, 23);
             this.btn_reg.TabIndex = 12;
@@ -152,7 +154,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(104, 305);
+            this.btn_back.Location = new System.Drawing.Point(90, 288);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(123, 23);
             this.btn_back.TabIndex = 13;
@@ -165,7 +167,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_group.DataSource = this.groupsBindingSource;
             this.cmb_group.DisplayMember = "Группа";
             this.cmb_group.FormattingEnabled = true;
-            this.cmb_group.Location = new System.Drawing.Point(104, 150);
+            this.cmb_group.Location = new System.Drawing.Point(90, 133);
             this.cmb_group.Name = "cmb_group";
             this.cmb_group.Size = new System.Drawing.Size(138, 21);
             this.cmb_group.TabIndex = 14;
@@ -185,11 +187,21 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.groupsTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(234, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 114);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 348);
+            this.ClientSize = new System.Drawing.Size(339, 327);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmb_group);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_reg);
@@ -210,6 +222,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Load += new System.EventHandler(this.Registration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +247,6 @@ namespace Electronic_educational_and_methodical_complex
         private DataBaseDataSet dataBaseDataSet1;
         private System.Windows.Forms.BindingSource groupsBindingSource;
         private DataBaseDataSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -42,12 +42,20 @@ namespace Electronic_educational_and_methodical_complex
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataSet = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
-            this.btn_deletefile = new System.Windows.Forms.Button();
-            this.btn_changefile = new System.Windows.Forms.Button();
-            this.btn_addfile = new System.Windows.Forms.Button();
+            this.btn_uprlectures = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btn_uprpractical = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -82,6 +90,7 @@ namespace Electronic_educational_and_methodical_complex
             this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.доступDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменитьПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,8 +106,10 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -118,6 +129,7 @@ namespace Electronic_educational_and_methodical_complex
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(2, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -134,9 +146,7 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.btn_deletefile);
-            this.tabPage1.Controls.Add(this.btn_changefile);
-            this.tabPage1.Controls.Add(this.btn_addfile);
+            this.tabPage1.Controls.Add(this.btn_uprlectures);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -231,44 +241,79 @@ namespace Electronic_educational_and_methodical_complex
             this.dataBaseDataSet.DataSetName = "DataBaseDataSet";
             this.dataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btn_deletefile
+            // btn_uprlectures
             // 
-            this.btn_deletefile.Location = new System.Drawing.Point(212, 6);
-            this.btn_deletefile.Name = "btn_deletefile";
-            this.btn_deletefile.Size = new System.Drawing.Size(95, 29);
-            this.btn_deletefile.TabIndex = 2;
-            this.btn_deletefile.Text = "Удалить файл";
-            this.btn_deletefile.UseVisualStyleBackColor = true;
-            // 
-            // btn_changefile
-            // 
-            this.btn_changefile.Location = new System.Drawing.Point(109, 6);
-            this.btn_changefile.Name = "btn_changefile";
-            this.btn_changefile.Size = new System.Drawing.Size(95, 29);
-            this.btn_changefile.TabIndex = 1;
-            this.btn_changefile.Text = "Изменить файл";
-            this.btn_changefile.UseVisualStyleBackColor = true;
-            // 
-            // btn_addfile
-            // 
-            this.btn_addfile.Location = new System.Drawing.Point(6, 6);
-            this.btn_addfile.Name = "btn_addfile";
-            this.btn_addfile.Size = new System.Drawing.Size(95, 29);
-            this.btn_addfile.TabIndex = 0;
-            this.btn_addfile.Text = "Добавить файл";
-            this.btn_addfile.UseVisualStyleBackColor = true;
-            this.btn_addfile.Click += new System.EventHandler(this.btn_addfile_Click);
+            this.btn_uprlectures.Location = new System.Drawing.Point(6, 6);
+            this.btn_uprlectures.Name = "btn_uprlectures";
+            this.btn_uprlectures.Size = new System.Drawing.Size(132, 29);
+            this.btn_uprlectures.TabIndex = 0;
+            this.btn_uprlectures.Text = "Управление лекциями";
+            this.btn_uprlectures.UseVisualStyleBackColor = true;
+            this.btn_uprlectures.Click += new System.EventHandler(this.btn_uprlectures_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.comboBox2);
+            this.tabPage2.Controls.Add(this.btn_uprpractical);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(937, 529);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Практика";
+            this.tabPage2.Text = "Практические задания";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 126);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(926, 400);
+            this.dataGridView3.TabIndex = 16;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(134, 96);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(26, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label10.Location = new System.Drawing.Point(3, 83);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Выберите предмет";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.predmetiBindingSource;
+            this.comboBox2.DisplayMember = "Предмет";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 99);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 13;
+            this.comboBox2.ValueMember = "Код_предмета";
+            // 
+            // btn_uprpractical
+            // 
+            this.btn_uprpractical.Location = new System.Drawing.Point(6, 6);
+            this.btn_uprpractical.Name = "btn_uprpractical";
+            this.btn_uprpractical.Size = new System.Drawing.Size(218, 37);
+            this.btn_uprpractical.TabIndex = 12;
+            this.btn_uprpractical.Text = "Управление практическими заданиями";
+            this.btn_uprpractical.UseVisualStyleBackColor = true;
+            this.btn_uprpractical.Click += new System.EventHandler(this.btn_uprlpractical_Click);
             // 
             // pictureBox2
             // 
@@ -281,6 +326,11 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView4);
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.comboBox3);
+            this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.pictureBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -288,6 +338,54 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Тесты";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(5, 124);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(926, 400);
+            this.dataGridView4.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(136, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label11.Location = new System.Drawing.Point(5, 81);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(119, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Выберите предмет";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.predmetiBindingSource;
+            this.comboBox3.DisplayMember = "Предмет";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(8, 97);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 18;
+            this.comboBox3.ValueMember = "Код_предмета";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(8, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(218, 37);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Управление тестовыми заданиями";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // pictureBox3
             // 
@@ -599,6 +697,15 @@ namespace Electronic_educational_and_methodical_complex
             this.studentsBindingSource.DataMember = "Students";
             this.studentsBindingSource.DataSource = this.dataBaseDataSet;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(937, 529);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Успеваемость";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -672,8 +779,12 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
@@ -703,9 +814,7 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.ToolStripMenuItem сменитьПользователяToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_deletefile;
-        private System.Windows.Forms.Button btn_changefile;
-        private System.Windows.Forms.Button btn_addfile;
+        private System.Windows.Forms.Button btn_uprlectures;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;
@@ -752,5 +861,16 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.DataGridViewTextBoxColumn логинDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn парольDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn доступDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btn_uprpractical;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }

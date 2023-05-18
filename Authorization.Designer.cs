@@ -35,12 +35,14 @@ namespace Electronic_educational_and_methodical_complex
             this.Pass = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 40);
+            this.label2.Location = new System.Drawing.Point(12, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -49,7 +51,7 @@ namespace Electronic_educational_and_methodical_complex
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 79);
+            this.label3.Location = new System.Drawing.Point(12, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
@@ -57,14 +59,14 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(83, 37);
+            this.Login.Location = new System.Drawing.Point(60, 19);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(150, 20);
             this.Login.TabIndex = 4;
             // 
             // Pass
             // 
-            this.Pass.Location = new System.Drawing.Point(83, 76);
+            this.Pass.Location = new System.Drawing.Point(60, 58);
             this.Pass.Name = "Pass";
             this.Pass.PasswordChar = '*';
             this.Pass.Size = new System.Drawing.Size(150, 20);
@@ -72,7 +74,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(111, 102);
+            this.btn_login.Location = new System.Drawing.Point(89, 95);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(83, 23);
             this.btn_login.TabIndex = 6;
@@ -82,7 +84,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_register
             // 
-            this.btn_register.Location = new System.Drawing.Point(111, 131);
+            this.btn_register.Location = new System.Drawing.Point(89, 124);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(83, 23);
             this.btn_register.TabIndex = 7;
@@ -90,11 +92,21 @@ namespace Electronic_educational_and_methodical_complex
             this.btn_register.UseVisualStyleBackColor = true;
             this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(230, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 114);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 176);
+            this.ClientSize = new System.Drawing.Size(335, 163);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.Pass);
@@ -104,6 +116,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,6 +129,7 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.TextBox Pass;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button btn_register;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
