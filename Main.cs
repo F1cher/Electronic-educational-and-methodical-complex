@@ -81,10 +81,10 @@ namespace Electronic_educational_and_methodical_complex
 
         private void Main_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Students". При необходимости она может быть перемещена или удалена.
-            this.studentsTableAdapter.Fill(this.dataBaseDataSet.Students);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Lecturesfull". При необходимости она может быть перемещена или удалена.
             this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Students". При необходимости она может быть перемещена или удалена.
+            this.studentsTableAdapter.Fill(this.dataBaseDataSet.Students);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet.Groups);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
@@ -97,10 +97,17 @@ namespace Electronic_educational_and_methodical_complex
                 Add_groups.Visible = false;
                 Add_predmet.Visible = false;
                 btn_uprlectures.Visible = false;
+                txt_group.Visible = false;
+                label2.Visible = false;
 
-                DataView filter = new DataView(this.dataBaseDataSet.Lecturesfull);
-                filter.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%'";
-                this.lecturesfullBindingSource.DataSource = filter;
+                int i = 0;
+
+                if (Int32.TryParse(txt_group.Text, out i))
+                {
+                    DataView filter = new DataView(this.dataBaseDataSet.Lecturesfull);
+                    filter.RowFilter = "Код_группы = " + i;
+                    this.dataGridView2.DataSource = filter;
+                }
             }
         }
 

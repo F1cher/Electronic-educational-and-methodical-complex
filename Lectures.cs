@@ -42,8 +42,8 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void AddLectures_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Lecturesfull". При необходимости она может быть перемещена или удалена.
-            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.LecturesAdd". При необходимости она может быть перемещена или удалена.
+            this.lecturesAddTableAdapter.Fill(this.dataBaseDataSet.LecturesAdd);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet.Groups);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
@@ -72,7 +72,7 @@ namespace Electronic_educational_and_methodical_complex
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+            this.lecturesAddTableAdapter.Fill(this.dataBaseDataSet.LecturesAdd);
             toolStripStatusLabel1.Text = "Лекция была добавлена!";
         }
 
@@ -96,7 +96,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+                this.lecturesAddTableAdapter.Fill(this.dataBaseDataSet.LecturesAdd);
                 toolStripStatusLabel1.Text = "Лекция была изменена!";
             }
             else if (dialogResult == DialogResult.No)
@@ -115,7 +115,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+                this.lecturesAddTableAdapter.Fill(this.dataBaseDataSet.LecturesAdd);
                 toolStripStatusLabel1.Text = "Лекция была удалена!";
             }
             else if (dialogResult == DialogResult.No)
@@ -139,9 +139,9 @@ namespace Electronic_educational_and_methodical_complex
 
         private void txt_naz_TextChanged(object sender, EventArgs e)
         {
-            DataView poisk = new DataView(this.dataBaseDataSet.Lecturesfull);
+            DataView poisk = new DataView(this.dataBaseDataSet.LecturesAdd);
             poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%'";
-            this.lecturesfullBindingSource.DataSource = poisk;
+            this.lecturesAddBindingSource.DataSource = poisk;
         }
     }
 }

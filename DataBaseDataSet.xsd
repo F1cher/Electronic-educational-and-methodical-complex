@@ -481,10 +481,9 @@ FROM            Tests</CommandText>
               <DbSource ConnectionRef="DataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT       Lectures.[Код_лекции], Predmeti.Предмет, Groups.Группа, Lectures.Название, Lectures.Путь
-FROM            ((Lectures INNER JOIN
-                         Predmeti ON Lectures.[Код_предмета] = Predmeti.[Код_предмета]) INNER JOIN
-                         Groups ON Lectures.[Код_группы] = Groups.[Код_группы])</CommandText>
+                    <CommandText>SELECT       Lectures.[Код_лекции], Predmeti.Предмет, Lectures.[Код_группы], Lectures.Название, Lectures.Путь
+FROM            (Lectures INNER JOIN
+                         Predmeti ON Lectures.[Код_предмета] = Predmeti.[Код_предмета])</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -495,7 +494,30 @@ FROM            ((Lectures INNER JOIN
               <Mapping SourceColumn="Предмет" DataSetColumn="Предмет" />
               <Mapping SourceColumn="Название" DataSetColumn="Название" />
               <Mapping SourceColumn="Путь" DataSetColumn="Путь" />
+              <Mapping SourceColumn="Код_группы" DataSetColumn="Код_группы" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LecturesAddTableAdapter" GeneratorDataComponentClassName="LecturesAddTableAdapter" Name="LecturesAdd" UserDataComponentName="LecturesAddTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       Lectures.[Код_лекции], Predmeti.Предмет, Groups.Группа, Lectures.Название, Lectures.Путь
+FROM            ((Lectures INNER JOIN
+                         Groups ON Lectures.[Код_группы] = Groups.[Код_группы]) INNER JOIN
+                         Predmeti ON Lectures.[Код_предмета] = Predmeti.[Код_предмета])</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Код_лекции" DataSetColumn="Код_лекции" />
+              <Mapping SourceColumn="Предмет" DataSetColumn="Предмет" />
               <Mapping SourceColumn="Группа" DataSetColumn="Группа" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Путь" DataSetColumn="Путь" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -507,7 +529,7 @@ FROM            ((Lectures INNER JOIN
   <xs:element name="DataBaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataBaseDataSet" msprop:Generator_UserDSName="DataBaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_UserTableName="Groups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_RowEvArgName="GroupsRowChangeEvent" msprop:Generator_RowClassName="GroupsRow">
+        <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_RowClassName="GroupsRow" msprop:Generator_UserTableName="Groups" msprop:Generator_RowEvArgName="GroupsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_группы" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" />
@@ -521,7 +543,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Predmeti" msprop:Generator_TableClassName="PredmetiDataTable" msprop:Generator_TableVarName="tablePredmeti" msprop:Generator_TablePropName="Predmeti" msprop:Generator_RowDeletingName="PredmetiRowDeleting" msprop:Generator_RowChangingName="PredmetiRowChanging" msprop:Generator_RowEvHandlerName="PredmetiRowChangeEventHandler" msprop:Generator_RowDeletedName="PredmetiRowDeleted" msprop:Generator_UserTableName="Predmeti" msprop:Generator_RowChangedName="PredmetiRowChanged" msprop:Generator_RowEvArgName="PredmetiRowChangeEvent" msprop:Generator_RowClassName="PredmetiRow">
+        <xs:element name="Predmeti" msprop:Generator_TableClassName="PredmetiDataTable" msprop:Generator_TableVarName="tablePredmeti" msprop:Generator_RowChangedName="PredmetiRowChanged" msprop:Generator_TablePropName="Predmeti" msprop:Generator_RowDeletingName="PredmetiRowDeleting" msprop:Generator_RowChangingName="PredmetiRowChanging" msprop:Generator_RowEvHandlerName="PredmetiRowChangeEventHandler" msprop:Generator_RowDeletedName="PredmetiRowDeleted" msprop:Generator_RowClassName="PredmetiRow" msprop:Generator_UserTableName="Predmeti" msprop:Generator_RowEvArgName="PredmetiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_предмета" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_предмета" msprop:Generator_ColumnPropNameInRow="Код_предмета" msprop:Generator_ColumnPropNameInTable="Код_предметаColumn" msprop:Generator_UserColumnName="Код_предмета" type="xs:int" />
@@ -535,7 +557,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_пользователя" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_пользователя" msprop:Generator_ColumnPropNameInRow="Код_пользователя" msprop:Generator_ColumnPropNameInTable="Код_пользователяColumn" msprop:Generator_UserColumnName="Код_пользователя" type="xs:int" />
@@ -585,7 +607,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Usp" msprop:Generator_TableClassName="UspDataTable" msprop:Generator_TableVarName="tableUsp" msprop:Generator_TablePropName="Usp" msprop:Generator_RowDeletingName="UspRowDeleting" msprop:Generator_RowChangingName="UspRowChanging" msprop:Generator_RowEvHandlerName="UspRowChangeEventHandler" msprop:Generator_RowDeletedName="UspRowDeleted" msprop:Generator_UserTableName="Usp" msprop:Generator_RowChangedName="UspRowChanged" msprop:Generator_RowEvArgName="UspRowChangeEvent" msprop:Generator_RowClassName="UspRow">
+        <xs:element name="Usp" msprop:Generator_TableClassName="UspDataTable" msprop:Generator_TableVarName="tableUsp" msprop:Generator_RowChangedName="UspRowChanged" msprop:Generator_TablePropName="Usp" msprop:Generator_RowDeletingName="UspRowDeleting" msprop:Generator_RowChangingName="UspRowChanging" msprop:Generator_RowEvHandlerName="UspRowChangeEventHandler" msprop:Generator_RowDeletedName="UspRowDeleted" msprop:Generator_RowClassName="UspRow" msprop:Generator_UserTableName="Usp" msprop:Generator_RowEvArgName="UspRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_успеваемости" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_успеваемости" msprop:Generator_ColumnPropNameInRow="Код_успеваемости" msprop:Generator_ColumnPropNameInTable="Код_успеваемостиColumn" msprop:Generator_UserColumnName="Код_успеваемости" type="xs:int" />
@@ -595,7 +617,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Students" msprop:Generator_TableClassName="StudentsDataTable" msprop:Generator_TableVarName="tableStudents" msprop:Generator_RowChangedName="StudentsRowChanged" msprop:Generator_TablePropName="Students" msprop:Generator_RowDeletingName="StudentsRowDeleting" msprop:Generator_RowChangingName="StudentsRowChanging" msprop:Generator_RowEvHandlerName="StudentsRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentsRowDeleted" msprop:Generator_RowClassName="StudentsRow" msprop:Generator_UserTableName="Students" msprop:Generator_RowEvArgName="StudentsRowChangeEvent">
+        <xs:element name="Students" msprop:Generator_TableClassName="StudentsDataTable" msprop:Generator_TableVarName="tableStudents" msprop:Generator_TablePropName="Students" msprop:Generator_RowDeletingName="StudentsRowDeleting" msprop:Generator_RowChangingName="StudentsRowChanging" msprop:Generator_RowEvHandlerName="StudentsRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentsRowDeleted" msprop:Generator_UserTableName="Students" msprop:Generator_RowChangedName="StudentsRowChanged" msprop:Generator_RowEvArgName="StudentsRowChangeEvent" msprop:Generator_RowClassName="StudentsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_пользователя" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_пользователя" msprop:Generator_ColumnPropNameInRow="Код_пользователя" msprop:Generator_ColumnPropNameInTable="Код_пользователяColumn" msprop:Generator_UserColumnName="Код_пользователя" type="xs:int" minOccurs="0" />
@@ -651,7 +673,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Lectures" msprop:Generator_TableClassName="LecturesDataTable" msprop:Generator_TableVarName="tableLectures" msprop:Generator_TablePropName="Lectures" msprop:Generator_RowDeletingName="LecturesRowDeleting" msprop:Generator_RowChangingName="LecturesRowChanging" msprop:Generator_RowEvHandlerName="LecturesRowChangeEventHandler" msprop:Generator_RowDeletedName="LecturesRowDeleted" msprop:Generator_UserTableName="Lectures" msprop:Generator_RowChangedName="LecturesRowChanged" msprop:Generator_RowEvArgName="LecturesRowChangeEvent" msprop:Generator_RowClassName="LecturesRow">
+        <xs:element name="Lectures" msprop:Generator_TableClassName="LecturesDataTable" msprop:Generator_TableVarName="tableLectures" msprop:Generator_RowChangedName="LecturesRowChanged" msprop:Generator_TablePropName="Lectures" msprop:Generator_RowDeletingName="LecturesRowDeleting" msprop:Generator_RowChangingName="LecturesRowChanging" msprop:Generator_RowEvHandlerName="LecturesRowChangeEventHandler" msprop:Generator_RowDeletedName="LecturesRowDeleted" msprop:Generator_RowClassName="LecturesRow" msprop:Generator_UserTableName="Lectures" msprop:Generator_RowEvArgName="LecturesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_лекции" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_лекции" msprop:Generator_ColumnPropNameInRow="Код_лекции" msprop:Generator_ColumnPropNameInTable="Код_лекцииColumn" msprop:Generator_UserColumnName="Код_лекции" type="xs:int" />
@@ -674,7 +696,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Practical" msprop:Generator_TableClassName="PracticalDataTable" msprop:Generator_TableVarName="tablePractical" msprop:Generator_TablePropName="Practical" msprop:Generator_RowDeletingName="PracticalRowDeleting" msprop:Generator_RowChangingName="PracticalRowChanging" msprop:Generator_RowEvHandlerName="PracticalRowChangeEventHandler" msprop:Generator_RowDeletedName="PracticalRowDeleted" msprop:Generator_UserTableName="Practical" msprop:Generator_RowChangedName="PracticalRowChanged" msprop:Generator_RowEvArgName="PracticalRowChangeEvent" msprop:Generator_RowClassName="PracticalRow">
+        <xs:element name="Practical" msprop:Generator_TableClassName="PracticalDataTable" msprop:Generator_TableVarName="tablePractical" msprop:Generator_RowChangedName="PracticalRowChanged" msprop:Generator_TablePropName="Practical" msprop:Generator_RowDeletingName="PracticalRowDeleting" msprop:Generator_RowChangingName="PracticalRowChanging" msprop:Generator_RowEvHandlerName="PracticalRowChangeEventHandler" msprop:Generator_RowDeletedName="PracticalRowDeleted" msprop:Generator_RowClassName="PracticalRow" msprop:Generator_UserTableName="Practical" msprop:Generator_RowEvArgName="PracticalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_практики" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_практики" msprop:Generator_ColumnPropNameInRow="Код_практики" msprop:Generator_ColumnPropNameInTable="Код_практикиColumn" msprop:Generator_UserColumnName="Код_практики" type="xs:int" />
@@ -697,7 +719,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Tests" msprop:Generator_TableClassName="TestsDataTable" msprop:Generator_TableVarName="tableTests" msprop:Generator_TablePropName="Tests" msprop:Generator_RowDeletingName="TestsRowDeleting" msprop:Generator_RowChangingName="TestsRowChanging" msprop:Generator_RowEvHandlerName="TestsRowChangeEventHandler" msprop:Generator_RowDeletedName="TestsRowDeleted" msprop:Generator_UserTableName="Tests" msprop:Generator_RowChangedName="TestsRowChanged" msprop:Generator_RowEvArgName="TestsRowChangeEvent" msprop:Generator_RowClassName="TestsRow">
+        <xs:element name="Tests" msprop:Generator_TableClassName="TestsDataTable" msprop:Generator_TableVarName="tableTests" msprop:Generator_RowChangedName="TestsRowChanged" msprop:Generator_TablePropName="Tests" msprop:Generator_RowDeletingName="TestsRowDeleting" msprop:Generator_RowChangingName="TestsRowChanging" msprop:Generator_RowEvHandlerName="TestsRowChangeEventHandler" msprop:Generator_RowDeletedName="TestsRowDeleted" msprop:Generator_RowClassName="TestsRow" msprop:Generator_UserTableName="Tests" msprop:Generator_RowEvArgName="TestsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_теста" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_теста" msprop:Generator_ColumnPropNameInRow="Код_теста" msprop:Generator_ColumnPropNameInTable="Код_тестаColumn" msprop:Generator_UserColumnName="Код_теста" type="xs:int" />
@@ -720,7 +742,7 @@ FROM            ((Lectures INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Lecturesfull" msprop:Generator_TableClassName="LecturesfullDataTable" msprop:Generator_TableVarName="tableLecturesfull" msprop:Generator_RowChangedName="LecturesfullRowChanged" msprop:Generator_TablePropName="Lecturesfull" msprop:Generator_RowDeletingName="LecturesfullRowDeleting" msprop:Generator_RowChangingName="LecturesfullRowChanging" msprop:Generator_RowEvHandlerName="LecturesfullRowChangeEventHandler" msprop:Generator_RowDeletedName="LecturesfullRowDeleted" msprop:Generator_RowClassName="LecturesfullRow" msprop:Generator_UserTableName="Lecturesfull" msprop:Generator_RowEvArgName="LecturesfullRowChangeEvent">
+        <xs:element name="Lecturesfull" msprop:Generator_TableClassName="LecturesfullDataTable" msprop:Generator_TableVarName="tableLecturesfull" msprop:Generator_TablePropName="Lecturesfull" msprop:Generator_RowDeletingName="LecturesfullRowDeleting" msprop:Generator_RowChangingName="LecturesfullRowChanging" msprop:Generator_RowEvHandlerName="LecturesfullRowChangeEventHandler" msprop:Generator_RowDeletedName="LecturesfullRowDeleted" msprop:Generator_UserTableName="Lecturesfull" msprop:Generator_RowChangedName="LecturesfullRowChanged" msprop:Generator_RowEvArgName="LecturesfullRowChangeEvent" msprop:Generator_RowClassName="LecturesfullRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_лекции" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_лекции" msprop:Generator_ColumnPropNameInRow="Код_лекции" msprop:Generator_ColumnPropNameInTable="Код_лекцииColumn" msprop:Generator_UserColumnName="Код_лекции" type="xs:int" minOccurs="0" />
@@ -745,7 +767,36 @@ FROM            ((Lectures INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LecturesAdd" msprop:Generator_TableClassName="LecturesAddDataTable" msprop:Generator_TableVarName="tableLecturesAdd" msprop:Generator_TablePropName="LecturesAdd" msprop:Generator_RowDeletingName="LecturesAddRowDeleting" msprop:Generator_RowChangingName="LecturesAddRowChanging" msprop:Generator_RowEvHandlerName="LecturesAddRowChangeEventHandler" msprop:Generator_RowDeletedName="LecturesAddRowDeleted" msprop:Generator_UserTableName="LecturesAdd" msprop:Generator_RowChangedName="LecturesAddRowChanged" msprop:Generator_RowEvArgName="LecturesAddRowChangeEvent" msprop:Generator_RowClassName="LecturesAddRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Код_лекции" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_лекции" msprop:Generator_ColumnPropNameInRow="Код_лекции" msprop:Generator_ColumnPropNameInTable="Код_лекцииColumn" msprop:Generator_UserColumnName="Код_лекции" type="xs:int" minOccurs="0" />
+              <xs:element name="Предмет" msprop:Generator_ColumnVarNameInTable="columnПредмет" msprop:Generator_ColumnPropNameInRow="Предмет" msprop:Generator_ColumnPropNameInTable="ПредметColumn" msprop:Generator_UserColumnName="Предмет" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Группа" msprop:Generator_ColumnVarNameInTable="columnГруппа" msprop:Generator_ColumnPropNameInRow="Группа" msprop:Generator_ColumnPropNameInTable="ГруппаColumn" msprop:Generator_UserColumnName="Группа" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Путь" msprop:Generator_ColumnVarNameInTable="columnПуть" msprop:Generator_ColumnPropNameInRow="Путь" msprop:Generator_ColumnPropNameInTable="ПутьColumn" msprop:Generator_UserColumnName="Путь" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -788,11 +839,12 @@ FROM            ((Lectures INNER JOIN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="GroupsUsers" msdata:parent="Groups" msdata:child="Users" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="GroupsUsers" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationGroupsUsers" msprop:Generator_UserParentTable="Groups" />
-      <msdata:Relationship name="PredmetiUsp" msdata:parent="Predmeti" msdata:child="Usp" msdata:parentkey="Код_предмета" msdata:childkey="Код_предмета" msprop:Generator_UserChildTable="Usp" msprop:Generator_ChildPropName="GetUspRows" msprop:Generator_UserRelationName="PredmetiUsp" msprop:Generator_ParentPropName="PredmetiRow" msprop:Generator_RelationVarName="relationPredmetiUsp" msprop:Generator_UserParentTable="Predmeti" />
-      <msdata:Relationship name="UsersUsp" msdata:parent="Users" msdata:child="Usp" msdata:parentkey="Код_пользователя" msdata:childkey="Код_пользователя" msprop:Generator_UserChildTable="Usp" msprop:Generator_ChildPropName="GetUspRows" msprop:Generator_UserRelationName="UsersUsp" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_RelationVarName="relationUsersUsp" msprop:Generator_UserParentTable="Users" />
-      <msdata:Relationship name="GroupsLectures" msdata:parent="Groups" msdata:child="Lectures" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Lectures" msprop:Generator_ChildPropName="GetLecturesRows" msprop:Generator_UserRelationName="GroupsLectures" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationGroupsLectures" msprop:Generator_UserParentTable="Groups" />
-      <msdata:Relationship name="PredmetiLectures" msdata:parent="Predmeti" msdata:child="Lectures" msdata:parentkey="Код_предмета" msdata:childkey="Код_предмета" msprop:Generator_UserChildTable="Lectures" msprop:Generator_ChildPropName="GetLecturesRows" msprop:Generator_UserRelationName="PredmetiLectures" msprop:Generator_ParentPropName="PredmetiRow" msprop:Generator_RelationVarName="relationPredmetiLectures" msprop:Generator_UserParentTable="Predmeti" />
+      <msdata:Relationship name="GroupsUsers" msdata:parent="Groups" msdata:child="Users" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="GroupsUsers" msprop:Generator_RelationVarName="relationGroupsUsers" msprop:Generator_UserParentTable="Groups" msprop:Generator_ParentPropName="GroupsRow" />
+      <msdata:Relationship name="PredmetiUsp" msdata:parent="Predmeti" msdata:child="Usp" msdata:parentkey="Код_предмета" msdata:childkey="Код_предмета" msprop:Generator_UserChildTable="Usp" msprop:Generator_ChildPropName="GetUspRows" msprop:Generator_UserRelationName="PredmetiUsp" msprop:Generator_RelationVarName="relationPredmetiUsp" msprop:Generator_UserParentTable="Predmeti" msprop:Generator_ParentPropName="PredmetiRow" />
+      <msdata:Relationship name="UsersUsp" msdata:parent="Users" msdata:child="Usp" msdata:parentkey="Код_пользователя" msdata:childkey="Код_пользователя" msprop:Generator_UserChildTable="Usp" msprop:Generator_ChildPropName="GetUspRows" msprop:Generator_UserRelationName="UsersUsp" msprop:Generator_RelationVarName="relationUsersUsp" msprop:Generator_UserParentTable="Users" msprop:Generator_ParentPropName="UsersRow" />
+      <msdata:Relationship name="GroupsLectures" msdata:parent="Groups" msdata:child="Lectures" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Lectures" msprop:Generator_ChildPropName="GetLecturesRows" msprop:Generator_UserRelationName="GroupsLectures" msprop:Generator_RelationVarName="relationGroupsLectures" msprop:Generator_UserParentTable="Groups" msprop:Generator_ParentPropName="GroupsRow" />
+      <msdata:Relationship name="PredmetiLectures" msdata:parent="Predmeti" msdata:child="Lectures" msdata:parentkey="Код_предмета" msdata:childkey="Код_предмета" msprop:Generator_UserChildTable="Lectures" msprop:Generator_ChildPropName="GetLecturesRows" msprop:Generator_UserRelationName="PredmetiLectures" msprop:Generator_RelationVarName="relationPredmetiLectures" msprop:Generator_UserParentTable="Predmeti" msprop:Generator_ParentPropName="PredmetiRow" />
+      <msdata:Relationship name="GroupsLectures1" msdata:parent="Groups" msdata:child="Lecturesfull" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Lecturesfull" msprop:Generator_ChildPropName="GetLecturesfullRows" msprop:Generator_UserRelationName="GroupsLectures1" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationGroupsLectures1" msprop:Generator_UserParentTable="Groups" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

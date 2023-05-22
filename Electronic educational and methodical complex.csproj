@@ -52,6 +52,9 @@
     <Compile Include="AddGroups.Designer.cs">
       <DependentUpon>AddGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseDataSet.cs">
+      <DependentUpon>DataBaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Lectures.cs">
       <SubType>Form</SubType>
     </Compile>
