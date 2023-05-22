@@ -16,7 +16,6 @@ namespace Electronic_educational_and_methodical_complex
     {
         OleDbConnection con;
         OleDbCommand cmd;
-        OleDbDataReader dr;
         public Registration()
         {
             InitializeComponent();

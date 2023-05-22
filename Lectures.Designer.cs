@@ -53,12 +53,22 @@ namespace Electronic_educational_and_methodical_complex
             this.label4 = new System.Windows.Forms.Label();
             this.groupsTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.GroupsTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lecturesfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.LecturesfullTableAdapter();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_naz = new System.Windows.Forms.TextBox();
+            this.lecturesfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.кодлекцииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.группаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturesfullBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_clear
@@ -165,11 +175,22 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодлекцииDataGridViewTextBoxColumn,
+            this.предметDataGridViewTextBoxColumn,
+            this.группаDataGridViewTextBoxColumn,
+            this.названиеDataGridViewTextBoxColumn,
+            this.путьDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.lecturesfullBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 162);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(673, 311);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
@@ -245,11 +266,69 @@ namespace Electronic_educational_and_methodical_complex
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // lecturesfullTableAdapter
+            // 
+            this.lecturesfullTableAdapter.ClearBeforeFill = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(422, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(139, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Введите название лекции";
+            // 
+            // txt_naz
+            // 
+            this.txt_naz.Location = new System.Drawing.Point(410, 28);
+            this.txt_naz.Name = "txt_naz";
+            this.txt_naz.Size = new System.Drawing.Size(160, 20);
+            this.txt_naz.TabIndex = 20;
+            this.txt_naz.TextChanged += new System.EventHandler(this.txt_naz_TextChanged);
+            // 
+            // lecturesfullBindingSource
+            // 
+            this.lecturesfullBindingSource.DataMember = "Lecturesfull";
+            this.lecturesfullBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // кодлекцииDataGridViewTextBoxColumn
+            // 
+            this.кодлекцииDataGridViewTextBoxColumn.DataPropertyName = "Код_лекции";
+            this.кодлекцииDataGridViewTextBoxColumn.HeaderText = "Код_лекции";
+            this.кодлекцииDataGridViewTextBoxColumn.Name = "кодлекцииDataGridViewTextBoxColumn";
+            // 
+            // предметDataGridViewTextBoxColumn
+            // 
+            this.предметDataGridViewTextBoxColumn.DataPropertyName = "Предмет";
+            this.предметDataGridViewTextBoxColumn.HeaderText = "Предмет";
+            this.предметDataGridViewTextBoxColumn.Name = "предметDataGridViewTextBoxColumn";
+            // 
+            // группаDataGridViewTextBoxColumn
+            // 
+            this.группаDataGridViewTextBoxColumn.DataPropertyName = "Группа";
+            this.группаDataGridViewTextBoxColumn.HeaderText = "Группа";
+            this.группаDataGridViewTextBoxColumn.Name = "группаDataGridViewTextBoxColumn";
+            // 
+            // названиеDataGridViewTextBoxColumn
+            // 
+            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
+            // 
+            // путьDataGridViewTextBoxColumn
+            // 
+            this.путьDataGridViewTextBoxColumn.DataPropertyName = "Путь";
+            this.путьDataGridViewTextBoxColumn.HeaderText = "Путь";
+            this.путьDataGridViewTextBoxColumn.Name = "путьDataGridViewTextBoxColumn";
+            // 
             // Lectures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 498);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txt_naz);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmb_group);
@@ -276,6 +355,7 @@ namespace Electronic_educational_and_methodical_complex
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturesfullBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +386,14 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.BindingSource groupsBindingSource;
         private DataBaseDataSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private DataBaseDataSetTableAdapters.LecturesfullTableAdapter lecturesfullTableAdapter;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_naz;
+        private System.Windows.Forms.BindingSource lecturesfullBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодлекцииDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn предметDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn группаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn путьDataGridViewTextBoxColumn;
     }
 }

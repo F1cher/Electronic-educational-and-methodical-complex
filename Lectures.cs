@@ -14,7 +14,6 @@ namespace Electronic_educational_and_methodical_complex
     public partial class Lectures : Form
     {
         DataSet ds;
-        OleDbDataAdapter da;
         OleDbCommand cmd;
         OleDbConnection con;
         public Lectures()
@@ -25,15 +24,6 @@ namespace Electronic_educational_and_methodical_complex
         {
             con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
             ds = new DataSet();
-        }
-        void GetLectures()
-        {
-            GetCon();
-            da = new OleDbDataAdapter("SELECT * FROM Lectures", con);
-            con.Open();
-            da.Fill(ds, "Lectures");
-            dataGridView1.DataSource = ds.Tables["Lectures"];
-            con.Close();
         }
         public void Clear()
         {
@@ -52,11 +42,13 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void AddLectures_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Lecturesfull". При необходимости она может быть перемещена или удалена.
+            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet.Groups);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
             this.predmetiTableAdapter.Fill(this.dataBaseDataSet.Predmeti);
-            GetLectures();
+            GetCon();
         }
         private void btn_obzor_Click(object sender, EventArgs e)
         {
@@ -80,7 +72,7 @@ namespace Electronic_educational_and_methodical_complex
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            GetLectures();
+            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
             toolStripStatusLabel1.Text = "Лекция была добавлена!";
         }
 
@@ -104,7 +96,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                GetLectures();
+                this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
                 toolStripStatusLabel1.Text = "Лекция была изменена!";
             }
             else if (dialogResult == DialogResult.No)
@@ -123,7 +115,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                GetLectures();
+                this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
                 toolStripStatusLabel1.Text = "Лекция была удалена!";
             }
             else if (dialogResult == DialogResult.No)
@@ -143,6 +135,13 @@ namespace Electronic_educational_and_methodical_complex
             cmb_group.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txt_tema.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             txt_pyt.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void txt_naz_TextChanged(object sender, EventArgs e)
+        {
+            DataView poisk = new DataView(this.dataBaseDataSet.Lecturesfull);
+            poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%'";
+            this.lecturesfullBindingSource.DataSource = poisk;
         }
     }
 }

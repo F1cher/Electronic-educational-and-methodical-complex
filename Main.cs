@@ -15,7 +15,6 @@ namespace Electronic_educational_and_methodical_complex
     {
         string Access;
         DataSet ds;
-        OleDbDataAdapter da;
         OleDbCommand cmd;
         OleDbConnection con;
         public Main(string Saccess, string Group)
@@ -29,6 +28,7 @@ namespace Electronic_educational_and_methodical_complex
             con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
             ds = new DataSet();
         }
+     
         public void Clear(TabPage tabPageName)
         {
             foreach (Control control in tabPageName.Controls)
@@ -83,6 +83,8 @@ namespace Electronic_educational_and_methodical_complex
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Students". При необходимости она может быть перемещена или удалена.
             this.studentsTableAdapter.Fill(this.dataBaseDataSet.Students);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Lecturesfull". При необходимости она может быть перемещена или удалена.
+            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet.Groups);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
@@ -95,6 +97,10 @@ namespace Electronic_educational_and_methodical_complex
                 Add_groups.Visible = false;
                 Add_predmet.Visible = false;
                 btn_uprlectures.Visible = false;
+
+                DataView filter = new DataView(this.dataBaseDataSet.Lecturesfull);
+                filter.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%'";
+                this.lecturesfullBindingSource.DataSource = filter;
             }
         }
 
@@ -217,6 +223,33 @@ namespace Electronic_educational_and_methodical_complex
         {
             Tests Tests = new Tests();
             Tests.Show();
+        }
+
+        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_pyt.Text = dataGridView2.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Diagnostics.Process.Start(txt_pyt.Text);
+        }
+
+        private void txt_naz_TextChanged(object sender, EventArgs e)
+        {
+            DataView poisk = new DataView(this.dataBaseDataSet.Lecturesfull);
+            poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%'";
+            this.lecturesfullBindingSource.DataSource = poisk;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Diagnostics.Process.Start(txt_pyt.Text);
         }
     }
 }
