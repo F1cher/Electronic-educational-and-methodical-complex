@@ -53,12 +53,20 @@ namespace Electronic_educational_and_methodical_complex
             this.groupsTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.GroupsTableAdapter();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.practicalAddBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.practicalAddTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.PracticalAddTableAdapter();
+            this.кодпрактикиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.группаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.practicalAddBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -118,9 +126,17 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодпрактикиDataGridViewTextBoxColumn,
+            this.предметDataGridViewTextBoxColumn,
+            this.группаDataGridViewTextBoxColumn,
+            this.названиеDataGridViewTextBoxColumn,
+            this.путьDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.practicalAddBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 164);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(673, 309);
@@ -245,6 +261,45 @@ namespace Electronic_educational_and_methodical_complex
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
+            // practicalAddBindingSource
+            // 
+            this.practicalAddBindingSource.DataMember = "PracticalAdd";
+            this.practicalAddBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // practicalAddTableAdapter
+            // 
+            this.practicalAddTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодпрактикиDataGridViewTextBoxColumn
+            // 
+            this.кодпрактикиDataGridViewTextBoxColumn.DataPropertyName = "Код_практики";
+            this.кодпрактикиDataGridViewTextBoxColumn.HeaderText = "Код_практики";
+            this.кодпрактикиDataGridViewTextBoxColumn.Name = "кодпрактикиDataGridViewTextBoxColumn";
+            // 
+            // предметDataGridViewTextBoxColumn
+            // 
+            this.предметDataGridViewTextBoxColumn.DataPropertyName = "Предмет";
+            this.предметDataGridViewTextBoxColumn.HeaderText = "Предмет";
+            this.предметDataGridViewTextBoxColumn.Name = "предметDataGridViewTextBoxColumn";
+            // 
+            // группаDataGridViewTextBoxColumn
+            // 
+            this.группаDataGridViewTextBoxColumn.DataPropertyName = "Группа";
+            this.группаDataGridViewTextBoxColumn.HeaderText = "Группа";
+            this.группаDataGridViewTextBoxColumn.Name = "группаDataGridViewTextBoxColumn";
+            // 
+            // названиеDataGridViewTextBoxColumn
+            // 
+            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
+            // 
+            // путьDataGridViewTextBoxColumn
+            // 
+            this.путьDataGridViewTextBoxColumn.DataPropertyName = "Путь";
+            this.путьDataGridViewTextBoxColumn.HeaderText = "Путь";
+            this.путьDataGridViewTextBoxColumn.Name = "путьDataGridViewTextBoxColumn";
+            // 
             // Practical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +331,7 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.practicalAddBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +362,12 @@ namespace Electronic_educational_and_methodical_complex
         private DataBaseDataSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingSource practicalAddBindingSource;
+        private DataBaseDataSetTableAdapters.PracticalAddTableAdapter practicalAddTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодпрактикиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn предметDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn группаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn путьDataGridViewTextBoxColumn;
     }
 }

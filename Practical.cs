@@ -26,15 +26,6 @@ namespace Electronic_educational_and_methodical_complex
             con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
             ds = new DataSet();
         }
-        void GetPractical()
-        {
-            GetCon();
-            da = new OleDbDataAdapter("SELECT * FROM Practical", con);
-            con.Open();
-            da.Fill(ds, "Practical");
-            dataGridView1.DataSource = ds.Tables["Practical"];
-            con.Close();
-        }
         public void Clear()
         {
             foreach (Control control in this.Controls)
@@ -53,11 +44,13 @@ namespace Electronic_educational_and_methodical_complex
 
         private void Practical_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.PracticalAdd". При необходимости она может быть перемещена или удалена.
+            this.practicalAddTableAdapter.Fill(this.dataBaseDataSet.PracticalAdd);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet.Groups);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
             this.predmetiTableAdapter.Fill(this.dataBaseDataSet.Predmeti);
-            GetPractical();
+            GetCon();
         }
 
         private void btn_obzor_Click(object sender, EventArgs e)
@@ -82,7 +75,7 @@ namespace Electronic_educational_and_methodical_complex
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            GetPractical();
+            this.practicalAddTableAdapter.Fill(this.dataBaseDataSet.PracticalAdd);
             toolStripStatusLabel1.Text = "Практическое задание было добавлено!";
         }
 
@@ -106,7 +99,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                GetPractical();
+                this.practicalAddTableAdapter.Fill(this.dataBaseDataSet.PracticalAdd);
                 toolStripStatusLabel1.Text = "Практическое задание было изменено!";
             }
             else if (dialogResult == DialogResult.No)
@@ -126,7 +119,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                GetPractical();
+                this.practicalAddTableAdapter.Fill(this.dataBaseDataSet.PracticalAdd);
                 toolStripStatusLabel1.Text = "Практическое задание было удалено!";
             }
             else if (dialogResult == DialogResult.No)

@@ -142,6 +142,6 @@ namespace Electronic_educational_and_methodical_complex
             DataView poisk = new DataView(this.dataBaseDataSet.LecturesAdd);
             poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%'";
             this.lecturesAddBindingSource.DataSource = poisk;
-        }
+        } 
     }
 }

@@ -26,15 +26,6 @@ namespace Electronic_educational_and_methodical_complex
             con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
             ds = new DataSet();
         }
-        void GetTests()
-        {
-            GetCon();
-            da = new OleDbDataAdapter("SELECT * FROM Tests", con);
-            con.Open();
-            da.Fill(ds, "Tests");
-            dataGridView1.DataSource = ds.Tables["Tests"];
-            con.Close();
-        }
         public void Clear()
         {
             foreach (Control control in this.Controls)
@@ -52,11 +43,13 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void Tests_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.TestsAdd". При необходимости она может быть перемещена или удалена.
+            this.testsAddTableAdapter.Fill(this.dataBaseDataSet.TestsAdd);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet.Groups);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
             this.predmetiTableAdapter.Fill(this.dataBaseDataSet.Predmeti);
-            GetTests();
+            GetCon();
         }
         private void btn_obzor_Click(object sender, EventArgs e)
         {
@@ -79,7 +72,7 @@ namespace Electronic_educational_and_methodical_complex
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            GetTests();
+            this.testsAddTableAdapter.Fill(this.dataBaseDataSet.TestsAdd);
             toolStripStatusLabel1.Text = "Тест был добавлен!";
         }
 
@@ -103,7 +96,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                GetTests();
+                this.testsAddTableAdapter.Fill(this.dataBaseDataSet.TestsAdd);
                 toolStripStatusLabel1.Text = "Тест был изменен!";
             }
             else if (dialogResult == DialogResult.No)
@@ -123,7 +116,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                GetTests();
+                this.testsAddTableAdapter.Fill(this.dataBaseDataSet.TestsAdd);
                 toolStripStatusLabel1.Text = "Тест был удален!";
             }
             else if (dialogResult == DialogResult.No)

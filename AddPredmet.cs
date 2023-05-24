@@ -127,5 +127,10 @@ namespace Electronic_educational_and_methodical_complex
         {
             txt_predmet.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

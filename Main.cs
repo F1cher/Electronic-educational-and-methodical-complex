@@ -81,6 +81,14 @@ namespace Electronic_educational_and_methodical_complex
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Testsfull". При необходимости она может быть перемещена или удалена.
+            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Testsfull". При необходимости она может быть перемещена или удалена.
+            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Testsfull". При необходимости она может быть перемещена или удалена.
+            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Practicalfull". При необходимости она может быть перемещена или удалена.
+            this.practicalfullTableAdapter.Fill(this.dataBaseDataSet.Practicalfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Lecturesfull". При необходимости она может быть перемещена или удалена.
             this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Students". При необходимости она может быть перемещена или удалена.
@@ -100,17 +108,13 @@ namespace Electronic_educational_and_methodical_complex
                 txt_group.Visible = false;
                 label2.Visible = false;
 
-                int i = 0;
 
-                if (Int32.TryParse(txt_group.Text, out i))
-                {
-                    DataView filter = new DataView(this.dataBaseDataSet.Lecturesfull);
-                    filter.RowFilter = "Код_группы = " + i;
-                    this.dataGridView2.DataSource = filter;
-                }
+                //Сортировка по группе (переделать)
+                DataView filter = new DataView(this.dataBaseDataSet.Lecturesfull);
+                filter.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.lecturesfullBindingSource.DataSource = filter;
             }
         }
-
         private void btn_uprlectures_Click(object sender, EventArgs e)
         {
             Lectures Lectures = new Lectures();
@@ -120,13 +124,13 @@ namespace Electronic_educational_and_methodical_complex
         private void add_predmet_Click(object sender, EventArgs e)
         {
             AddPredmet AddPredmet = new AddPredmet();
-            AddPredmet.Show();
+            AddPredmet.ShowDialog();
         }
 
         private void Add_groups_Click(object sender, EventArgs e)
         {
             AddGroups AddGroups = new AddGroups();
-            AddGroups.Show();
+            AddGroups.ShowDialog();
         }
 
         private void btn_addgroups_Click(object sender, EventArgs e)
@@ -223,13 +227,13 @@ namespace Electronic_educational_and_methodical_complex
         private void btn_uprlpractical_Click(object sender, EventArgs e)
         {
             Practical Practical = new Practical();
-            Practical.Show();
+            Practical.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Tests Tests = new Tests();
-            Tests.Show();
+            Tests.ShowDialog();
         }
 
         private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -237,26 +241,125 @@ namespace Electronic_educational_and_methodical_complex
             txt_pyt.Text = dataGridView2.CurrentRow.Cells[4].Value.ToString();
         }
 
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            System.Diagnostics.Process.Start(txt_pyt.Text);
-        }
-
         private void txt_naz_TextChanged(object sender, EventArgs e)
         {
-            DataView poisk = new DataView(this.dataBaseDataSet.Lecturesfull);
-            poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%'";
-            this.lecturesfullBindingSource.DataSource = poisk;
+            if (txt_group.Text == "1")
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.Lecturesfull);
+                poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.lecturesfullBindingSource.DataSource = poisk;
+            }
+            else
+            {
+                DataView poisk_s = new DataView(this.dataBaseDataSet.Lecturesfull);
+                poisk_s.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.lecturesfullBindingSource.DataSource = poisk_s;
+            }
+        }
+        private void cmb_predmet_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_group.Text == "1")
+            {
+                DataView predmet = new DataView(this.dataBaseDataSet.Lecturesfull);
+                predmet.RowFilter = "Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.lecturesfullBindingSource.DataSource = predmet;
+            }
+            else
+            {
+                DataView predmet_s = new DataView(this.dataBaseDataSet.Lecturesfull);
+                predmet_s.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.lecturesfullBindingSource.DataSource = predmet_s;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+            cmb_predmet.Refresh();
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             System.Diagnostics.Process.Start(txt_pyt.Text);
+        }
+
+
+
+
+
+
+        private void dataGridView3_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_pyt_2.Text = dataGridView3.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Diagnostics.Process.Start(txt_pyt_2.Text);
+        }
+
+        private void cmb_predmet_2_TextChanged(object sender, EventArgs e)
+        {
+            DataView predmet_2 = new DataView(this.dataBaseDataSet.Practicalfull);
+            predmet_2.RowFilter = "Предмет LIKE '" + cmb_predmet_2.Text + "%'";
+            this.practicalfullBindingSource.DataSource = predmet_2;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.practicalfullTableAdapter.Fill(this.dataBaseDataSet.Practicalfull);
+        }
+
+        private void Add_predmet_2_Click(object sender, EventArgs e)
+        {
+            AddPredmet AddPredmet = new AddPredmet();
+            AddPredmet.ShowDialog();
+        }
+
+        private void txt_naz_2_TextChanged(object sender, EventArgs e)
+        {
+            DataView poisk_2 = new DataView(this.dataBaseDataSet.Practicalfull);
+            poisk_2.RowFilter = "Название LIKE '" + txt_naz_2.Text + "%'";
+            this.practicalfullBindingSource.DataSource = poisk_2;
+        }
+
+
+
+
+
+        private void dataGridView4_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_pyt_3.Text = dataGridView4.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Diagnostics.Process.Start(txt_pyt_3.Text);
+        }
+
+        private void cmb_predmet_3_TextChanged(object sender, EventArgs e)
+        {
+            DataView predmet_3 = new DataView(this.dataBaseDataSet1.Testsfull);
+            predmet_3.RowFilter = "Предмет LIKE '" + cmb_predmet_3.Text + "%'";
+            this.testsfullBindingSource.DataSource = predmet_3;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
+        }
+
+        private void btn_addpredmet_3_Click(object sender, EventArgs e)
+        {
+            AddPredmet AddPredmet = new AddPredmet();
+            AddPredmet.ShowDialog();
+        }
+
+        private void txt_naz_3_TextChanged(object sender, EventArgs e)
+        {
+            DataView poisk_3 = new DataView(this.dataBaseDataSet1.Testsfull);
+            poisk_3.RowFilter = "Название LIKE '" + txt_naz_3.Text + "%'";
+            this.testsfullBindingSource.DataSource = poisk_3;
         }
     }
 }

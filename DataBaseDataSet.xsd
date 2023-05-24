@@ -521,6 +521,96 @@ FROM            ((Lectures INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PracticalfullTableAdapter" GeneratorDataComponentClassName="PracticalfullTableAdapter" Name="Practicalfull" UserDataComponentName="PracticalfullTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       Practical.[Код_практики], Predmeti.Предмет, Practical.[Код_группы], Practical.Название, Practical.Путь
+FROM            (Practical INNER JOIN
+                         Predmeti ON Practical.[Код_предмета] = Predmeti.[Код_предмета])</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Код_практики" DataSetColumn="Код_практики" />
+              <Mapping SourceColumn="Предмет" DataSetColumn="Предмет" />
+              <Mapping SourceColumn="Код_группы" DataSetColumn="Код_группы" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Путь" DataSetColumn="Путь" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PracticalAddTableAdapter" GeneratorDataComponentClassName="PracticalAddTableAdapter" Name="PracticalAdd" UserDataComponentName="PracticalAddTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       Practical.[Код_практики], Predmeti.Предмет, Groups.Группа, Practical.Название, Practical.Путь
+FROM            ((Practical INNER JOIN
+                         Predmeti ON Practical.[Код_предмета] = Predmeti.[Код_предмета]) INNER JOIN
+                         Groups ON Practical.[Код_группы] = Groups.[Код_группы])</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Код_практики" DataSetColumn="Код_практики" />
+              <Mapping SourceColumn="Предмет" DataSetColumn="Предмет" />
+              <Mapping SourceColumn="Группа" DataSetColumn="Группа" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Путь" DataSetColumn="Путь" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TestsfullTableAdapter" GeneratorDataComponentClassName="TestsfullTableAdapter" Name="Testsfull" UserDataComponentName="TestsfullTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       Tests.[Код_теста], Predmeti.Предмет, Tests.[Код_группы], Tests.Название, Tests.Путь
+FROM            (Tests INNER JOIN
+                         Predmeti ON Tests.[Код_предмета] = Predmeti.[Код_предмета])</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Код_теста" DataSetColumn="Код_теста" />
+              <Mapping SourceColumn="Предмет" DataSetColumn="Предмет" />
+              <Mapping SourceColumn="Код_группы" DataSetColumn="Код_группы" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Путь" DataSetColumn="Путь" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TestsAddTableAdapter" GeneratorDataComponentClassName="TestsAddTableAdapter" Name="TestsAdd" UserDataComponentName="TestsAddTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DataBaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       Tests.[Код_теста], Predmeti.Предмет, Groups.Группа, Tests.Название, Tests.Путь
+FROM            ((Tests INNER JOIN
+                         Predmeti ON Tests.[Код_предмета] = Predmeti.[Код_предмета]) INNER JOIN
+                         Groups ON Tests.[Код_группы] = Groups.[Код_группы])</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Код_теста" DataSetColumn="Код_теста" />
+              <Mapping SourceColumn="Предмет" DataSetColumn="Предмет" />
+              <Mapping SourceColumn="Группа" DataSetColumn="Группа" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Путь" DataSetColumn="Путь" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -532,7 +622,7 @@ FROM            ((Lectures INNER JOIN
         <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_RowClassName="GroupsRow" msprop:Generator_UserTableName="Groups" msprop:Generator_RowEvArgName="GroupsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Код_группы" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" />
+              <xs:element name="Код_группы" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:string" />
               <xs:element name="Группа" msprop:Generator_ColumnVarNameInTable="columnГруппа" msprop:Generator_ColumnPropNameInRow="Группа" msprop:Generator_ColumnPropNameInTable="ГруппаColumn" msprop:Generator_UserColumnName="Группа" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -582,7 +672,7 @@ FROM            ((Lectures INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:string" minOccurs="0" />
               <xs:element name="Логин" msprop:Generator_ColumnVarNameInTable="columnЛогин" msprop:Generator_ColumnPropNameInRow="Логин" msprop:Generator_ColumnPropNameInTable="ЛогинColumn" msprop:Generator_UserColumnName="Логин" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -678,7 +768,7 @@ FROM            ((Lectures INNER JOIN
             <xs:sequence>
               <xs:element name="Код_лекции" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_лекции" msprop:Generator_ColumnPropNameInRow="Код_лекции" msprop:Generator_ColumnPropNameInTable="Код_лекцииColumn" msprop:Generator_UserColumnName="Код_лекции" type="xs:int" />
               <xs:element name="Код_предмета" msprop:Generator_ColumnVarNameInTable="columnКод_предмета" msprop:Generator_ColumnPropNameInRow="Код_предмета" msprop:Generator_ColumnPropNameInTable="Код_предметаColumn" msprop:Generator_UserColumnName="Код_предмета" type="xs:int" minOccurs="0" />
-              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:string" minOccurs="0" />
               <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -767,7 +857,7 @@ FROM            ((Lectures INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -775,6 +865,134 @@ FROM            ((Lectures INNER JOIN
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код_лекции" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_лекции" msprop:Generator_ColumnPropNameInRow="Код_лекции" msprop:Generator_ColumnPropNameInTable="Код_лекцииColumn" msprop:Generator_UserColumnName="Код_лекции" type="xs:int" minOccurs="0" />
+              <xs:element name="Предмет" msprop:Generator_ColumnVarNameInTable="columnПредмет" msprop:Generator_ColumnPropNameInRow="Предмет" msprop:Generator_ColumnPropNameInTable="ПредметColumn" msprop:Generator_UserColumnName="Предмет" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Группа" msprop:Generator_ColumnVarNameInTable="columnГруппа" msprop:Generator_ColumnPropNameInRow="Группа" msprop:Generator_ColumnPropNameInTable="ГруппаColumn" msprop:Generator_UserColumnName="Группа" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Путь" msprop:Generator_ColumnVarNameInTable="columnПуть" msprop:Generator_ColumnPropNameInRow="Путь" msprop:Generator_ColumnPropNameInTable="ПутьColumn" msprop:Generator_UserColumnName="Путь" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Practicalfull" msprop:Generator_TableClassName="PracticalfullDataTable" msprop:Generator_TableVarName="tablePracticalfull" msprop:Generator_RowChangedName="PracticalfullRowChanged" msprop:Generator_TablePropName="Practicalfull" msprop:Generator_RowDeletingName="PracticalfullRowDeleting" msprop:Generator_RowChangingName="PracticalfullRowChanging" msprop:Generator_RowEvHandlerName="PracticalfullRowChangeEventHandler" msprop:Generator_RowDeletedName="PracticalfullRowDeleted" msprop:Generator_RowClassName="PracticalfullRow" msprop:Generator_UserTableName="Practicalfull" msprop:Generator_RowEvArgName="PracticalfullRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Код_практики" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_практики" msprop:Generator_ColumnPropNameInRow="Код_практики" msprop:Generator_ColumnPropNameInTable="Код_практикиColumn" msprop:Generator_UserColumnName="Код_практики" type="xs:int" minOccurs="0" />
+              <xs:element name="Предмет" msprop:Generator_ColumnVarNameInTable="columnПредмет" msprop:Generator_ColumnPropNameInRow="Предмет" msprop:Generator_ColumnPropNameInTable="ПредметColumn" msprop:Generator_UserColumnName="Предмет" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Путь" msprop:Generator_ColumnVarNameInTable="columnПуть" msprop:Generator_ColumnPropNameInRow="Путь" msprop:Generator_ColumnPropNameInTable="ПутьColumn" msprop:Generator_UserColumnName="Путь" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracticalAdd" msprop:Generator_TableClassName="PracticalAddDataTable" msprop:Generator_TableVarName="tablePracticalAdd" msprop:Generator_TablePropName="PracticalAdd" msprop:Generator_RowDeletingName="PracticalAddRowDeleting" msprop:Generator_RowChangingName="PracticalAddRowChanging" msprop:Generator_RowEvHandlerName="PracticalAddRowChangeEventHandler" msprop:Generator_RowDeletedName="PracticalAddRowDeleted" msprop:Generator_UserTableName="PracticalAdd" msprop:Generator_RowChangedName="PracticalAddRowChanged" msprop:Generator_RowEvArgName="PracticalAddRowChangeEvent" msprop:Generator_RowClassName="PracticalAddRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Код_практики" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_практики" msprop:Generator_ColumnPropNameInRow="Код_практики" msprop:Generator_ColumnPropNameInTable="Код_практикиColumn" msprop:Generator_UserColumnName="Код_практики" type="xs:int" minOccurs="0" />
+              <xs:element name="Предмет" msprop:Generator_ColumnVarNameInTable="columnПредмет" msprop:Generator_ColumnPropNameInRow="Предмет" msprop:Generator_ColumnPropNameInTable="ПредметColumn" msprop:Generator_UserColumnName="Предмет" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Группа" msprop:Generator_ColumnVarNameInTable="columnГруппа" msprop:Generator_ColumnPropNameInRow="Группа" msprop:Generator_ColumnPropNameInTable="ГруппаColumn" msprop:Generator_UserColumnName="Группа" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Путь" msprop:Generator_ColumnVarNameInTable="columnПуть" msprop:Generator_ColumnPropNameInRow="Путь" msprop:Generator_ColumnPropNameInTable="ПутьColumn" msprop:Generator_UserColumnName="Путь" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Testsfull" msprop:Generator_TableClassName="TestsfullDataTable" msprop:Generator_TableVarName="tableTestsfull" msprop:Generator_RowChangedName="TestsfullRowChanged" msprop:Generator_TablePropName="Testsfull" msprop:Generator_RowDeletingName="TestsfullRowDeleting" msprop:Generator_RowChangingName="TestsfullRowChanging" msprop:Generator_RowEvHandlerName="TestsfullRowChangeEventHandler" msprop:Generator_RowDeletedName="TestsfullRowDeleted" msprop:Generator_RowClassName="TestsfullRow" msprop:Generator_UserTableName="Testsfull" msprop:Generator_RowEvArgName="TestsfullRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Код_теста" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_теста" msprop:Generator_ColumnPropNameInRow="Код_теста" msprop:Generator_ColumnPropNameInTable="Код_тестаColumn" msprop:Generator_UserColumnName="Код_теста" type="xs:int" minOccurs="0" />
+              <xs:element name="Предмет" msprop:Generator_ColumnVarNameInTable="columnПредмет" msprop:Generator_ColumnPropNameInRow="Предмет" msprop:Generator_ColumnPropNameInTable="ПредметColumn" msprop:Generator_UserColumnName="Предмет" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Путь" msprop:Generator_ColumnVarNameInTable="columnПуть" msprop:Generator_ColumnPropNameInRow="Путь" msprop:Generator_ColumnPropNameInTable="ПутьColumn" msprop:Generator_UserColumnName="Путь" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TestsAdd" msprop:Generator_TableClassName="TestsAddDataTable" msprop:Generator_TableVarName="tableTestsAdd" msprop:Generator_RowChangedName="TestsAddRowChanged" msprop:Generator_TablePropName="TestsAdd" msprop:Generator_RowDeletingName="TestsAddRowDeleting" msprop:Generator_RowChangingName="TestsAddRowChanging" msprop:Generator_RowEvHandlerName="TestsAddRowChangeEventHandler" msprop:Generator_RowDeletedName="TestsAddRowDeleted" msprop:Generator_RowClassName="TestsAddRow" msprop:Generator_UserTableName="TestsAdd" msprop:Generator_RowEvArgName="TestsAddRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Код_теста" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод_теста" msprop:Generator_ColumnPropNameInRow="Код_теста" msprop:Generator_ColumnPropNameInTable="Код_тестаColumn" msprop:Generator_UserColumnName="Код_теста" type="xs:int" minOccurs="0" />
               <xs:element name="Предмет" msprop:Generator_ColumnVarNameInTable="columnПредмет" msprop:Generator_ColumnPropNameInRow="Предмет" msprop:Generator_ColumnPropNameInTable="ПредметColumn" msprop:Generator_UserColumnName="Предмет" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -839,12 +1057,12 @@ FROM            ((Lectures INNER JOIN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="GroupsUsers" msdata:parent="Groups" msdata:child="Users" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="GroupsUsers" msprop:Generator_RelationVarName="relationGroupsUsers" msprop:Generator_UserParentTable="Groups" msprop:Generator_ParentPropName="GroupsRow" />
       <msdata:Relationship name="PredmetiUsp" msdata:parent="Predmeti" msdata:child="Usp" msdata:parentkey="Код_предмета" msdata:childkey="Код_предмета" msprop:Generator_UserChildTable="Usp" msprop:Generator_ChildPropName="GetUspRows" msprop:Generator_UserRelationName="PredmetiUsp" msprop:Generator_RelationVarName="relationPredmetiUsp" msprop:Generator_UserParentTable="Predmeti" msprop:Generator_ParentPropName="PredmetiRow" />
       <msdata:Relationship name="UsersUsp" msdata:parent="Users" msdata:child="Usp" msdata:parentkey="Код_пользователя" msdata:childkey="Код_пользователя" msprop:Generator_UserChildTable="Usp" msprop:Generator_ChildPropName="GetUspRows" msprop:Generator_UserRelationName="UsersUsp" msprop:Generator_RelationVarName="relationUsersUsp" msprop:Generator_UserParentTable="Users" msprop:Generator_ParentPropName="UsersRow" />
-      <msdata:Relationship name="GroupsLectures" msdata:parent="Groups" msdata:child="Lectures" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Lectures" msprop:Generator_ChildPropName="GetLecturesRows" msprop:Generator_UserRelationName="GroupsLectures" msprop:Generator_RelationVarName="relationGroupsLectures" msprop:Generator_UserParentTable="Groups" msprop:Generator_ParentPropName="GroupsRow" />
       <msdata:Relationship name="PredmetiLectures" msdata:parent="Predmeti" msdata:child="Lectures" msdata:parentkey="Код_предмета" msdata:childkey="Код_предмета" msprop:Generator_UserChildTable="Lectures" msprop:Generator_ChildPropName="GetLecturesRows" msprop:Generator_UserRelationName="PredmetiLectures" msprop:Generator_RelationVarName="relationPredmetiLectures" msprop:Generator_UserParentTable="Predmeti" msprop:Generator_ParentPropName="PredmetiRow" />
-      <msdata:Relationship name="GroupsLectures1" msdata:parent="Groups" msdata:child="Lecturesfull" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Lecturesfull" msprop:Generator_ChildPropName="GetLecturesfullRows" msprop:Generator_UserRelationName="GroupsLectures1" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationGroupsLectures1" msprop:Generator_UserParentTable="Groups" />
+      <msdata:Relationship name="Groups_Lectures" msdata:parent="Groups" msdata:child="Lectures" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Lectures" msprop:Generator_ChildPropName="GetLecturesRows" msprop:Generator_UserRelationName="Groups_Lectures" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationGroups_Lectures" msprop:Generator_UserParentTable="Groups" />
+      <msdata:Relationship name="Groups_Lecturesfull" msdata:parent="Groups" msdata:child="Lecturesfull" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Lecturesfull" msprop:Generator_ChildPropName="GetLecturesfullRows" msprop:Generator_UserRelationName="Groups_Lecturesfull" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationGroups_Lecturesfull" msprop:Generator_UserParentTable="Groups" />
+      <msdata:Relationship name="Groups_Users" msdata:parent="Groups" msdata:child="Users" msdata:parentkey="Код_группы" msdata:childkey="Код_группы" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="Groups_Users" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationGroups_Users" msprop:Generator_UserParentTable="Groups" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
