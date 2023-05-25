@@ -51,7 +51,18 @@
               <Mapping SourceColumn="Код_группы" DataSetColumn="Код_группы" />
               <Mapping SourceColumn="Группа" DataSetColumn="Группа" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="DataBaseConnectionString (Settings)" DbObjectName="Groups" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT       [Код_группы], Группа
+FROM            Groups
+WHERE        ([Код_группы] &gt; 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PredmetiTableAdapter" GeneratorDataComponentClassName="PredmetiTableAdapter" Name="Predmeti" UserDataComponentName="PredmetiTableAdapter">
             <MainSource>
@@ -907,7 +918,7 @@ FROM            ((Tests INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:string" minOccurs="0" />
               <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -971,7 +982,7 @@ FROM            ((Tests INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:int" minOccurs="0" />
+              <xs:element name="Код_группы" msprop:Generator_ColumnVarNameInTable="columnКод_группы" msprop:Generator_ColumnPropNameInRow="Код_группы" msprop:Generator_ColumnPropNameInTable="Код_группыColumn" msprop:Generator_UserColumnName="Код_группы" type="xs:string" minOccurs="0" />
               <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

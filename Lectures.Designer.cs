@@ -115,6 +115,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_predmet.DataSource = this.predmetiBindingSource;
             this.cmb_predmet.DisplayMember = "Предмет";
+            this.cmb_predmet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_predmet.FormattingEnabled = true;
             this.cmb_predmet.Location = new System.Drawing.Point(12, 134);
             this.cmb_predmet.Name = "cmb_predmet";
@@ -272,6 +273,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_group.DataSource = this.groupsBindingSource;
             this.cmb_group.DisplayMember = "Группа";
+            this.cmb_group.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_group.FormattingEnabled = true;
             this.cmb_group.Location = new System.Drawing.Point(139, 133);
             this.cmb_group.Name = "cmb_group";

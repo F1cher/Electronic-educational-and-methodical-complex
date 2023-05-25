@@ -4064,7 +4064,7 @@ namespace Electronic_educational_and_methodical_complex {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PracticalfullRow AddPracticalfullRow(string Предмет, int Код_группы, string Название, string Путь) {
+            public PracticalfullRow AddPracticalfullRow(string Предмет, string Код_группы, string Название, string Путь) {
                 PracticalfullRow rowPracticalfullRow = ((PracticalfullRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4108,7 +4108,7 @@ namespace Electronic_educational_and_methodical_complex {
                 base.Columns.Add(this.columnКод_практики);
                 this.columnПредмет = new global::System.Data.DataColumn("Предмет", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПредмет);
-                this.columnКод_группы = new global::System.Data.DataColumn("Код_группы", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnКод_группы = new global::System.Data.DataColumn("Код_группы", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКод_группы);
                 this.columnНазвание = new global::System.Data.DataColumn("Название", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnНазвание);
@@ -4683,7 +4683,7 @@ namespace Electronic_educational_and_methodical_complex {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestsfullRow AddTestsfullRow(string Предмет, int Код_группы, string Название, string Путь) {
+            public TestsfullRow AddTestsfullRow(string Предмет, string Код_группы, string Название, string Путь) {
                 TestsfullRow rowTestsfullRow = ((TestsfullRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4727,7 +4727,7 @@ namespace Electronic_educational_and_methodical_complex {
                 base.Columns.Add(this.columnКод_теста);
                 this.columnПредмет = new global::System.Data.DataColumn("Предмет", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПредмет);
-                this.columnКод_группы = new global::System.Data.DataColumn("Код_группы", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnКод_группы = new global::System.Data.DataColumn("Код_группы", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКод_группы);
                 this.columnНазвание = new global::System.Data.DataColumn("Название", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnНазвание);
@@ -6758,10 +6758,10 @@ namespace Electronic_educational_and_methodical_complex {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_группы {
+            public string Код_группы {
                 get {
                     try {
-                        return ((int)(this[this.tablePracticalfull.Код_группыColumn]));
+                        return ((string)(this[this.tablePracticalfull.Код_группыColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Код_группы\' в таблице \'Practicalfull\' равно DBNull.", e);
@@ -7068,10 +7068,10 @@ namespace Electronic_educational_and_methodical_complex {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_группы {
+            public string Код_группы {
                 get {
                     try {
-                        return ((int)(this[this.tableTestsfull.Код_группыColumn]));
+                        return ((string)(this[this.tableTestsfull.Код_группыColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Код_группы\' в таблице \'Testsfull\' равно DBNull.", e);
@@ -7968,11 +7968,16 @@ namespace Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Код_группы, Группа FROM Groups";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT       [Код_группы], Группа\r\nFROM            Groups\r\nWHERE        ([Код_гру" +
+                "ппы] > 1)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7997,6 +8002,19 @@ namespace Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdap
             DataBaseDataSet.GroupsDataTable dataTable = new DataBaseDataSet.GroupsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataBaseDataSet.GroupsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

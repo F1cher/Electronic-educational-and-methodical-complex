@@ -25,9 +25,9 @@ namespace Electronic_educational_and_methodical_complex
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet1.Groups);
+            fillByToolStripButton.PerformClick();
 
         }
-
         private void btn_back_Click(object sender, EventArgs e)
         {
             Authorization Authorization = new Authorization();
@@ -56,6 +56,45 @@ namespace Electronic_educational_and_methodical_complex
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Пользователь успешно добавлен!");
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.groupsTableAdapter.FillBy(this.dataBaseDataSet1.Groups);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.groupsTableAdapter.FillBy(this.dataBaseDataSet1.Groups);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByToolStripButton_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                this.groupsTableAdapter.FillBy(this.dataBaseDataSet1.Groups);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

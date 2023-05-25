@@ -48,9 +48,12 @@ namespace Electronic_educational_and_methodical_complex
             this.dataBaseDataSet1 = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
             this.groupsTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.GroupsTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_fam
@@ -190,17 +193,38 @@ namespace Electronic_educational_and_methodical_complex
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(234, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(242, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 114);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(256, 204);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(51, 25);
+            this.fillByToolStrip.TabIndex = 16;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            this.fillByToolStrip.Visible = false;
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click_2);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 327);
+            this.ClientSize = new System.Drawing.Size(347, 331);
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmb_group);
             this.Controls.Add(this.btn_back);
@@ -223,6 +247,8 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +274,7 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.BindingSource groupsBindingSource;
         private DataBaseDataSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }
