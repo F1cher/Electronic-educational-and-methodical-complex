@@ -82,10 +82,10 @@ namespace Electronic_educational_and_methodical_complex
         #region main_load
         private void Main_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Testsfull". При необходимости она может быть перемещена или удалена.
-            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Testsfull". При необходимости она может быть перемещена или удалена.
-            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.uspfull". При необходимости она может быть перемещена или удалена.
+            this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet2.usersfio". При необходимости она может быть перемещена или удалена.
+            this.usersfioTableAdapter.Fill(this.dataBaseDataSet2.usersfio);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Testsfull". При необходимости она может быть перемещена или удалена.
             this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Practicalfull". При необходимости она может быть перемещена или удалена.
@@ -106,6 +106,7 @@ namespace Electronic_educational_and_methodical_complex
                 Add_groups.Visible = false;
                 Add_predmet.Visible = false;
                 Add_predmet_2.Visible = false;
+                Add_predmet_3.Visible = false;
                 btn_uprlectures.Visible = false;
                 btn_uprpractical.Visible = false;
                 btn_uprtests.Visible = false;
@@ -287,7 +288,7 @@ namespace Electronic_educational_and_methodical_complex
                 MessageBox.Show("Не удается найти указанный файл!\nПроверьте правильность указанного пути.");
             }
         }
-        private void btn_addpredmet_3_Click(object sender, EventArgs e)
+        private void Add_predmet_3_Click(object sender, EventArgs e)
         {
             AddPredmet AddPredmet = new AddPredmet();
             AddPredmet.ShowDialog();
@@ -401,5 +402,240 @@ namespace Electronic_educational_and_methodical_complex
             this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
         }
         #endregion
+
+        private void btn_uspadd_Click(object sender, EventArgs e)
+        {
+            if (cmb_fio.SelectedIndex == -1 || cmbox_predmet.SelectedIndex == -1 || cmb_tema.SelectedIndex == -1  || txt_ocenka.Text == "")
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля!");
+                return;
+            }
+            string query = "Insert into Usp (Код_пользователя, Код_предмета, Тема, Оценка) values (@k_user,@k_predmet,@tema,@ocenka)";
+            cmd = new OleDbCommand(query, con);
+            cmd.Parameters.AddWithValue("@k_user", cmb_fio.SelectedValue);
+            cmd.Parameters.AddWithValue("@k_predmet", cmbox_predmet.SelectedValue);
+            cmd.Parameters.AddWithValue("@tema", cmb_tema.SelectedValue);
+            cmd.Parameters.AddWithValue("@ocenka", txt_ocenka.Text);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+            this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
+            toolStripStatusLabel2.Text = "Оценка была добавлена!";
+        }
+
+        private void btn_uspchange_Click(object sender, EventArgs e)
+        {
+            if (cmb_fio.SelectedIndex == -1 || cmbox_predmet.SelectedIndex == -1 || cmb_tema.SelectedIndex == -1 || txt_ocenka.Text == "")
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля!");
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите редактировать успеваемость?", "Редактировать успеваемость", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string query = "Update Usp Set Код_пользователя=@k_user, Код_предмета=@k_predmet, Тема=@tema, Оценка=@ocenka Where Код_успеваемости=@k_usp";
+                cmd = new OleDbCommand(query, con);
+                cmd.Parameters.AddWithValue("@k_user", cmb_fio.SelectedValue);
+                cmd.Parameters.AddWithValue("@k_predmet", cmbox_predmet.SelectedValue);
+                cmd.Parameters.AddWithValue("@tema", cmb_tema.SelectedValue);
+                cmd.Parameters.AddWithValue("@ocenka", txt_ocenka.Text);
+                cmd.Parameters.AddWithValue("@k_usp", dataGridView5.CurrentRow.Cells[0].Value);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
+                toolStripStatusLabel2.Text = "Оценка была изменена!";
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
+
+        private void btn_uspdelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить успеваемость?", "Удалить успеваемость", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string query = "Delete From Usp Where Код_успеваемости=@k_usp";
+                cmd = new OleDbCommand(query, con);
+                cmd.Parameters.AddWithValue("@k_usp", dataGridView5.CurrentRow.Cells[0].Value);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
+                toolStripStatusLabel2.Text = "Оценка была удалена!";
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
+
+        private void dataGridView5_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            cmb_fio.Text = dataGridView5.CurrentRow.Cells[1].Value.ToString();
+            cmb_predmet.Text = dataGridView5.CurrentRow.Cells[2].Value.ToString();
+            cmb_tema.Text = dataGridView5.CurrentRow.Cells[3].Value.ToString();
+            txt_ocenka.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void txt_poiskfam_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_group.Text == "1")
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.uspfull);
+                poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%' AND Предмет LIKE '" + cmbox_predmet.Text + "%'";
+                this.uspfullBindingSource.DataSource = poisk;
+            }
+            else
+            {
+                //DataView poisk = new DataView(this.dataBaseDataSet1.Testsfull);
+                //poisk.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
+                //this.testsfullBindingSource.DataSource = poisk;
+            }
+        }
+
+        private void cmbox_predmet_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_group.Text == "1")
+            {
+                DataView predmet = new DataView(this.dataBaseDataSet.uspfull);
+                predmet.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%' AND Предмет LIKE '" + cmbox_predmet.Text + "%'"; ;
+                this.uspfullBindingSource.DataSource = predmet;
+            }
+            else
+            {
+                //DataView predmet = new DataView(this.dataBaseDataSet1.Testsfull);
+                //predmet.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
+                //this.testsfullBindingSource.DataSource = predmet;
+            }
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                string query = "Select Название from Practical";
+                cmd = new OleDbCommand(query, con);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                con.Close();
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+                string query = "Select Название from Tests";
+                cmd = new OleDbCommand(query, con);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                con.Close();
+            }
+        }
+
+        private void button_clear_Click(object sender, EventArgs e)
+        {
+            Clear(tabPage5);
+        }
+
+        private void cmb_predmet_Click(object sender, EventArgs e)
+        {
+            string query = "Select Предмет from Predmeti";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_predmet.DataSource = tb;
+            cmb_predmet.DisplayMember = "Предмет";
+            con.Close();
+        }
+
+        private void cmb_predmet_2_Click(object sender, EventArgs e)
+        {
+            string query = "Select Предмет from Predmeti";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_predmet_2.DataSource = tb;
+            cmb_predmet_2.DisplayMember = "Предмет";
+            con.Close();
+        }
+
+        private void cmb_predmet_3_Click(object sender, EventArgs e)
+        {
+            string query = "Select Предмет from Predmeti";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_predmet_3.DataSource = tb;
+            cmb_predmet_3.DisplayMember = "Предмет";
+            con.Close();
+        }
+
+        private void cmb_group_Click(object sender, EventArgs e)
+        {
+            string query = "Select Группа from Groups";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_group.DataSource = tb;
+            cmb_group.DisplayMember = "Группа";
+            con.Close();
+        }
+
+        private void cmbox_predmet_Click(object sender, EventArgs e)
+        {
+            string query = "Select Предмет from Predmeti";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmbox_predmet.DataSource = tb;
+            cmbox_predmet.DisplayMember = "Предмет";
+            con.Close();
+        }
+
+        private void cmb_tema_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                string query = "Select Название from Practical";
+                cmd = new OleDbCommand(query, con);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                con.Close();
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+                string query = "Select Название from Tests";
+                cmd = new OleDbCommand(query, con);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                con.Close();
+            }
+        }
     }
 }

@@ -41,6 +41,11 @@ namespace Electronic_educational_and_methodical_complex
             this.Add_groups = new System.Windows.Forms.Button();
             this.Add_predmet = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.кодлекцииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturesfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataSet = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +58,11 @@ namespace Electronic_educational_and_methodical_complex
             this.button5 = new System.Windows.Forms.Button();
             this.txt_pyt_2 = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.кодпрактикиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.путьDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.practicalfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Add_predmet_2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -65,9 +75,14 @@ namespace Electronic_educational_and_methodical_complex
             this.button2 = new System.Windows.Forms.Button();
             this.txt_pyt_3 = new System.Windows.Forms.TextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.кодтестаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.путьDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.testsfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataSet1 = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
-            this.btn_addpredmet_3 = new System.Windows.Forms.Button();
+            this.Add_predmet_3 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmb_predmet_3 = new System.Windows.Forms.ComboBox();
             this.btn_uprtests = new System.Windows.Forms.Button();
@@ -106,6 +121,34 @@ namespace Electronic_educational_and_methodical_complex
             this.доступDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_tema = new System.Windows.Forms.ComboBox();
+            this.txt_poiskfam = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cmbox_predmet = new System.Windows.Forms.ComboBox();
+            this.cmb_fio = new System.Windows.Forms.ComboBox();
+            this.usersfioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataBaseDataSet2 = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txt_ocenka = new System.Windows.Forms.TextBox();
+            this.button_clear = new System.Windows.Forms.Button();
+            this.btn_uspdelete = new System.Windows.Forms.Button();
+            this.btn_uspchange = new System.Windows.Forms.Button();
+            this.btn_uspadd = new System.Windows.Forms.Button();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.кодуспеваемостиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.темаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.оценкаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uspfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменитьПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,21 +160,8 @@ namespace Electronic_educational_and_methodical_complex
             this.lecturesfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.LecturesfullTableAdapter();
             this.practicalfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.PracticalfullTableAdapter();
             this.testsfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.TestsfullTableAdapter();
-            this.кодлекцииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодпрактикиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.предметDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.путьDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодтестаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.предметDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.путьDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersfioTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.usersfioTableAdapter();
+            this.uspfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.uspfullTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -154,6 +184,13 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.statusStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersfioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspfullBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -291,6 +328,43 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             this.dataGridView2.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEnter);
             // 
+            // кодлекцииDataGridViewTextBoxColumn
+            // 
+            this.кодлекцииDataGridViewTextBoxColumn.DataPropertyName = "Код_лекции";
+            this.кодлекцииDataGridViewTextBoxColumn.HeaderText = "№ лекции";
+            this.кодлекцииDataGridViewTextBoxColumn.Name = "кодлекцииDataGridViewTextBoxColumn";
+            this.кодлекцииDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // предметDataGridViewTextBoxColumn
+            // 
+            this.предметDataGridViewTextBoxColumn.DataPropertyName = "Предмет";
+            this.предметDataGridViewTextBoxColumn.HeaderText = "Предмет";
+            this.предметDataGridViewTextBoxColumn.Name = "предметDataGridViewTextBoxColumn";
+            this.предметDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Код_группы";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Код_группы";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn
+            // 
+            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
+            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // путьDataGridViewTextBoxColumn
+            // 
+            this.путьDataGridViewTextBoxColumn.DataPropertyName = "Путь";
+            this.путьDataGridViewTextBoxColumn.HeaderText = "Путь";
+            this.путьDataGridViewTextBoxColumn.Name = "путьDataGridViewTextBoxColumn";
+            this.путьDataGridViewTextBoxColumn.ReadOnly = true;
+            this.путьDataGridViewTextBoxColumn.Visible = false;
+            // 
             // lecturesfullBindingSource
             // 
             this.lecturesfullBindingSource.DataMember = "Lecturesfull";
@@ -315,7 +389,6 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_predmet.DataSource = this.predmetiBindingSource;
             this.cmb_predmet.DisplayMember = "Предмет";
-            this.cmb_predmet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_predmet.FormattingEnabled = true;
             this.cmb_predmet.Location = new System.Drawing.Point(156, 90);
             this.cmb_predmet.Name = "cmb_predmet";
@@ -323,6 +396,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet.TabIndex = 2;
             this.cmb_predmet.ValueMember = "Код_предмета";
             this.cmb_predmet.TextChanged += new System.EventHandler(this.cmb_predmet_TextChanged);
+            this.cmb_predmet.Click += new System.EventHandler(this.cmb_predmet_Click);
             // 
             // predmetiBindingSource
             // 
@@ -417,6 +491,43 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
             this.dataGridView3.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEnter);
             // 
+            // кодпрактикиDataGridViewTextBoxColumn
+            // 
+            this.кодпрактикиDataGridViewTextBoxColumn.DataPropertyName = "Код_практики";
+            this.кодпрактикиDataGridViewTextBoxColumn.HeaderText = "№ практики";
+            this.кодпрактикиDataGridViewTextBoxColumn.Name = "кодпрактикиDataGridViewTextBoxColumn";
+            this.кодпрактикиDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // предметDataGridViewTextBoxColumn1
+            // 
+            this.предметDataGridViewTextBoxColumn1.DataPropertyName = "Предмет";
+            this.предметDataGridViewTextBoxColumn1.HeaderText = "Предмет";
+            this.предметDataGridViewTextBoxColumn1.Name = "предметDataGridViewTextBoxColumn1";
+            this.предметDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Код_группы";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Код_группы";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn1
+            // 
+            this.названиеDataGridViewTextBoxColumn1.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn1.Name = "названиеDataGridViewTextBoxColumn1";
+            this.названиеDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // путьDataGridViewTextBoxColumn1
+            // 
+            this.путьDataGridViewTextBoxColumn1.DataPropertyName = "Путь";
+            this.путьDataGridViewTextBoxColumn1.HeaderText = "Путь";
+            this.путьDataGridViewTextBoxColumn1.Name = "путьDataGridViewTextBoxColumn1";
+            this.путьDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.путьDataGridViewTextBoxColumn1.Visible = false;
+            // 
             // practicalfullBindingSource
             // 
             this.practicalfullBindingSource.DataMember = "Practicalfull";
@@ -446,7 +557,6 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_predmet_2.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_2.DisplayMember = "Предмет";
-            this.cmb_predmet_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_predmet_2.FormattingEnabled = true;
             this.cmb_predmet_2.Location = new System.Drawing.Point(156, 90);
             this.cmb_predmet_2.Name = "cmb_predmet_2";
@@ -454,6 +564,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet_2.TabIndex = 13;
             this.cmb_predmet_2.ValueMember = "Код_предмета";
             this.cmb_predmet_2.TextChanged += new System.EventHandler(this.cmb_predmet_2_TextChanged);
+            this.cmb_predmet_2.Click += new System.EventHandler(this.cmb_predmet_2_Click);
             // 
             // btn_uprpractical
             // 
@@ -481,7 +592,7 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.txt_pyt_3);
             this.tabPage3.Controls.Add(this.dataGridView4);
-            this.tabPage3.Controls.Add(this.btn_addpredmet_3);
+            this.tabPage3.Controls.Add(this.Add_predmet_3);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.cmb_predmet_3);
             this.tabPage3.Controls.Add(this.btn_uprtests);
@@ -551,6 +662,43 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
             this.dataGridView4.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellEnter);
             // 
+            // кодтестаDataGridViewTextBoxColumn
+            // 
+            this.кодтестаDataGridViewTextBoxColumn.DataPropertyName = "Код_теста";
+            this.кодтестаDataGridViewTextBoxColumn.HeaderText = "№ теста";
+            this.кодтестаDataGridViewTextBoxColumn.Name = "кодтестаDataGridViewTextBoxColumn";
+            this.кодтестаDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // предметDataGridViewTextBoxColumn2
+            // 
+            this.предметDataGridViewTextBoxColumn2.DataPropertyName = "Предмет";
+            this.предметDataGridViewTextBoxColumn2.HeaderText = "Предмет";
+            this.предметDataGridViewTextBoxColumn2.Name = "предметDataGridViewTextBoxColumn2";
+            this.предметDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Код_группы";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Код_группы";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // названиеDataGridViewTextBoxColumn2
+            // 
+            this.названиеDataGridViewTextBoxColumn2.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn2.Name = "названиеDataGridViewTextBoxColumn2";
+            this.названиеDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // путьDataGridViewTextBoxColumn2
+            // 
+            this.путьDataGridViewTextBoxColumn2.DataPropertyName = "Путь";
+            this.путьDataGridViewTextBoxColumn2.HeaderText = "Путь";
+            this.путьDataGridViewTextBoxColumn2.Name = "путьDataGridViewTextBoxColumn2";
+            this.путьDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.путьDataGridViewTextBoxColumn2.Visible = false;
+            // 
             // testsfullBindingSource
             // 
             this.testsfullBindingSource.DataMember = "Testsfull";
@@ -561,15 +709,15 @@ namespace Electronic_educational_and_methodical_complex
             this.dataBaseDataSet1.DataSetName = "DataBaseDataSet";
             this.dataBaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btn_addpredmet_3
+            // Add_predmet_3
             // 
-            this.btn_addpredmet_3.Location = new System.Drawing.Point(6, 47);
-            this.btn_addpredmet_3.Name = "btn_addpredmet_3";
-            this.btn_addpredmet_3.Size = new System.Drawing.Size(143, 29);
-            this.btn_addpredmet_3.TabIndex = 20;
-            this.btn_addpredmet_3.Text = "Управление предметами";
-            this.btn_addpredmet_3.UseVisualStyleBackColor = true;
-            this.btn_addpredmet_3.Click += new System.EventHandler(this.btn_addpredmet_3_Click);
+            this.Add_predmet_3.Location = new System.Drawing.Point(6, 47);
+            this.Add_predmet_3.Name = "Add_predmet_3";
+            this.Add_predmet_3.Size = new System.Drawing.Size(143, 29);
+            this.Add_predmet_3.TabIndex = 20;
+            this.Add_predmet_3.Text = "Управление предметами";
+            this.Add_predmet_3.UseVisualStyleBackColor = true;
+            this.Add_predmet_3.Click += new System.EventHandler(this.Add_predmet_3_Click);
             // 
             // label11
             // 
@@ -585,7 +733,6 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_predmet_3.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_3.DisplayMember = "Предмет";
-            this.cmb_predmet_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_predmet_3.FormattingEnabled = true;
             this.cmb_predmet_3.Location = new System.Drawing.Point(156, 90);
             this.cmb_predmet_3.Name = "cmb_predmet_3";
@@ -593,6 +740,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet_3.TabIndex = 18;
             this.cmb_predmet_3.ValueMember = "Код_предмета";
             this.cmb_predmet_3.TextChanged += new System.EventHandler(this.cmb_predmet_3_TextChanged);
+            this.cmb_predmet_3.Click += new System.EventHandler(this.cmb_predmet_3_Click);
             // 
             // btn_uprtests
             // 
@@ -760,6 +908,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_group.Size = new System.Drawing.Size(98, 21);
             this.cmb_group.TabIndex = 13;
             this.cmb_group.ValueMember = "Код_группы";
+            this.cmb_group.Click += new System.EventHandler(this.cmb_group_Click);
             // 
             // groupsBindingSource
             // 
@@ -871,48 +1020,56 @@ namespace Electronic_educational_and_methodical_complex
             this.кодпользователяDataGridViewTextBoxColumn.DataPropertyName = "Код_пользователя";
             this.кодпользователяDataGridViewTextBoxColumn.HeaderText = "Код_пользователя";
             this.кодпользователяDataGridViewTextBoxColumn.Name = "кодпользователяDataGridViewTextBoxColumn";
+            this.кодпользователяDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // фамилияDataGridViewTextBoxColumn
             // 
             this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
             this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // имяDataGridViewTextBoxColumn
             // 
             this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
             this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // отчествоDataGridViewTextBoxColumn
             // 
             this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
             this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
+            this.отчествоDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // группаDataGridViewTextBoxColumn3
             // 
             this.группаDataGridViewTextBoxColumn3.DataPropertyName = "Группа";
             this.группаDataGridViewTextBoxColumn3.HeaderText = "Группа";
             this.группаDataGridViewTextBoxColumn3.Name = "группаDataGridViewTextBoxColumn3";
+            this.группаDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // логинDataGridViewTextBoxColumn
             // 
             this.логинDataGridViewTextBoxColumn.DataPropertyName = "Логин";
             this.логинDataGridViewTextBoxColumn.HeaderText = "Логин";
             this.логинDataGridViewTextBoxColumn.Name = "логинDataGridViewTextBoxColumn";
+            this.логинDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // парольDataGridViewTextBoxColumn
             // 
             this.парольDataGridViewTextBoxColumn.DataPropertyName = "Пароль";
             this.парольDataGridViewTextBoxColumn.HeaderText = "Пароль";
             this.парольDataGridViewTextBoxColumn.Name = "парольDataGridViewTextBoxColumn";
+            this.парольDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // доступDataGridViewTextBoxColumn
             // 
             this.доступDataGridViewTextBoxColumn.DataPropertyName = "Доступ";
             this.доступDataGridViewTextBoxColumn.HeaderText = "Доступ";
             this.доступDataGridViewTextBoxColumn.Name = "доступDataGridViewTextBoxColumn";
+            this.доступDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // studentsBindingSource
             // 
@@ -921,12 +1078,285 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label18);
+            this.tabPage5.Controls.Add(this.comboBox1);
+            this.tabPage5.Controls.Add(this.cmb_tema);
+            this.tabPage5.Controls.Add(this.txt_poiskfam);
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.pictureBox5);
+            this.tabPage5.Controls.Add(this.statusStrip2);
+            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.cmbox_predmet);
+            this.tabPage5.Controls.Add(this.cmb_fio);
+            this.tabPage5.Controls.Add(this.label2);
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.label19);
+            this.tabPage5.Controls.Add(this.txt_ocenka);
+            this.tabPage5.Controls.Add(this.button_clear);
+            this.tabPage5.Controls.Add(this.btn_uspdelete);
+            this.tabPage5.Controls.Add(this.btn_uspchange);
+            this.tabPage5.Controls.Add(this.btn_uspadd);
+            this.tabPage5.Controls.Add(this.dataGridView5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(937, 529);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Успеваемость";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(375, 94);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 13);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "Вид работы";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Практическое задание",
+            "Тест"});
+            this.comboBox1.Location = new System.Drawing.Point(378, 110);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 41;
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            // 
+            // cmb_tema
+            // 
+            this.cmb_tema.DisplayMember = "Название";
+            this.cmb_tema.FormattingEnabled = true;
+            this.cmb_tema.Location = new System.Drawing.Point(505, 110);
+            this.cmb_tema.Name = "cmb_tema";
+            this.cmb_tema.Size = new System.Drawing.Size(121, 21);
+            this.cmb_tema.TabIndex = 40;
+            this.cmb_tema.ValueMember = "Название";
+            this.cmb_tema.Click += new System.EventHandler(this.cmb_tema_Click);
+            // 
+            // txt_poiskfam
+            // 
+            this.txt_poiskfam.Location = new System.Drawing.Point(670, 22);
+            this.txt_poiskfam.Name = "txt_poiskfam";
+            this.txt_poiskfam.Size = new System.Drawing.Size(160, 20);
+            this.txt_poiskfam.TabIndex = 39;
+            this.txt_poiskfam.TextChanged += new System.EventHandler(this.txt_poiskfam_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(702, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 13);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "Введите фамилию";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
+            this.pictureBox5.Location = new System.Drawing.Point(836, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(93, 114);
+            this.pictureBox5.TabIndex = 37;
+            this.pictureBox5.TabStop = false;
+            // 
+            // statusStrip2
+            // 
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel2});
+            this.statusStrip2.Location = new System.Drawing.Point(0, 507);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(937, 22);
+            this.statusStrip2.TabIndex = 36;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label16.Location = new System.Drawing.Point(218, 94);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(59, 13);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Предмет";
+            // 
+            // cmbox_predmet
+            // 
+            this.cmbox_predmet.DataSource = this.predmetiBindingSource;
+            this.cmbox_predmet.DisplayMember = "Предмет";
+            this.cmbox_predmet.FormattingEnabled = true;
+            this.cmbox_predmet.Location = new System.Drawing.Point(221, 110);
+            this.cmbox_predmet.Name = "cmbox_predmet";
+            this.cmbox_predmet.Size = new System.Drawing.Size(151, 21);
+            this.cmbox_predmet.TabIndex = 34;
+            this.cmbox_predmet.ValueMember = "Код_предмета";
+            this.cmbox_predmet.TextChanged += new System.EventHandler(this.cmbox_predmet_TextChanged);
+            this.cmbox_predmet.Click += new System.EventHandler(this.cmbox_predmet_Click);
+            // 
+            // cmb_fio
+            // 
+            this.cmb_fio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_fio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_fio.DataSource = this.usersfioBindingSource;
+            this.cmb_fio.DisplayMember = "ФИО";
+            this.cmb_fio.FormattingEnabled = true;
+            this.cmb_fio.Location = new System.Drawing.Point(6, 110);
+            this.cmb_fio.Name = "cmb_fio";
+            this.cmb_fio.Size = new System.Drawing.Size(209, 21);
+            this.cmb_fio.TabIndex = 33;
+            this.cmb_fio.ValueMember = "Код_пользователя";
+            // 
+            // usersfioBindingSource
+            // 
+            this.usersfioBindingSource.DataMember = "usersfio";
+            this.usersfioBindingSource.DataSource = this.dataBaseDataSet2;
+            // 
+            // dataBaseDataSet2
+            // 
+            this.dataBaseDataSet2.DataSetName = "DataBaseDataSet";
+            this.dataBaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label2.Location = new System.Drawing.Point(629, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Оценка";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label15.Location = new System.Drawing.Point(502, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(85, 13);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Тема работы";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label19.Location = new System.Drawing.Point(3, 94);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 27;
+            this.label19.Text = "ФИО";
+            // 
+            // txt_ocenka
+            // 
+            this.txt_ocenka.Location = new System.Drawing.Point(632, 110);
+            this.txt_ocenka.Name = "txt_ocenka";
+            this.txt_ocenka.Size = new System.Drawing.Size(100, 20);
+            this.txt_ocenka.TabIndex = 25;
+            // 
+            // button_clear
+            // 
+            this.button_clear.Location = new System.Drawing.Point(285, 6);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(87, 29);
+            this.button_clear.TabIndex = 11;
+            this.button_clear.Text = "Очистить";
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            // 
+            // btn_uspdelete
+            // 
+            this.btn_uspdelete.Location = new System.Drawing.Point(192, 6);
+            this.btn_uspdelete.Name = "btn_uspdelete";
+            this.btn_uspdelete.Size = new System.Drawing.Size(87, 29);
+            this.btn_uspdelete.TabIndex = 10;
+            this.btn_uspdelete.Text = "Удалить";
+            this.btn_uspdelete.UseVisualStyleBackColor = true;
+            this.btn_uspdelete.Click += new System.EventHandler(this.btn_uspdelete_Click);
+            // 
+            // btn_uspchange
+            // 
+            this.btn_uspchange.Location = new System.Drawing.Point(99, 6);
+            this.btn_uspchange.Name = "btn_uspchange";
+            this.btn_uspchange.Size = new System.Drawing.Size(87, 29);
+            this.btn_uspchange.TabIndex = 9;
+            this.btn_uspchange.Text = "Изменить";
+            this.btn_uspchange.UseVisualStyleBackColor = true;
+            this.btn_uspchange.Click += new System.EventHandler(this.btn_uspchange_Click);
+            // 
+            // btn_uspadd
+            // 
+            this.btn_uspadd.Location = new System.Drawing.Point(6, 6);
+            this.btn_uspadd.Name = "btn_uspadd";
+            this.btn_uspadd.Size = new System.Drawing.Size(87, 29);
+            this.btn_uspadd.TabIndex = 8;
+            this.btn_uspadd.Text = "Добавить";
+            this.btn_uspadd.UseVisualStyleBackColor = true;
+            this.btn_uspadd.Click += new System.EventHandler(this.btn_uspadd_Click);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодуспеваемостиDataGridViewTextBoxColumn,
+            this.фИОDataGridViewTextBoxColumn,
+            this.предметDataGridViewTextBoxColumn3,
+            this.темаDataGridViewTextBoxColumn,
+            this.оценкаDataGridViewTextBoxColumn});
+            this.dataGridView5.DataSource = this.uspfullBindingSource;
+            this.dataGridView5.Location = new System.Drawing.Point(3, 138);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(931, 366);
+            this.dataGridView5.TabIndex = 0;
+            this.dataGridView5.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellEnter);
+            // 
+            // кодуспеваемостиDataGridViewTextBoxColumn
+            // 
+            this.кодуспеваемостиDataGridViewTextBoxColumn.DataPropertyName = "Код_успеваемости";
+            this.кодуспеваемостиDataGridViewTextBoxColumn.HeaderText = "Код_успеваемости";
+            this.кодуспеваемостиDataGridViewTextBoxColumn.Name = "кодуспеваемостиDataGridViewTextBoxColumn";
+            this.кодуспеваемостиDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // фИОDataGridViewTextBoxColumn
+            // 
+            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
+            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // предметDataGridViewTextBoxColumn3
+            // 
+            this.предметDataGridViewTextBoxColumn3.DataPropertyName = "Предмет";
+            this.предметDataGridViewTextBoxColumn3.HeaderText = "Предмет";
+            this.предметDataGridViewTextBoxColumn3.Name = "предметDataGridViewTextBoxColumn3";
+            // 
+            // темаDataGridViewTextBoxColumn
+            // 
+            this.темаDataGridViewTextBoxColumn.DataPropertyName = "Тема";
+            this.темаDataGridViewTextBoxColumn.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn.Name = "темаDataGridViewTextBoxColumn";
+            // 
+            // оценкаDataGridViewTextBoxColumn
+            // 
+            this.оценкаDataGridViewTextBoxColumn.DataPropertyName = "Оценка";
+            this.оценкаDataGridViewTextBoxColumn.HeaderText = "Оценка";
+            this.оценкаDataGridViewTextBoxColumn.Name = "оценкаDataGridViewTextBoxColumn";
+            // 
+            // uspfullBindingSource
+            // 
+            this.uspfullBindingSource.DataMember = "uspfull";
+            this.uspfullBindingSource.DataSource = this.dataBaseDataSet;
             // 
             // menuStrip1
             // 
@@ -993,116 +1423,13 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.testsfullTableAdapter.ClearBeforeFill = true;
             // 
-            // кодлекцииDataGridViewTextBoxColumn
+            // usersfioTableAdapter
             // 
-            this.кодлекцииDataGridViewTextBoxColumn.DataPropertyName = "Код_лекции";
-            this.кодлекцииDataGridViewTextBoxColumn.HeaderText = "№ лекции";
-            this.кодлекцииDataGridViewTextBoxColumn.Name = "кодлекцииDataGridViewTextBoxColumn";
-            this.кодлекцииDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usersfioTableAdapter.ClearBeforeFill = true;
             // 
-            // предметDataGridViewTextBoxColumn
+            // uspfullTableAdapter
             // 
-            this.предметDataGridViewTextBoxColumn.DataPropertyName = "Предмет";
-            this.предметDataGridViewTextBoxColumn.HeaderText = "Предмет";
-            this.предметDataGridViewTextBoxColumn.Name = "предметDataGridViewTextBoxColumn";
-            this.предметDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Код_группы";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Код_группы";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // названиеDataGridViewTextBoxColumn
-            // 
-            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
-            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // путьDataGridViewTextBoxColumn
-            // 
-            this.путьDataGridViewTextBoxColumn.DataPropertyName = "Путь";
-            this.путьDataGridViewTextBoxColumn.HeaderText = "Путь";
-            this.путьDataGridViewTextBoxColumn.Name = "путьDataGridViewTextBoxColumn";
-            this.путьDataGridViewTextBoxColumn.ReadOnly = true;
-            this.путьDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // кодпрактикиDataGridViewTextBoxColumn
-            // 
-            this.кодпрактикиDataGridViewTextBoxColumn.DataPropertyName = "Код_практики";
-            this.кодпрактикиDataGridViewTextBoxColumn.HeaderText = "№ практики";
-            this.кодпрактикиDataGridViewTextBoxColumn.Name = "кодпрактикиDataGridViewTextBoxColumn";
-            this.кодпрактикиDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // предметDataGridViewTextBoxColumn1
-            // 
-            this.предметDataGridViewTextBoxColumn1.DataPropertyName = "Предмет";
-            this.предметDataGridViewTextBoxColumn1.HeaderText = "Предмет";
-            this.предметDataGridViewTextBoxColumn1.Name = "предметDataGridViewTextBoxColumn1";
-            this.предметDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Код_группы";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Код_группы";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // названиеDataGridViewTextBoxColumn1
-            // 
-            this.названиеDataGridViewTextBoxColumn1.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn1.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn1.Name = "названиеDataGridViewTextBoxColumn1";
-            this.названиеDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // путьDataGridViewTextBoxColumn1
-            // 
-            this.путьDataGridViewTextBoxColumn1.DataPropertyName = "Путь";
-            this.путьDataGridViewTextBoxColumn1.HeaderText = "Путь";
-            this.путьDataGridViewTextBoxColumn1.Name = "путьDataGridViewTextBoxColumn1";
-            this.путьDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.путьDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // кодтестаDataGridViewTextBoxColumn
-            // 
-            this.кодтестаDataGridViewTextBoxColumn.DataPropertyName = "Код_теста";
-            this.кодтестаDataGridViewTextBoxColumn.HeaderText = "№ теста";
-            this.кодтестаDataGridViewTextBoxColumn.Name = "кодтестаDataGridViewTextBoxColumn";
-            this.кодтестаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // предметDataGridViewTextBoxColumn2
-            // 
-            this.предметDataGridViewTextBoxColumn2.DataPropertyName = "Предмет";
-            this.предметDataGridViewTextBoxColumn2.HeaderText = "Предмет";
-            this.предметDataGridViewTextBoxColumn2.Name = "предметDataGridViewTextBoxColumn2";
-            this.предметDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Код_группы";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Код_группы";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // названиеDataGridViewTextBoxColumn2
-            // 
-            this.названиеDataGridViewTextBoxColumn2.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn2.Name = "названиеDataGridViewTextBoxColumn2";
-            this.названиеDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // путьDataGridViewTextBoxColumn2
-            // 
-            this.путьDataGridViewTextBoxColumn2.DataPropertyName = "Путь";
-            this.путьDataGridViewTextBoxColumn2.HeaderText = "Путь";
-            this.путьDataGridViewTextBoxColumn2.Name = "путьDataGridViewTextBoxColumn2";
-            this.путьDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.путьDataGridViewTextBoxColumn2.Visible = false;
+            this.uspfullTableAdapter.ClearBeforeFill = true;
             // 
             // Main
             // 
@@ -1143,6 +1470,15 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.statusStrip2.ResumeLayout(false);
+            this.statusStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersfioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspfullBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1205,7 +1541,7 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.ComboBox cmb_predmet_2;
         private System.Windows.Forms.Button btn_uprpractical;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button btn_addpredmet_3;
+        private System.Windows.Forms.Button Add_predmet_3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmb_predmet_3;
         private System.Windows.Forms.Button btn_uprtests;
@@ -1258,5 +1594,36 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn путьDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.ComboBox cmb_fio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txt_ocenka;
+        private System.Windows.Forms.Button button_clear;
+        private System.Windows.Forms.Button btn_uspdelete;
+        private System.Windows.Forms.Button btn_uspchange;
+        private System.Windows.Forms.Button btn_uspadd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn группаDataGridViewTextBoxColumn;
+        private DataBaseDataSet dataBaseDataSet2;
+        private System.Windows.Forms.BindingSource usersfioBindingSource;
+        private DataBaseDataSetTableAdapters.usersfioTableAdapter usersfioTableAdapter;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cmbox_predmet;
+        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.BindingSource uspfullBindingSource;
+        private DataBaseDataSetTableAdapters.uspfullTableAdapter uspfullTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодуспеваемостиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn предметDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn оценкаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TextBox txt_poiskfam;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cmb_tema;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

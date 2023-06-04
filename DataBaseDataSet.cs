@@ -10,6 +10,5 @@
 namespace Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters {
     
     
-    public partial class LecturesfullTableAdapter {
-    }
+
 }
