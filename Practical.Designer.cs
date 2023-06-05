@@ -332,7 +332,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.btn_changepractical);
             this.Controls.Add(this.btn_addpractical);
             this.Name = "Practical";
-            this.Text = "Управление практическими заданиями";
+            this.Text = "Управление практиками";
             this.Load += new System.EventHandler(this.Practical_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).EndInit();

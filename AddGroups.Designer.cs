@@ -108,10 +108,10 @@ namespace Electronic_educational_and_methodical_complex
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label1.Location = new System.Drawing.Point(12, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Группа";
             // 
@@ -154,7 +154,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.btn_changegroups);
             this.Controls.Add(this.btn_addgroups);
             this.Name = "AddGroups";
-            this.Text = "Добавление группы";
+            this.Text = "Управление группами";
             this.Load += new System.EventHandler(this.AddGroups_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);

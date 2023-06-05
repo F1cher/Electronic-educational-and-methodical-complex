@@ -17,7 +17,6 @@ C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical comple
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.exe.config
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.exe
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\bin\Debug\Electronic educational and methodical complex.pdb
-C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.AssemblyReference.cache
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddGroups.resources
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AddPredmet.resources
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Authorization.resources

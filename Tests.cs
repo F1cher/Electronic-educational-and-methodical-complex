@@ -56,7 +56,7 @@ namespace Electronic_educational_and_methodical_complex
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 txt_pyt.Text = openFileDialog1.FileName;
         }
-        private void btn_addlectures_Click(object sender, EventArgs e)
+        private void btn_addtests_Click(object sender, EventArgs e)
         {
             if (cmb_predmet.SelectedIndex == -1 || cmb_group.SelectedIndex == -1 || txt_tema.Text == "" || txt_pyt.Text == "")
             {
@@ -84,7 +84,7 @@ namespace Electronic_educational_and_methodical_complex
             toolStripStatusLabel1.Text = "Тест был добавлен!";
         }
 
-        private void btn_changelectures_Click(object sender, EventArgs e)
+        private void btn_changetests_Click(object sender, EventArgs e)
         {
             if (cmb_predmet.SelectedIndex == -1 || cmb_group.SelectedIndex == -1 || txt_tema.Text == "" || txt_pyt.Text == "")
             {
@@ -121,7 +121,7 @@ namespace Electronic_educational_and_methodical_complex
             }
         }
 
-        private void btn_deletelectures_Click(object sender, EventArgs e)
+        private void btn_deleteusers_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить тест?", "Удалить тест", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)

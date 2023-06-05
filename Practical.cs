@@ -14,7 +14,6 @@ namespace Electronic_educational_and_methodical_complex
     public partial class Practical : Form
     {
         DataSet ds;
-        OleDbDataAdapter da;
         OleDbCommand cmd;
         OleDbConnection con;
         public Practical()

@@ -54,9 +54,9 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet = new System.Windows.Forms.ComboBox();
             this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_deletelectures = new System.Windows.Forms.Button();
-            this.btn_changelectures = new System.Windows.Forms.Button();
-            this.btn_addlectures = new System.Windows.Forms.Button();
+            this.btn_deleteusers = new System.Windows.Forms.Button();
+            this.btn_changetests = new System.Windows.Forms.Button();
+            this.btn_addtests = new System.Windows.Forms.Button();
             this.predmetiTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.PredmetiTableAdapter();
             this.groupsTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.GroupsTableAdapter();
             this.testsAddTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.TestsAddTableAdapter();
@@ -268,35 +268,35 @@ namespace Electronic_educational_and_methodical_complex
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
-            // btn_deletelectures
+            // btn_deleteusers
             // 
-            this.btn_deletelectures.Location = new System.Drawing.Point(198, 12);
-            this.btn_deletelectures.Name = "btn_deletelectures";
-            this.btn_deletelectures.Size = new System.Drawing.Size(87, 29);
-            this.btn_deletelectures.TabIndex = 22;
-            this.btn_deletelectures.Text = "Удалить";
-            this.btn_deletelectures.UseVisualStyleBackColor = true;
-            this.btn_deletelectures.Click += new System.EventHandler(this.btn_deletelectures_Click);
+            this.btn_deleteusers.Location = new System.Drawing.Point(198, 12);
+            this.btn_deleteusers.Name = "btn_deleteusers";
+            this.btn_deleteusers.Size = new System.Drawing.Size(87, 29);
+            this.btn_deleteusers.TabIndex = 22;
+            this.btn_deleteusers.Text = "Удалить";
+            this.btn_deleteusers.UseVisualStyleBackColor = true;
+            this.btn_deleteusers.Click += new System.EventHandler(this.btn_deleteusers_Click);
             // 
-            // btn_changelectures
+            // btn_changetests
             // 
-            this.btn_changelectures.Location = new System.Drawing.Point(105, 12);
-            this.btn_changelectures.Name = "btn_changelectures";
-            this.btn_changelectures.Size = new System.Drawing.Size(87, 29);
-            this.btn_changelectures.TabIndex = 21;
-            this.btn_changelectures.Text = "Изменить";
-            this.btn_changelectures.UseVisualStyleBackColor = true;
-            this.btn_changelectures.Click += new System.EventHandler(this.btn_changelectures_Click);
+            this.btn_changetests.Location = new System.Drawing.Point(105, 12);
+            this.btn_changetests.Name = "btn_changetests";
+            this.btn_changetests.Size = new System.Drawing.Size(87, 29);
+            this.btn_changetests.TabIndex = 21;
+            this.btn_changetests.Text = "Изменить";
+            this.btn_changetests.UseVisualStyleBackColor = true;
+            this.btn_changetests.Click += new System.EventHandler(this.btn_changetests_Click);
             // 
-            // btn_addlectures
+            // btn_addtests
             // 
-            this.btn_addlectures.Location = new System.Drawing.Point(12, 12);
-            this.btn_addlectures.Name = "btn_addlectures";
-            this.btn_addlectures.Size = new System.Drawing.Size(87, 29);
-            this.btn_addlectures.TabIndex = 20;
-            this.btn_addlectures.Text = "Добавить";
-            this.btn_addlectures.UseVisualStyleBackColor = true;
-            this.btn_addlectures.Click += new System.EventHandler(this.btn_addlectures_Click);
+            this.btn_addtests.Location = new System.Drawing.Point(12, 12);
+            this.btn_addtests.Name = "btn_addtests";
+            this.btn_addtests.Size = new System.Drawing.Size(87, 29);
+            this.btn_addtests.TabIndex = 20;
+            this.btn_addtests.Text = "Добавить";
+            this.btn_addtests.UseVisualStyleBackColor = true;
+            this.btn_addtests.Click += new System.EventHandler(this.btn_addtests_Click);
             // 
             // predmetiTableAdapter
             // 
@@ -328,11 +328,11 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmb_predmet);
             this.Controls.Add(this.btn_clear);
-            this.Controls.Add(this.btn_deletelectures);
-            this.Controls.Add(this.btn_changelectures);
-            this.Controls.Add(this.btn_addlectures);
+            this.Controls.Add(this.btn_deleteusers);
+            this.Controls.Add(this.btn_changetests);
+            this.Controls.Add(this.btn_addtests);
             this.Name = "Tests";
-            this.Text = "Управление тестовыми заданиями";
+            this.Text = "Управление тестами";
             this.Load += new System.EventHandler(this.Tests_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
@@ -364,9 +364,9 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_predmet;
         private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.Button btn_deletelectures;
-        private System.Windows.Forms.Button btn_changelectures;
-        private System.Windows.Forms.Button btn_addlectures;
+        private System.Windows.Forms.Button btn_deleteusers;
+        private System.Windows.Forms.Button btn_changetests;
+        private System.Windows.Forms.Button btn_addtests;
         private DataBaseDataSet dataBaseDataSet;
         private System.Windows.Forms.BindingSource predmetiBindingSource;
         private DataBaseDataSetTableAdapters.PredmetiTableAdapter predmetiTableAdapter;

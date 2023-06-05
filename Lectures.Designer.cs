@@ -395,7 +395,6 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_naz;
-        private System.Windows.Forms.DataGridViewTextBoxColumn группаDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource lecturesAddBindingSource;
         private DataBaseDataSetTableAdapters.LecturesAddTableAdapter lecturesAddTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодлекцииDataGridViewTextBoxColumn;
