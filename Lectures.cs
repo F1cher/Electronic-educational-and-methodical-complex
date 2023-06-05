@@ -22,9 +22,10 @@ namespace Electronic_educational_and_methodical_complex
         }
         void GetCon()
         {
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
+            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
             ds = new DataSet();
         }
+
         public void Clear()
         {
             foreach (Control control in this.Controls)
@@ -63,6 +64,14 @@ namespace Electronic_educational_and_methodical_complex
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
             }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == cmb_predmet.Text && dataGridView1.Rows[i].Cells[2].Value.ToString() == cmb_group.Text && dataGridView1.Rows[i].Cells[3].Value.ToString() == txt_tema.Text && dataGridView1.Rows[i].Cells[4].Value.ToString() == txt_pyt.Text)
+                {
+                    MessageBox.Show("Такая лекция уже существует!");
+                    return;
+                }
+            }
             string query = "Insert into Lectures (Код_предмета, Код_группы, Название, Путь) values (@k_predmet, @k_group, @nazv, @pyt)";
             cmd = new OleDbCommand(query, con);
             cmd.Parameters.AddWithValue("@k_predmet", cmb_predmet.SelectedValue);
@@ -82,6 +91,14 @@ namespace Electronic_educational_and_methodical_complex
             {
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == cmb_predmet.Text && dataGridView1.Rows[i].Cells[2].Value.ToString() == cmb_group.Text && dataGridView1.Rows[i].Cells[3].Value.ToString() == txt_tema.Text && dataGridView1.Rows[i].Cells[4].Value.ToString() == txt_pyt.Text)
+                {
+                    MessageBox.Show("Такая лекция уже существует!");
+                    return;
+                }
             }
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите редактировать лекцию?", "Редактировать лекцию", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -142,6 +159,6 @@ namespace Electronic_educational_and_methodical_complex
             DataView poisk = new DataView(this.dataBaseDataSet.LecturesAdd);
             poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%'";
             this.lecturesAddBindingSource.DataSource = poisk;
-        } 
+        }
     }
 }

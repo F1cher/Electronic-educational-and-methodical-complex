@@ -30,11 +30,12 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void btn_back_Click(object sender, EventArgs e)
         {
+            Registration.ActiveForm.Hide();
             Authorization Authorization = new Authorization();
-            Authorization.Show();
-            this.Hide();
+            Authorization.ShowDialog(this);
+            Close();
         }
-
+        
         private void btn_reg_Click(object sender, EventArgs e)
         {
             if (txt_fam.Text == "" || txt_name.Text == "" || txt_otch.Text == "" || cmb_group.SelectedIndex == -1 || txt_login.Text == "" || txt_pass.Text == "")
@@ -42,7 +43,7 @@ namespace Electronic_educational_and_methodical_complex
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
             }
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
+            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");            
             string query = "Insert into Users (Фамилия, Имя, Отчество, Код_группы, Логин, Пароль, Доступ) values (@fam, @name, @otch, @k_group, @login, @pass, @access)";
             cmd = new OleDbCommand(query, con);
             cmd.Parameters.AddWithValue("@fam", txt_fam.Text);

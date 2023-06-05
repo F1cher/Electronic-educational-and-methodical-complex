@@ -35,9 +35,7 @@ namespace Electronic_educational_and_methodical_complex
             this.label12 = new System.Windows.Forms.Label();
             this.txt_naz = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.txt_pyt = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_group = new System.Windows.Forms.TextBox();
             this.Add_groups = new System.Windows.Forms.Button();
             this.Add_predmet = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -56,7 +54,6 @@ namespace Electronic_educational_and_methodical_complex
             this.label13 = new System.Windows.Forms.Label();
             this.txt_naz_2 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.txt_pyt_2 = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.кодпрактикиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.предметDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +70,6 @@ namespace Electronic_educational_and_methodical_complex
             this.label14 = new System.Windows.Forms.Label();
             this.txt_naz_3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.txt_pyt_3 = new System.Windows.Forms.TextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.кодтестаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.предметDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,6 +117,7 @@ namespace Electronic_educational_and_methodical_complex
             this.доступDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btn_export = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmb_tema = new System.Windows.Forms.ComboBox();
@@ -215,9 +212,7 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.txt_naz);
             this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.txt_pyt);
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.txt_group);
             this.tabPage1.Controls.Add(this.Add_groups);
             this.tabPage1.Controls.Add(this.Add_predmet);
             this.tabPage1.Controls.Add(this.dataGridView2);
@@ -259,14 +254,6 @@ namespace Electronic_educational_and_methodical_complex
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // txt_pyt
-            // 
-            this.txt_pyt.Location = new System.Drawing.Point(820, 6);
-            this.txt_pyt.Name = "txt_pyt";
-            this.txt_pyt.Size = new System.Drawing.Size(10, 20);
-            this.txt_pyt.TabIndex = 13;
-            this.txt_pyt.Visible = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
@@ -275,15 +262,6 @@ namespace Electronic_educational_and_methodical_complex
             this.pictureBox1.Size = new System.Drawing.Size(93, 114);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // txt_group
-            // 
-            this.txt_group.Enabled = false;
-            this.txt_group.Location = new System.Drawing.Point(820, 6);
-            this.txt_group.Name = "txt_group";
-            this.txt_group.Size = new System.Drawing.Size(10, 20);
-            this.txt_group.TabIndex = 9;
-            this.txt_group.Visible = false;
             // 
             // Add_groups
             // 
@@ -418,7 +396,6 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.txt_naz_2);
             this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.txt_pyt_2);
             this.tabPage2.Controls.Add(this.dataGridView3);
             this.tabPage2.Controls.Add(this.Add_predmet_2);
             this.tabPage2.Controls.Add(this.label10);
@@ -459,14 +436,6 @@ namespace Electronic_educational_and_methodical_complex
             this.button5.Text = "Обновить данные";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // txt_pyt_2
-            // 
-            this.txt_pyt_2.Location = new System.Drawing.Point(820, 3);
-            this.txt_pyt_2.Name = "txt_pyt_2";
-            this.txt_pyt_2.Size = new System.Drawing.Size(10, 20);
-            this.txt_pyt_2.TabIndex = 17;
-            this.txt_pyt_2.Visible = false;
             // 
             // dataGridView3
             // 
@@ -590,7 +559,6 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.txt_naz_3);
             this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.txt_pyt_3);
             this.tabPage3.Controls.Add(this.dataGridView4);
             this.tabPage3.Controls.Add(this.Add_predmet_3);
             this.tabPage3.Controls.Add(this.label11);
@@ -630,14 +598,6 @@ namespace Electronic_educational_and_methodical_complex
             this.button2.Text = "Обновить данные";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txt_pyt_3
-            // 
-            this.txt_pyt_3.Location = new System.Drawing.Point(820, 4);
-            this.txt_pyt_3.Name = "txt_pyt_3";
-            this.txt_pyt_3.Size = new System.Drawing.Size(10, 20);
-            this.txt_pyt_3.TabIndex = 22;
-            this.txt_pyt_3.Visible = false;
             // 
             // dataGridView4
             // 
@@ -1078,6 +1038,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btn_export);
             this.tabPage5.Controls.Add(this.label18);
             this.tabPage5.Controls.Add(this.comboBox1);
             this.tabPage5.Controls.Add(this.cmb_tema);
@@ -1104,17 +1065,29 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage5.Text = "Успеваемость";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // btn_export
+            // 
+            this.btn_export.Location = new System.Drawing.Point(475, 6);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(151, 29);
+            this.btn_export.TabIndex = 43;
+            this.btn_export.Text = "Экспортировать в Word";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label18.Location = new System.Drawing.Point(375, 94);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 13);
+            this.label18.Size = new System.Drawing.Size(76, 13);
             this.label18.TabIndex = 42;
             this.label18.Text = "Вид работы";
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Практическое задание",
@@ -1128,6 +1101,7 @@ namespace Electronic_educational_and_methodical_complex
             // cmb_tema
             // 
             this.cmb_tema.DisplayMember = "Название";
+            this.cmb_tema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tema.FormattingEnabled = true;
             this.cmb_tema.Location = new System.Drawing.Point(505, 110);
             this.cmb_tema.Name = "cmb_tema";
@@ -1191,13 +1165,13 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmbox_predmet.DataSource = this.predmetiBindingSource;
             this.cmbox_predmet.DisplayMember = "Предмет";
+            this.cmbox_predmet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbox_predmet.FormattingEnabled = true;
             this.cmbox_predmet.Location = new System.Drawing.Point(221, 110);
             this.cmbox_predmet.Name = "cmbox_predmet";
             this.cmbox_predmet.Size = new System.Drawing.Size(151, 21);
             this.cmbox_predmet.TabIndex = 34;
             this.cmbox_predmet.ValueMember = "Код_предмета";
-            this.cmbox_predmet.TextChanged += new System.EventHandler(this.cmbox_predmet_TextChanged);
             this.cmbox_predmet.Click += new System.EventHandler(this.cmbox_predmet_Click);
             // 
             // cmb_fio
@@ -1256,9 +1230,11 @@ namespace Electronic_educational_and_methodical_complex
             // txt_ocenka
             // 
             this.txt_ocenka.Location = new System.Drawing.Point(632, 110);
+            this.txt_ocenka.MaxLength = 1;
             this.txt_ocenka.Name = "txt_ocenka";
             this.txt_ocenka.Size = new System.Drawing.Size(100, 20);
             this.txt_ocenka.TabIndex = 25;
+            this.txt_ocenka.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ocenka_KeyPress);
             // 
             // button_clear
             // 
@@ -1344,7 +1320,7 @@ namespace Electronic_educational_and_methodical_complex
             // темаDataGridViewTextBoxColumn
             // 
             this.темаDataGridViewTextBoxColumn.DataPropertyName = "Тема";
-            this.темаDataGridViewTextBoxColumn.HeaderText = "Тема";
+            this.темаDataGridViewTextBoxColumn.HeaderText = "Тема работы";
             this.темаDataGridViewTextBoxColumn.Name = "темаDataGridViewTextBoxColumn";
             // 
             // оценкаDataGridViewTextBoxColumn
@@ -1504,7 +1480,6 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Add_predmet;
-        private System.Windows.Forms.TextBox txt_group;
         private System.Windows.Forms.Button Add_groups;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -1546,7 +1521,6 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.ComboBox cmb_predmet_3;
         private System.Windows.Forms.Button btn_uprtests;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TextBox txt_pyt;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_naz;
@@ -1556,7 +1530,6 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_naz_2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txt_pyt_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource studentsBindingSource;
         private DataBaseDataSetTableAdapters.StudentsTableAdapter studentsTableAdapter;
@@ -1575,7 +1548,6 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_naz_3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txt_pyt_3;
         private DataBaseDataSet dataBaseDataSet1;
         private System.Windows.Forms.BindingSource testsfullBindingSource;
         private DataBaseDataSetTableAdapters.TestsfullTableAdapter testsfullTableAdapter;
@@ -1614,16 +1586,17 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.BindingSource uspfullBindingSource;
         private DataBaseDataSetTableAdapters.uspfullTableAdapter uspfullTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодуспеваемостиDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn предметDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn оценкаDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox txt_poiskfam;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cmb_tema;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодуспеваемостиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn предметDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn темаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn оценкаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_export;
     }
 }

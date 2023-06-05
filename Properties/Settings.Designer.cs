@@ -26,7 +26,8 @@ namespace Electronic_educational_and_methodical_complex.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\DataBase.mdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\DataBase.mdb;Jet OLE" +
+            "DB:Database Password=53605360")]
         public string DataBaseConnectionString {
             get {
                 return ((string)(this["DataBaseConnectionString"]));

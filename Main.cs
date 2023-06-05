@@ -8,24 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace Electronic_educational_and_methodical_complex
 {
     public partial class Main : Form
     {
-        string Access;
+        private Word.Application application;
+        Word.Document document;
+        Word.Paragraph wordparagraph;
+        string Access, familia, ima, otches, Groups, pyt;
         DataSet ds;
         OleDbCommand cmd;
         OleDbConnection con;
-        public Main(string Saccess, string Group)
+        public Main(string Saccess, string Group, string fam, string name, string otch)
         {
             InitializeComponent();
             Access = Saccess;
-            txt_group.Text = Group;
+            Groups = Group;
+            familia = fam;
+            ima = name;
+            otches = otch;
         }
         void GetCon()
         {
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
+            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
             ds = new DataSet();
         }
      
@@ -51,9 +58,10 @@ namespace Electronic_educational_and_methodical_complex
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите сменить пользователя?", "Сменить пользователя", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                Main.ActiveForm.Hide();
                 Authorization Authorization = new Authorization();
-                Authorization.Show();
-                this.Hide();
+                Authorization.ShowDialog(this);
+                Close();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -80,7 +88,7 @@ namespace Electronic_educational_and_methodical_complex
         }
         #endregion
         #region main_load
-        private void Main_Load(object sender, EventArgs e)
+        public void Main_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.uspfull". При необходимости она может быть перемещена или удалена.
             this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
@@ -110,20 +118,21 @@ namespace Electronic_educational_and_methodical_complex
                 btn_uprlectures.Visible = false;
                 btn_uprpractical.Visible = false;
                 btn_uprtests.Visible = false;
-
-                //Сортировка по группе (переделать)
+                txt_poiskfam.Visible = false;
+                label17.Visible = false;
+                txt_poiskfam.Text = familia + " " + ima + " " + otches;
+                //Сортировка по группе
                 DataView filter = new DataView(this.dataBaseDataSet.Lecturesfull);
-                filter.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                filter.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
                 this.lecturesfullBindingSource.DataSource = filter;
+                //Сортировка по фамилии
+                DataView famil = new DataView(this.dataBaseDataSet.uspfull);
+                famil.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%'";
+                this.uspfullBindingSource.DataSource = famil;
             }
         }
         #endregion
         #region lectures
-        private void btn_uprlectures_Click(object sender, EventArgs e)
-        {
-            Lectures Lectures = new Lectures();
-            Lectures.Show();
-        }
         private void add_predmet_Click(object sender, EventArgs e)
         {
             AddPredmet AddPredmet = new AddPredmet();
@@ -136,13 +145,13 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            txt_pyt.Text = dataGridView2.CurrentRow.Cells[4].Value.ToString();
+            pyt = dataGridView2.CurrentRow.Cells[4].Value.ToString();
         }
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                System.Diagnostics.Process.Start(txt_pyt.Text);
+                System.Diagnostics.Process.Start(pyt);
             }
             catch
             {
@@ -157,6 +166,24 @@ namespace Electronic_educational_and_methodical_complex
             {
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == txt_fam.Text && dataGridView1.Rows[i].Cells[2].Value.ToString() == txt_name.Text && dataGridView1.Rows[i].Cells[3].Value.ToString() == txt_otch.Text && dataGridView1.Rows[i].Cells[4].Value.ToString() == cmb_group.Text)
+                {
+                    MessageBox.Show("Такой пользователь уже существует!");
+                    return;
+                }
+                if (dataGridView1.Rows[i].Cells[5].Value.ToString() == txt_login.Text)
+                {
+                    MessageBox.Show("Пользователь с таким логином уже существует!");
+                    return;
+                }
+                if (dataGridView1.Rows[i].Cells[6].Value.ToString() == txt_pass.Text)
+                {
+                    MessageBox.Show("Пользователь с таким паролем уже существует!");
+                    return;
+                }
             }
             string query = "Insert into Users (Фамилия, Имя, Отчество, Код_группы, Логин, Пароль, Доступ) values (@fam,@name,@otch,@k_group,@login,@pass,@access)";
             cmd = new OleDbCommand(query, con);
@@ -179,6 +206,24 @@ namespace Electronic_educational_and_methodical_complex
             {
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == txt_fam.Text && dataGridView1.Rows[i].Cells[2].Value.ToString() == txt_name.Text && dataGridView1.Rows[i].Cells[3].Value.ToString() == txt_otch.Text && dataGridView1.Rows[i].Cells[4].Value.ToString() == cmb_group.Text)
+                {
+                    MessageBox.Show("Такой пользователь уже существует!");
+                    return;
+                }
+                if (dataGridView1.Rows[i].Cells[5].Value.ToString() == txt_login.Text)
+                {
+                    MessageBox.Show("Пользователь с таким логином уже существует!");
+                    return;
+                }
+                if (dataGridView1.Rows[i].Cells[6].Value.ToString() == txt_pass.Text)
+                {
+                    MessageBox.Show("Пользователь с таким паролем уже существует!");
+                    return;
+                }
             }
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите редактировать пользователя?", "Редактировать пользователя", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -246,14 +291,14 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void dataGridView3_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            txt_pyt_2.Text = dataGridView3.CurrentRow.Cells[4].Value.ToString();
+            pyt = dataGridView3.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                System.Diagnostics.Process.Start(txt_pyt.Text);
+                System.Diagnostics.Process.Start(pyt);
             }
             catch
             {
@@ -274,14 +319,14 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void dataGridView4_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            txt_pyt_3.Text = dataGridView4.CurrentRow.Cells[4].Value.ToString();
+            pyt = dataGridView4.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                System.Diagnostics.Process.Start(txt_pyt.Text);
+                System.Diagnostics.Process.Start(pyt);
             }
             catch
             {
@@ -297,7 +342,7 @@ namespace Electronic_educational_and_methodical_complex
         #region poisk
         private void txt_naz_TextChanged(object sender, EventArgs e)
         {
-            if (txt_group.Text == "1")
+            if (Groups == "1")
             {
                 DataView poisk = new DataView(this.dataBaseDataSet.Lecturesfull);
                 poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
@@ -306,14 +351,14 @@ namespace Electronic_educational_and_methodical_complex
             else
             {
                 DataView poisk = new DataView(this.dataBaseDataSet.Lecturesfull);
-                poisk.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                poisk.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
                 this.lecturesfullBindingSource.DataSource = poisk;
             }
         }
 
         private void txt_naz_2_TextChanged(object sender, EventArgs e)
         {
-            if (txt_group.Text == "1")
+            if (Groups == "1")
             {
                 DataView poisk = new DataView(this.dataBaseDataSet.Practicalfull);
                 poisk.RowFilter = "Название LIKE '" + txt_naz_2.Text + "%' AND Предмет LIKE '" + cmb_predmet_2.Text + "%'";
@@ -322,14 +367,14 @@ namespace Electronic_educational_and_methodical_complex
             else
             {
                 DataView poisk = new DataView(this.dataBaseDataSet.Practicalfull);
-                poisk.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_2.Text + "%' AND Предмет LIKE '" + cmb_predmet_2.Text + "%'";
+                poisk.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz_2.Text + "%' AND Предмет LIKE '" + cmb_predmet_2.Text + "%'";
                 this.practicalfullBindingSource.DataSource = poisk;
             }
         }
 
         private void txt_naz_3_TextChanged(object sender, EventArgs e)
         {
-            if (txt_group.Text == "1")
+            if (Groups == "1")
             {
                 DataView poisk = new DataView(this.dataBaseDataSet1.Testsfull);
                 poisk.RowFilter = "Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
@@ -338,13 +383,13 @@ namespace Electronic_educational_and_methodical_complex
             else
             {
                 DataView poisk = new DataView(this.dataBaseDataSet1.Testsfull);
-                poisk.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
+                poisk.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
                 this.testsfullBindingSource.DataSource = poisk;
             }
         }
         private void cmb_predmet_TextChanged(object sender, EventArgs e)
         {
-            if (txt_group.Text == "1")
+            if (Groups == "1")
             {
                 DataView predmet = new DataView(this.dataBaseDataSet.Lecturesfull);
                 predmet.RowFilter = "Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
@@ -353,13 +398,13 @@ namespace Electronic_educational_and_methodical_complex
             else
             {
                 DataView predmet = new DataView(this.dataBaseDataSet.Lecturesfull);
-                predmet.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                predmet.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
                 this.lecturesfullBindingSource.DataSource = predmet;
             }
         }
         private void cmb_predmet_2_TextChanged(object sender, EventArgs e)
         {
-            if (txt_group.Text == "1")
+            if (Groups == "1")
             {
                 DataView predmet = new DataView(this.dataBaseDataSet.Practicalfull);
                 predmet.RowFilter = "Название LIKE '" + txt_naz_2.Text + "%' AND Предмет LIKE '" + cmb_predmet_2.Text + "%'";
@@ -368,13 +413,13 @@ namespace Electronic_educational_and_methodical_complex
             else
             {
                 DataView predmet = new DataView(this.dataBaseDataSet.Practicalfull);
-                predmet.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_2.Text + "%' AND Предмет LIKE '" + cmb_predmet_2.Text + "%'";
+                predmet.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz_2.Text + "%' AND Предмет LIKE '" + cmb_predmet_2.Text + "%'";
                 this.practicalfullBindingSource.DataSource = predmet;
             }
         }
         private void cmb_predmet_3_TextChanged(object sender, EventArgs e)
         {
-            if (txt_group.Text == "1")
+            if (Groups == "1")
             {
                 DataView predmet = new DataView(this.dataBaseDataSet1.Testsfull);
                 predmet.RowFilter = "Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'"; ;
@@ -383,7 +428,7 @@ namespace Electronic_educational_and_methodical_complex
             else
             {
                 DataView predmet = new DataView(this.dataBaseDataSet1.Testsfull);
-                predmet.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
+                predmet.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
                 this.testsfullBindingSource.DataSource = predmet;
             }
         }
@@ -410,6 +455,14 @@ namespace Electronic_educational_and_methodical_complex
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
             }
+            for (int i = 0; i < dataGridView5.RowCount; i++)
+            {
+                if (dataGridView5.Rows[i].Cells[1].Value.ToString() == cmb_fio.Text && dataGridView5.Rows[i].Cells[2].Value.ToString() == cmbox_predmet.Text && dataGridView1.Rows[i].Cells[3].Value.ToString() == cmb_tema.Text && dataGridView1.Rows[i].Cells[4].Value.ToString() == txt_ocenka.Text)
+                {
+                    MessageBox.Show("Данному студенту уже поставлена оценка за эту работу!");
+                    return;
+                }
+            }
             string query = "Insert into Usp (Код_пользователя, Код_предмета, Тема, Оценка) values (@k_user,@k_predmet,@tema,@ocenka)";
             cmd = new OleDbCommand(query, con);
             cmd.Parameters.AddWithValue("@k_user", cmb_fio.SelectedValue);
@@ -429,6 +482,14 @@ namespace Electronic_educational_and_methodical_complex
             {
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
+            }
+            for (int i = 0; i < dataGridView5.RowCount; i++)
+            {
+                if (dataGridView5.Rows[i].Cells[1].Value.ToString() == cmb_fio.Text && dataGridView5.Rows[i].Cells[2].Value.ToString() == cmbox_predmet.Text && dataGridView1.Rows[i].Cells[3].Value.ToString() == cmb_tema.Text && dataGridView1.Rows[i].Cells[4].Value.ToString() == txt_ocenka.Text)
+                {
+                    MessageBox.Show("Данному студенту уже поставлена оценка за эту работу!");
+                    return;
+                }
             }
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите редактировать успеваемость?", "Редактировать успеваемость", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -482,7 +543,7 @@ namespace Electronic_educational_and_methodical_complex
 
         private void txt_poiskfam_TextChanged(object sender, EventArgs e)
         {
-            if (txt_group.Text == "1")
+            if (Groups == "1")
             {
                 DataView poisk = new DataView(this.dataBaseDataSet.uspfull);
                 poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%' AND Предмет LIKE '" + cmbox_predmet.Text + "%'";
@@ -491,26 +552,12 @@ namespace Electronic_educational_and_methodical_complex
             else
             {
                 //DataView poisk = new DataView(this.dataBaseDataSet1.Testsfull);
-                //poisk.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
+                //poisk.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
                 //this.testsfullBindingSource.DataSource = poisk;
             }
         }
 
-        private void cmbox_predmet_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_group.Text == "1")
-            {
-                DataView predmet = new DataView(this.dataBaseDataSet.uspfull);
-                predmet.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%' AND Предмет LIKE '" + cmbox_predmet.Text + "%'"; ;
-                this.uspfullBindingSource.DataSource = predmet;
-            }
-            else
-            {
-                //DataView predmet = new DataView(this.dataBaseDataSet1.Testsfull);
-                //predmet.RowFilter = "Код_группы LIKE '" + txt_group.Text + "%' AND Название LIKE '" + txt_naz_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_3.Text + "%'";
-                //this.testsfullBindingSource.DataSource = predmet;
-            }
-        }
+       
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
@@ -584,6 +631,63 @@ namespace Electronic_educational_and_methodical_complex
             con.Close();
         }
 
+        private void txt_ocenka_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 48 || e.KeyChar >= 54) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+        #region export
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            application = new Word.Application
+            {
+                Visible = true
+            };
+            //Создание нового документа Word
+            document = application.Documents.Add();
+            //Добавление нового параграфа документа Word
+            wordparagraph = document.Paragraphs.Add();
+            wordparagraph.Range.Text = "Успеваемость студентов";
+            //Красный цвет шрифта
+            wordparagraph.Range.Font.Color = Word.WdColor.wdColorBlack;
+            wordparagraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            //Размер 18, Тип шрифта Arial, курсив и полужирный
+            wordparagraph.Range.Font.Size = 14;
+            wordparagraph.Range.Font.Name = "Arial";
+            wordparagraph.Range.Font.Bold = 1;
+            wordparagraph = document.Paragraphs.Add();
+            wordparagraph = document.Paragraphs[2];
+            wordparagraph.Range.Font.Color = Word.WdColor.wdColorBlack;
+            wordparagraph.Range.Font.Bold = 0;
+            Word.Range wordrange = wordparagraph.Range;
+            var row = dataBaseDataSet.uspfull.Rows.Count;
+            var col = dataBaseDataSet.uspfull.Columns.Count;
+            Word.Table wordtable1 = document.Tables.Add(wordrange, row + 1, col-1);
+            Word.Range wordcellrange = document.Tables[1].Cell(1, 2).Range;
+            wordtable1.Range.Font.Size = 9;
+            wordtable1.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleDouble;
+            wordtable1.Borders.InsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+            wordtable1.Rows[1].Range.Font.Color = Word.WdColor.wdColorBlack;
+            for (int i = 1; i < col; i++)
+            {
+                for (int j = 0; j < row; j++)
+                {
+                    //Занести заголовки полей в ячейку
+                    wordcellrange = document.Tables[1].Cell(1, i).Range;
+                    wordcellrange.Text = dataBaseDataSet.uspfull.Columns[i].ToString();
+                    //Занести данные в ячейки
+                    wordcellrange = document.Tables[1].Cell(j + 2, i).Range;
+                    wordcellrange.Text = dataBaseDataSet.uspfull.Rows[j][i].ToString();
+                }
+            }
+        }
+        #endregion
+        private void btn_uprlectures_Click(object sender, EventArgs e)
+        {
+            Lectures Lectures = new Lectures();
+            Lectures.ShowDialog();
+        }
+
         private void cmb_group_Click(object sender, EventArgs e)
         {
             string query = "Select Группа from Groups";
@@ -637,5 +741,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Close();
             }
         }
+
+       
     }
 }

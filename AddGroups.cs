@@ -23,7 +23,7 @@ namespace Electronic_educational_and_methodical_complex
         }
         void GetCon()
         {
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
+            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
             ds = new DataSet();
         }
         void GetGroups()
@@ -62,6 +62,14 @@ namespace Electronic_educational_and_methodical_complex
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
             }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == txt_group.Text)
+                {
+                    MessageBox.Show("Группа с таким названием уже существует!");
+                    return;
+                }
+            }
             string query = "Insert into Groups (Группа) values (@group)";
             cmd = new OleDbCommand(query, con);
             cmd.Parameters.AddWithValue("@group", txt_group.Text);
@@ -78,6 +86,14 @@ namespace Electronic_educational_and_methodical_complex
             {
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
+            }
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == txt_group.Text)
+                {
+                    MessageBox.Show("Группа с таким названием уже существует!");
+                    return;
+                }
             }
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите редактировать группу?", "Редактировать группу", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)

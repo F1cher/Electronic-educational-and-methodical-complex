@@ -31,7 +31,7 @@ namespace Electronic_educational_and_methodical_complex
             }
             string login = Login.Text;
             string pass = Pass.Text;
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb");
+            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
             cmd = new OleDbCommand();
             con.Open();
             cmd.Connection = con;
@@ -46,9 +46,10 @@ namespace Electronic_educational_and_methodical_complex
                 string Saccess = dr["Доступ"].ToString();
                 string Group = dr["Код_группы"].ToString();
                 MessageBox.Show("Добро пожаловать, " + fam + " " + name + " " + otch + "!");
-                Main Main = new Main(Saccess, Group);
-                Main.Show();
-                this.Hide();
+                Authorization.ActiveForm.Hide();
+                Main Main = new Main(Saccess, Group, fam, name, otch);
+                Main.ShowDialog(this);
+                Close();
             }
             else
             {
@@ -59,9 +60,10 @@ namespace Electronic_educational_and_methodical_complex
 
         private void btn_register_Click(object sender, EventArgs e)
         {
+            Authorization.ActiveForm.Hide();
             Registration Registration = new Registration();
-            Registration.Show();
-            this.Hide();
+            Registration.ShowDialog(this);
+            Close();
         }
     }
 }
