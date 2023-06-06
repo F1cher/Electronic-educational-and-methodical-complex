@@ -23,10 +23,8 @@ namespace Electronic_educational_and_methodical_complex
 
         private void Registration_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet1.Groups". При необходимости она может быть перемещена или удалена.
             this.groupsTableAdapter.Fill(this.dataBaseDataSet1.Groups);
             fillByToolStripButton.PerformClick();
-
         }
         private void btn_back_Click(object sender, EventArgs e)
         {
@@ -43,8 +41,10 @@ namespace Electronic_educational_and_methodical_complex
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
             }
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");            
-            string query = "Insert into Users (Фамилия, Имя, Отчество, Код_группы, Логин, Пароль, Доступ) values (@fam, @name, @otch, @k_group, @login, @pass, @access)";
+            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
+
+
+            string query = "Select COUNT(*) from Users where Фамилия = @fam and Имя = @name and Отчество = @otch and Код_группы = @k_group and Логин = @login and Пароль = @pass";
             cmd = new OleDbCommand(query, con);
             cmd.Parameters.AddWithValue("@fam", txt_fam.Text);
             cmd.Parameters.AddWithValue("@name", txt_name.Text);
@@ -52,8 +52,23 @@ namespace Electronic_educational_and_methodical_complex
             cmd.Parameters.AddWithValue("@k_group", cmb_group.SelectedValue);
             cmd.Parameters.AddWithValue("@login", txt_login.Text);
             cmd.Parameters.AddWithValue("@pass", txt_pass.Text);
-            cmd.Parameters.AddWithValue("@access", "Студент");
             con.Open();
+            Int32 count = (Int32)cmd.ExecuteScalar();
+            if (count > 0)
+            {
+                MessageBox.Show("Такой пользователь уже зарегистрирован!");
+                con.Close();
+                return;
+            }
+            string query_2 = "Insert into Users (Фамилия, Имя, Отчество, Код_группы, Логин, Пароль, Доступ) values (@fam, @name, @otch, @k_group, @login, @pass, @access)";
+            cmd = new OleDbCommand(query_2, con);
+            cmd.Parameters.AddWithValue("@fam", txt_fam.Text);
+            cmd.Parameters.AddWithValue("@name", txt_name.Text);
+            cmd.Parameters.AddWithValue("@otch", txt_otch.Text);
+            cmd.Parameters.AddWithValue("@k_group", cmb_group.SelectedValue);
+            cmd.Parameters.AddWithValue("@login", txt_login.Text);
+            cmd.Parameters.AddWithValue("@pass", txt_pass.Text);
+            cmd.Parameters.AddWithValue("@access", "Студент");
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Пользователь успешно добавлен!");

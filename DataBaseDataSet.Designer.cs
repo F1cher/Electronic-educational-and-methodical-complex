@@ -2980,7 +2980,7 @@ namespace Electronic_educational_and_methodical_complex {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PracticalRow AddPracticalRow(int Код_предмета, int Код_группы, string Название, string Путь) {
+            public PracticalRow AddPracticalRow(string Код_предмета, int Код_группы, string Название, string Путь) {
                 PracticalRow rowPracticalRow = ((PracticalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3029,7 +3029,7 @@ namespace Electronic_educational_and_methodical_complex {
             private void InitClass() {
                 this.columnКод_практики = new global::System.Data.DataColumn("Код_практики", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКод_практики);
-                this.columnКод_предмета = new global::System.Data.DataColumn("Код_предмета", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnКод_предмета = new global::System.Data.DataColumn("Код_предмета", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКод_предмета);
                 this.columnКод_группы = new global::System.Data.DataColumn("Код_группы", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКод_группы);
@@ -7325,10 +7325,10 @@ namespace Electronic_educational_and_methodical_complex {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_предмета {
+            public string Код_предмета {
                 get {
                     try {
-                        return ((int)(this[this.tablePractical.Код_предметаColumn]));
+                        return ((string)(this[this.tablePractical.Код_предметаColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Код_предмета\' в таблице \'Practical\' равно DBNull.", e);

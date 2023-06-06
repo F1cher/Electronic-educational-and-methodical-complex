@@ -527,11 +527,11 @@ namespace Electronic_educational_and_methodical_complex
             DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите редактировать успеваемость?", "Редактировать успеваемость", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                string query = "Update Usp Set Код_пользователя=@k_user, Код_предмета=@k_predmet,Код_вида=@vid, Тема=@tema, Оценка=@ocenka Where Код_успеваемости=@k_usp";
+                string query = "Update Usp Set Код_пользователя=@k_user, Код_предмета=@k_predmet, Код_вида=@k_vida, Тема=@tema, Оценка=@ocenka Where Код_успеваемости=@k_usp";
                 cmd = new OleDbCommand(query, con);
                 cmd.Parameters.AddWithValue("@k_user", cmb_fio.SelectedValue);
-                cmd.Parameters.AddWithValue("@k_predmet", cmbox_predmet.SelectedValue);
-                cmd.Parameters.AddWithValue("@vid", cmb_vid.SelectedValue);
+                cmd.Parameters.AddWithValue("@k_predmet", cmb_predmet.SelectedValue);
+                cmd.Parameters.AddWithValue("@k_vida", cmb_vid.SelectedValue);
                 cmd.Parameters.AddWithValue("@tema", cmb_tema.SelectedValue);
                 cmd.Parameters.AddWithValue("@ocenka", txt_ocenka.Text);
                 cmd.Parameters.AddWithValue("@k_usp", dataGridView5.CurrentRow.Cells[0].Value);
@@ -539,7 +539,7 @@ namespace Electronic_educational_and_methodical_complex
                 cmd.ExecuteNonQuery();
                 con.Close();
                 this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
-                toolStripStatusLabel2.Text = "Оценка была изменена!";
+                toolStripStatusLabel2.Text = "Пользователь был изменен!";
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -558,7 +558,7 @@ namespace Electronic_educational_and_methodical_complex
                 cmd.ExecuteNonQuery();
                 con.Close();
                 this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
-                toolStripStatusLabel2.Text = "Оценка была удалена!";
+                toolStripStatusLabel2.Text = "Группа была удалена!";
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -595,7 +595,7 @@ namespace Electronic_educational_and_methodical_complex
         {
             if (cmb_vid.SelectedIndex == 0)
             {
-                string query = "Select Название from Lectures";
+                string query = "Select Название, Код_предмета from Lectures";
                 cmd = new OleDbCommand(query, con);
                 con.Open();
                 OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
