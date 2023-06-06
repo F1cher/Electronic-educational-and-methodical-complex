@@ -32,3 +32,5 @@ C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical comple
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.Tests.resources
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.ResolveComReference.cache
 C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic educational and methodical complex.csproj.AssemblyReference.cache
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AnswersPractical.resources
+C:\Users\tiuno\Desktop\диплом\Electronic educational and methodical complex\obj\Debug\Electronic_educational_and_methodical_complex.AnswersTest.resources

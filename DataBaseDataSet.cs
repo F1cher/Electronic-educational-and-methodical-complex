@@ -4,6 +4,9 @@
 
     partial class DataBaseDataSet
     {
+        partial class AnswersDataTable
+        {
+        }
     }
 }
 

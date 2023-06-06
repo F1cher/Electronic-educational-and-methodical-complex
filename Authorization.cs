@@ -40,6 +40,7 @@ namespace Electronic_educational_and_methodical_complex
             dr = cmd.ExecuteReader();
             if (dr.Read())
             {
+                string k_users = dr["Код_пользователя"].ToString();
                 string fam = dr["Фамилия"].ToString();
                 string name = dr["Имя"].ToString();
                 string otch = dr["Отчество"].ToString();
@@ -47,7 +48,7 @@ namespace Electronic_educational_and_methodical_complex
                 string Group = dr["Код_группы"].ToString();
                 MessageBox.Show("Добро пожаловать, " + fam + " " + name + " " + otch + "!");
                 Authorization.ActiveForm.Hide();
-                Main Main = new Main(Saccess, Group, fam, name, otch);
+                Main Main = new Main(Saccess, Group, fam, name, otch, k_users);
                 Main.ShowDialog(this);
                 Close();
             }

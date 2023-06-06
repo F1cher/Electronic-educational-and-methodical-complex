@@ -17,11 +17,11 @@ namespace Electronic_educational_and_methodical_complex
         private Word.Application application;
         Word.Document document;
         Word.Paragraph wordparagraph;
-        string Access, familia, ima, otches, Groups, pyt;
+        string Access, familia, ima, otches, Groups, pyt, k_user;
         DataSet ds;
         OleDbCommand cmd;
         OleDbConnection con;
-        public Main(string Saccess, string Group, string fam, string name, string otch)
+        public Main(string Saccess, string Group, string fam, string name, string otch, string k_users)
         {
             InitializeComponent();
             Access = Saccess;
@@ -29,6 +29,7 @@ namespace Electronic_educational_and_methodical_complex
             familia = fam;
             ima = name;
             otches = otch;
+            k_user = k_users;
         }
         void GetCon()
         {
@@ -90,6 +91,10 @@ namespace Electronic_educational_and_methodical_complex
         #region main_load
         public void Main_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.AnswersTestfull". При необходимости она может быть перемещена или удалена.
+            this.answersTestfullTableAdapter.Fill(this.dataBaseDataSet.AnswersTestfull);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.AnswersPracticfull". При необходимости она может быть перемещена или удалена.
+            this.answersPracticfullTableAdapter.Fill(this.dataBaseDataSet.AnswersPracticfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.uspfull". При необходимости она может быть перемещена или удалена.
             this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Vidi". При необходимости она может быть перемещена или удалена.
@@ -123,10 +128,21 @@ namespace Electronic_educational_and_methodical_complex
                 txt_poiskfam.Visible = false;
                 label17.Visible = false;
                 txt_poiskfam.Text = familia + " " + ima + " " + otches;
-                //Сортировка по группе
-                DataView filter = new DataView(this.dataBaseDataSet.Lecturesfull);
-                filter.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
-                this.lecturesfullBindingSource.DataSource = filter;
+                //Сортировка по группе (лекции)
+                DataView filter_lec = new DataView(this.dataBaseDataSet.Lecturesfull);
+                filter_lec.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.lecturesfullBindingSource.DataSource = filter_lec;
+
+                //Сортировка по группе (практика)
+                DataView filter_prac = new DataView(this.dataBaseDataSet.Practicalfull);
+                filter_prac.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.practicalfullBindingSource.DataSource = filter_prac;
+
+                //Сортировка по группе (тесты)
+                DataView filter_test = new DataView(this.dataBaseDataSet1.Testsfull);
+                filter_test.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
+                this.testsfullBindingSource.DataSource = filter_test;
+
                 //Сортировка по фамилии
                 DataView famil = new DataView(this.dataBaseDataSet.uspfull);
                 famil.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%'";
@@ -582,29 +598,47 @@ namespace Electronic_educational_and_methodical_complex
                 this.uspfullBindingSource.DataSource = poisk;
             }
         }
-        private void button_clear_Click(object sender, EventArgs e)
+
+        private void btn_save_Click(object sender, EventArgs e)
         {
-            Clear(tabPage5);
+            AnswersPractical AnswersPractical = new AnswersPractical(k_user);
+            AnswersPractical.ShowDialog();
         }
-        private void txt_ocenka_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void btn_updateans_Click(object sender, EventArgs e)
         {
-            if ((e.KeyChar <= 48 || e.KeyChar >= 54) && e.KeyChar != 8)
-                e.Handled = true;
-        }
-        private void cmb_vid_TextChanged(object sender, EventArgs e)
-        {
-            if (cmb_vid.SelectedIndex == 0)
+            if (rb_prac.Checked)
             {
-                string query = "Select Название, Код_предмета from Lectures";
-                cmd = new OleDbCommand(query, con);
-                con.Open();
-                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-                DataTable tb = new DataTable();
-                adapter.Fill(tb);
-                cmb_tema.DataSource = tb;
-                cmb_tema.DisplayMember = "Название";
-                con.Close();
+                this.answersPracticfullTableAdapter.Fill(this.dataBaseDataSet.AnswersPracticfull);
+                dataGridView6.DataSource = answersPracticfullBindingSource;
             }
+            else
+            {
+                this.answersTestfullTableAdapter.Fill(this.dataBaseDataSet.AnswersTestfull);
+                dataGridView6.DataSource = answersTestfullBindingSource;
+            }
+        }
+
+
+        private void dataGridView6_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(pyt);
+            }
+            catch
+            {
+                MessageBox.Show("Не удается найти указанный файл!\nПроверьте правильность указанного пути.");
+            }
+        }
+
+        private void dataGridView6_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            pyt = dataGridView6.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void cmb_tema_Click(object sender, EventArgs e)
+        {
             if (cmb_vid.SelectedIndex == 1)
             {
                 string query = "Select Название from Practical";
@@ -617,6 +651,7 @@ namespace Electronic_educational_and_methodical_complex
                 cmb_tema.DisplayMember = "Название";
                 con.Close();
             }
+
             if (cmb_vid.SelectedIndex == 2)
             {
                 string query = "Select Название from Tests";
@@ -630,6 +665,33 @@ namespace Electronic_educational_and_methodical_complex
                 con.Close();
             }
         }
+
+        private void btn_save_2_Click(object sender, EventArgs e)
+        {
+            AnswersTest AnswersTest = new AnswersTest(k_user);
+            AnswersTest.ShowDialog();
+        }
+
+        private void txt_poiskfam_2_TextChanged(object sender, EventArgs e)
+        {
+            if (Groups == "1")
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.Students);
+                poisk.RowFilter = "Фамилия LIKE '" + txt_poiskfam_2.Text + "%'";
+                this.studentsBindingSource.DataSource = poisk;
+            }
+        }
+
+        private void button_clear_Click(object sender, EventArgs e)
+        {
+            Clear(tabPage5);
+        }
+        private void txt_ocenka_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 48 || e.KeyChar >= 54) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+
         private void btn_export_Click(object sender, EventArgs e)
         {
             application = new Word.Application
