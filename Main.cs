@@ -127,7 +127,24 @@ namespace Electronic_educational_and_methodical_complex
                 Add_tests.Visible = false;
                 txt_poiskfam.Visible = false;
                 label17.Visible = false;
+                label20.Visible = false;
+                txt_poiskfam_3.Visible = false;
                 txt_poiskfam.Text = familia + " " + ima + " " + otches;
+                btn_uspadd.Visible = false;
+                btn_uspchange.Visible = false;
+                btn_uspdelete.Visible = false;
+                button_clear.Visible = false;
+                cmb_fio.Visible = false;
+                cmbox_predmet.Visible = false;
+                cmb_vid.Visible = false;
+                cmb_tema.Visible = false;
+                btn_export.Visible = false;
+                txt_ocenka.Visible = false;
+                label15.Visible = false;
+                label2.Visible = false;
+                label16.Visible = false;
+                label18.Visible = false;
+                label19.Visible = false;
                 //Сортировка по группе (лекции)
                 DataView filter_lec = new DataView(this.dataBaseDataSet.Lecturesfull);
                 filter_lec.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
@@ -143,10 +160,20 @@ namespace Electronic_educational_and_methodical_complex
                 filter_test.RowFilter = "Код_группы LIKE '" + Groups + "%' AND Название LIKE '" + txt_naz.Text + "%' AND Предмет LIKE '" + cmb_predmet.Text + "%'";
                 this.testsfullBindingSource.DataSource = filter_test;
 
-                //Сортировка по фамилии
+                //Сортировка по фамилии в успеваемости
                 DataView famil = new DataView(this.dataBaseDataSet.uspfull);
-                famil.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%'";
+                famil.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%'";
                 this.uspfullBindingSource.DataSource = famil;
+
+                //Сортировка по фамилии в ответах
+                txt_poiskfam_3.Text = familia + ' ' + ima + ' ' + otches;
+
+                dataGridView6.DataSource = null;
+            }
+            else
+            {
+                btn_save.Visible = false;
+                btn_save_2.Visible = false;
             }
         }
         #endregion
@@ -587,6 +614,7 @@ namespace Electronic_educational_and_methodical_complex
             cmbox_predmet.Text = dataGridView5.CurrentRow.Cells[2].Value.ToString();
             cmb_vid.Text = dataGridView5.CurrentRow.Cells[3].Value.ToString();
             cmb_tema.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
+            textBox1.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
             txt_ocenka.Text = dataGridView5.CurrentRow.Cells[5].Value.ToString();
         }
         private void txt_poiskfam_TextChanged(object sender, EventArgs e)
@@ -604,21 +632,6 @@ namespace Electronic_educational_and_methodical_complex
             AnswersPractical AnswersPractical = new AnswersPractical(k_user);
             AnswersPractical.ShowDialog();
         }
-
-        private void btn_updateans_Click(object sender, EventArgs e)
-        {
-            if (rb_prac.Checked)
-            {
-                this.answersPracticfullTableAdapter.Fill(this.dataBaseDataSet.AnswersPracticfull);
-                dataGridView6.DataSource = answersPracticfullBindingSource;
-            }
-            else
-            {
-                this.answersTestfullTableAdapter.Fill(this.dataBaseDataSet.AnswersTestfull);
-                dataGridView6.DataSource = answersTestfullBindingSource;
-            }
-        }
-
 
         private void dataGridView6_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -670,6 +683,78 @@ namespace Electronic_educational_and_methodical_complex
         {
             AnswersTest AnswersTest = new AnswersTest(k_user);
             AnswersTest.ShowDialog();
+        }
+
+        private void rb_prac_CheckedChanged(object sender, EventArgs e)
+        {
+            this.answersPracticfullTableAdapter.Fill(this.dataBaseDataSet.AnswersPracticfull);
+            dataGridView6.DataSource = answersPracticfullBindingSource;
+            DataView poisk = new DataView(this.dataBaseDataSet.AnswersPracticfull);
+            poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%'";
+            this.answersPracticfullBindingSource.DataSource = poisk;
+
+        }
+
+        private void rb_test_CheckedChanged(object sender, EventArgs e)
+        {
+            this.answersTestfullTableAdapter.Fill(this.dataBaseDataSet.AnswersTestfull);
+            dataGridView6.DataSource = answersTestfullBindingSource;
+            DataView poisk = new DataView(this.dataBaseDataSet.AnswersTestfull);
+            poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%'";
+            this.answersTestfullBindingSource.DataSource = poisk;
+        }
+
+        private void txt_poiskfam_3_TextChanged(object sender, EventArgs e)
+        {
+            if (rb_prac.Checked == true)
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.AnswersPracticfull);
+                poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_4.Text + "%' AND Название LIKE '" + txt_poisktemy_2.Text + "%'";
+                this.answersPracticfullBindingSource.DataSource = poisk;
+            }
+            if (rb_test.Checked == true)
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.AnswersTestfull);
+                poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_4.Text + "%' AND Название LIKE '" + txt_poisktemy_2.Text + "%'";
+                this.answersTestfullBindingSource.DataSource = poisk;
+            }
+        }
+
+        private void cmb_predmet_4_TextChanged(object sender, EventArgs e)
+        {
+            if (rb_prac.Checked == true)
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.AnswersPracticfull);
+                poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_4.Text + "%' AND Название LIKE '" + txt_poisktemy_2.Text + "%'";
+                this.answersPracticfullBindingSource.DataSource = poisk;
+            }
+            if (rb_test.Checked == true)
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.AnswersTestfull);
+                poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_4.Text + "%' AND Название LIKE '" + txt_poisktemy_2.Text + "%'";
+                this.answersTestfullBindingSource.DataSource = poisk;
+            }
+        }
+
+        private void txt_poisktemy_2_TextChanged(object sender, EventArgs e)
+        {
+            if (rb_prac.Checked == true)
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.AnswersPracticfull);
+                poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_4.Text + "%' AND Название LIKE '" + txt_poisktemy_2.Text + "%'";
+                this.answersPracticfullBindingSource.DataSource = poisk;
+            }
+            if (rb_test.Checked == true)
+            {
+                DataView poisk = new DataView(this.dataBaseDataSet.AnswersTestfull);
+                poisk.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%' AND Предмет LIKE '" + cmb_predmet_4.Text + "%' AND Название LIKE '" + txt_poisktemy_2.Text + "%'";
+                this.answersTestfullBindingSource.DataSource = poisk;
+            }
+        }
+
+        private void btn_clear_2_Click(object sender, EventArgs e)
+        {
+            Clear(tabPage6);
         }
 
         private void txt_poiskfam_2_TextChanged(object sender, EventArgs e)

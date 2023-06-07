@@ -74,32 +74,6 @@ namespace Electronic_educational_and_methodical_complex
             MessageBox.Show("Пользователь успешно добавлен!");
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.groupsTableAdapter.FillBy(this.dataBaseDataSet1.Groups);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.groupsTableAdapter.FillBy(this.dataBaseDataSet1.Groups);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void fillByToolStripButton_Click_2(object sender, EventArgs e)
         {
             try
