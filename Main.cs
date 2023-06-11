@@ -185,16 +185,40 @@ namespace Electronic_educational_and_methodical_complex
         {
             AddPredmet AddPredmet = new AddPredmet();
             AddPredmet.ShowDialog();
+            string query = "Select * from Predmeti";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_predmet.DataSource = tb;
+            cmb_predmet_2.DataSource = tb;
+            cmb_predmet_3.DataSource = tb;
+            cmb_predmet_4.DataSource = tb;
+            cmbox_predmet.DataSource = tb;
+            cmb_predmet.DisplayMember = "Предмет";
+            cmb_predmet_2.DisplayMember = "Предмет";
+            cmb_predmet_3.DisplayMember = "Предмет";
+            cmb_predmet_4.DisplayMember = "Предмет";
+            cmbox_predmet.DisplayMember = "Предмет";
+            cmb_predmet.ValueMember = "Код_предмета";
+            cmb_predmet_2.ValueMember = "Код_предмета";
+            cmb_predmet_3.ValueMember = "Код_предмета";
+            cmb_predmet_4.ValueMember = "Код_предмета";
+            cmbox_predmet.ValueMember = "Код_предмета";
+            con.Close();
         }
         private void Add_lectures_Click(object sender, EventArgs e)
         {
             Lectures Lectures = new Lectures();
             Lectures.ShowDialog();
+            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
         }
         private void Add_groups_Click(object sender, EventArgs e)
         {
             AddGroups AddGroups = new AddGroups();
             AddGroups.ShowDialog();
+            cmb_group.Refresh();
         }
         private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -210,19 +234,6 @@ namespace Electronic_educational_and_methodical_complex
             {
                 MessageBox.Show("Не удается найти указанный файл!\nПроверьте правильность указанного пути.");
             }
-        }
-        private void cmb_predmet_Click(object sender, EventArgs e)
-        {
-            string query = "Select * from Predmeti";
-            cmd = new OleDbCommand(query, con);
-            con.Open();
-            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-            DataTable tb = new DataTable();
-            adapter.Fill(tb);
-            cmb_predmet.DataSource = tb;
-            cmb_predmet.DisplayMember = "Предмет";
-            cmb_predmet.ValueMember = "Код_предмета";
-            con.Close();
         }
         #endregion
         #region users
@@ -344,6 +355,7 @@ namespace Electronic_educational_and_methodical_complex
         {
             Practical Practical = new Practical();
             Practical.ShowDialog();
+            this.practicalfullTableAdapter.Fill(this.dataBaseDataSet.Practicalfull);
         }
         private void dataGridView3_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -365,18 +377,27 @@ namespace Electronic_educational_and_methodical_complex
         {
             AddPredmet AddPredmet = new AddPredmet();
             AddPredmet.ShowDialog();
-        }
-        private void cmb_predmet_2_Click(object sender, EventArgs e)
-        {
             string query = "Select * from Predmeti";
             cmd = new OleDbCommand(query, con);
             con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
             DataTable tb = new DataTable();
             adapter.Fill(tb);
+            cmb_predmet.DataSource = tb;
             cmb_predmet_2.DataSource = tb;
+            cmb_predmet_3.DataSource = tb;
+            cmb_predmet_4.DataSource = tb;
+            cmbox_predmet.DataSource = tb;
+            cmb_predmet.DisplayMember = "Предмет";
             cmb_predmet_2.DisplayMember = "Предмет";
+            cmb_predmet_3.DisplayMember = "Предмет";
+            cmb_predmet_4.DisplayMember = "Предмет";
+            cmbox_predmet.DisplayMember = "Предмет";
+            cmb_predmet.ValueMember = "Код_предмета";
             cmb_predmet_2.ValueMember = "Код_предмета";
+            cmb_predmet_3.ValueMember = "Код_предмета";
+            cmb_predmet_4.ValueMember = "Код_предмета";
+            cmbox_predmet.ValueMember = "Код_предмета";
             con.Close();
         }
         #endregion
@@ -385,6 +406,7 @@ namespace Electronic_educational_and_methodical_complex
         {
             Tests Tests = new Tests();
             Tests.ShowDialog();
+            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
         }
         private void dataGridView4_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -406,18 +428,27 @@ namespace Electronic_educational_and_methodical_complex
         {
             AddPredmet AddPredmet = new AddPredmet();
             AddPredmet.ShowDialog();
-        }
-        private void cmb_predmet_3_Click(object sender, EventArgs e)
-        {
             string query = "Select * from Predmeti";
             cmd = new OleDbCommand(query, con);
             con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
             DataTable tb = new DataTable();
             adapter.Fill(tb);
+            cmb_predmet.DataSource = tb;
+            cmb_predmet_2.DataSource = tb;
             cmb_predmet_3.DataSource = tb;
+            cmb_predmet_4.DataSource = tb;
+            cmbox_predmet.DataSource = tb;
+            cmb_predmet.DisplayMember = "Предмет";
+            cmb_predmet_2.DisplayMember = "Предмет";
             cmb_predmet_3.DisplayMember = "Предмет";
+            cmb_predmet_4.DisplayMember = "Предмет";
+            cmbox_predmet.DisplayMember = "Предмет";
+            cmb_predmet.ValueMember = "Код_предмета";
+            cmb_predmet_2.ValueMember = "Код_предмета";
             cmb_predmet_3.ValueMember = "Код_предмета";
+            cmb_predmet_4.ValueMember = "Код_предмета";
+            cmbox_predmet.ValueMember = "Код_предмета";
             con.Close();
         }
         #endregion
@@ -516,18 +547,6 @@ namespace Electronic_educational_and_methodical_complex
         }
         #endregion
         #region btn_update
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.practicalfullTableAdapter.Fill(this.dataBaseDataSet.Practicalfull);
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
-        }
         #endregion
         #region usp
         private void btn_uspadd_Click(object sender, EventArgs e)
@@ -803,21 +822,6 @@ namespace Electronic_educational_and_methodical_complex
                 con.Close();
             }
         }
-
-        private void cmb_predmet_4_Click(object sender, EventArgs e)
-        {
-            string query = "Select * from Predmeti";
-            cmd = new OleDbCommand(query, con);
-            con.Open();
-            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-            DataTable tb = new DataTable();
-            adapter.Fill(tb);
-            cmb_predmet_4.DataSource = tb;
-            cmb_predmet_4.DisplayMember = "Предмет";
-            cmb_predmet_4.ValueMember = "Код_предмета";
-            con.Close();
-        }
-
         private void label24_Click(object sender, EventArgs e)
         {
 
@@ -931,19 +935,6 @@ namespace Electronic_educational_and_methodical_complex
             cmb_group.DisplayMember = "Группа";
             cmb_group.ValueMember = "Код_группы";
             con.Close();
-        }
-        private void cmbox_predmet_Click(object sender, EventArgs e)
-        {
-            //string query = "Select * from Predmeti";
-            //cmd = new OleDbCommand(query, con);
-            //con.Open();
-            //OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-            //DataTable tb = new DataTable();
-            //adapter.Fill(tb);
-            //cmbox_predmet.DataSource = tb;
-            //cmbox_predmet.DisplayMember = "Предмет";
-            //cmbox_predmet.ValueMember = "Код_предмета";
-            //con.Close();
         }
 #endregion
     }

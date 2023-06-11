@@ -41,9 +41,8 @@ namespace Electronic_educational_and_methodical_complex
                 MessageBox.Show("Пожалуйста, заполните все поля!");
                 return;
             }
+
             con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
-
-
             string query = "Select COUNT(*) from Users where Фамилия = @fam and Имя = @name and Отчество = @otch and Код_группы = @k_group and Логин = @login and Пароль = @pass";
             cmd = new OleDbCommand(query, con);
             cmd.Parameters.AddWithValue("@fam", txt_fam.Text);
