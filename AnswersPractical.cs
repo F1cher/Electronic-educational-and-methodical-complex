@@ -13,14 +13,15 @@ namespace Electronic_educational_and_methodical_complex
 {
     public partial class AnswersPractical : Form
     {
-        int k_usr;
+        int k_usr, Group;
         DataSet ds;
         OleDbCommand cmd;
         OleDbConnection con;
-        public AnswersPractical(string k_user)
+        public AnswersPractical(string k_user, string Groups)
         {
             InitializeComponent();
             k_usr = Convert.ToInt32(k_user);
+            Group = Convert.ToInt32(Groups);
         }
         void GetCon()
         {
@@ -39,7 +40,26 @@ namespace Electronic_educational_and_methodical_complex
             this.practicalTableAdapter.Fill(this.dataBaseDataSet.Practical);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
             this.predmetiTableAdapter.Fill(this.dataBaseDataSet.Predmeti);
-            GetCon();   
+            GetCon();
+            cmb_predmet.Text = "";
+            cmb_tema.DataSource = null;
+        }
+
+        private void cmb_predmet_TextChanged(object sender, EventArgs e)
+        {
+            string query = "Select Название, Код_практики from Practical where Код_предмета = @k_predmeta AND Код_группы = @k_group";
+            cmd = new OleDbCommand(query, con);
+            cmd.Parameters.AddWithValue("@k_predmeta", cmb_predmet.SelectedValue);
+            cmd.Parameters.AddWithValue("@k_group", Group);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            cmb_tema.Text = "";
+            adapter.Fill(tb);
+            cmb_tema.DataSource = tb;
+            cmb_tema.DisplayMember = "Название";
+            cmb_tema.ValueMember = "Код_практики";
+            con.Close();
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -63,7 +83,7 @@ namespace Electronic_educational_and_methodical_complex
                 con.Close();
                 return;
             }
-          
+
             string query_2 = "Insert into AnswersPractical (Код_пользователя, Код_предмета, Код_практики, Путь) values (@k_user, @k_predmet, @k_prac, @pyt)";
             cmd = new OleDbCommand(query_2, con);
             cmd.Parameters.AddWithValue("@k_user", k_usr);

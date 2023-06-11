@@ -13,14 +13,15 @@ namespace Electronic_educational_and_methodical_complex
 {
     public partial class AnswersTest : Form
     {
-        int k_usr;
+        int k_usr, Group;
         DataSet ds;
         OleDbCommand cmd;
         OleDbConnection con;
-        public AnswersTest(string k_user)
+        public AnswersTest(string k_user, string Groups)
         {
             InitializeComponent();
             k_usr = Convert.ToInt32(k_user);
+            Group = Convert.ToInt32(Groups);
         }
         void GetCon()
         {
@@ -74,6 +75,25 @@ namespace Electronic_educational_and_methodical_complex
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Tests". При необходимости она может быть перемещена или удалена.
             this.testsTableAdapter.Fill(this.dataBaseDataSet.Tests);
             GetCon();
+            cmb_predmet.Text = "";
+            cmb_tema.DataSource = null;
+        }
+
+        private void cmb_predmet_TextChanged(object sender, EventArgs e)
+        {
+            string query = "Select Название, Код_теста from Tests where Код_предмета = @k_predmeta AND Код_группы = @k_group";
+            cmd = new OleDbCommand(query, con);
+            cmd.Parameters.AddWithValue("@k_predmeta", cmb_predmet.SelectedValue);
+            cmd.Parameters.AddWithValue("@k_group", Group);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            cmb_tema.Text = "";
+            adapter.Fill(tb);
+            cmb_tema.DataSource = tb;
+            cmb_tema.DisplayMember = "Название";
+            cmb_tema.ValueMember = "Код_теста";
+            con.Close();
         }
     }
 }

@@ -190,6 +190,10 @@ namespace Electronic_educational_and_methodical_complex
             this.uspfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.uspfullTableAdapter();
             this.answersPracticfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.AnswersPracticfullTableAdapter();
             this.answersTestfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.AnswersTestfullTableAdapter();
+            this.practicalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.practicalTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.PracticalTableAdapter();
+            this.testsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testsTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.TestsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -227,6 +231,8 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.answersTestfullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.answersPracticfullBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.practicalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -268,6 +274,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(651, 6);
             this.label12.Name = "label12";
@@ -277,6 +284,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // txt_naz
             // 
+            this.txt_naz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_naz.Location = new System.Drawing.Point(654, 22);
             this.txt_naz.Name = "txt_naz";
             this.txt_naz.Size = new System.Drawing.Size(160, 20);
@@ -398,6 +406,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label1.Location = new System.Drawing.Point(651, 47);
@@ -408,6 +417,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // cmb_predmet
             // 
+            this.cmb_predmet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_predmet.DataSource = this.predmetiBindingSource;
             this.cmb_predmet.DisplayMember = "Предмет";
             this.cmb_predmet.FormattingEnabled = true;
@@ -466,6 +476,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(651, 6);
             this.label13.Name = "label13";
@@ -475,6 +486,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // txt_naz_2
             // 
+            this.txt_naz_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_naz_2.Location = new System.Drawing.Point(654, 22);
             this.txt_naz_2.Name = "txt_naz_2";
             this.txt_naz_2.Size = new System.Drawing.Size(160, 20);
@@ -571,6 +583,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label10.Location = new System.Drawing.Point(651, 47);
@@ -581,6 +594,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // cmb_predmet_2
             // 
+            this.cmb_predmet_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_predmet_2.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_2.DisplayMember = "Предмет";
             this.cmb_predmet_2.FormattingEnabled = true;
@@ -643,6 +657,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(651, 6);
             this.label14.Name = "label14";
@@ -652,6 +667,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // txt_naz_3
             // 
+            this.txt_naz_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_naz_3.Location = new System.Drawing.Point(654, 22);
             this.txt_naz_3.Name = "txt_naz_3";
             this.txt_naz_3.Size = new System.Drawing.Size(160, 20);
@@ -753,6 +769,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label11.Location = new System.Drawing.Point(651, 47);
@@ -763,6 +780,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // cmb_predmet_3
             // 
+            this.cmb_predmet_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_predmet_3.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_3.DisplayMember = "Предмет";
             this.cmb_predmet_3.FormattingEnabled = true;
@@ -828,6 +846,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // txt_poiskfam_2
             // 
+            this.txt_poiskfam_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_poiskfam_2.Location = new System.Drawing.Point(670, 25);
             this.txt_poiskfam_2.Name = "txt_poiskfam_2";
             this.txt_poiskfam_2.Size = new System.Drawing.Size(160, 20);
@@ -836,12 +855,14 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label24
             // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(667, 9);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(100, 13);
             this.label24.TabIndex = 40;
             this.label24.Text = "Введите фамилию";
+            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // pictureBox4
             // 
@@ -1166,6 +1187,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // txt_poisktemy
             // 
+            this.txt_poisktemy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_poisktemy.Location = new System.Drawing.Point(670, 61);
             this.txt_poisktemy.Name = "txt_poisktemy";
             this.txt_poisktemy.Size = new System.Drawing.Size(160, 20);
@@ -1173,6 +1195,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label21
             // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(667, 45);
             this.label21.Name = "label21";
@@ -1211,6 +1234,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_vid.Size = new System.Drawing.Size(147, 21);
             this.cmb_vid.TabIndex = 41;
             this.cmb_vid.ValueMember = "Код_вида";
+            this.cmb_vid.TextChanged += new System.EventHandler(this.cmb_vid_TextChanged);
             // 
             // vidiBindingSource
             // 
@@ -1219,18 +1243,17 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // cmb_tema
             // 
-            this.cmb_tema.DisplayMember = "Название";
             this.cmb_tema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tema.FormattingEnabled = true;
             this.cmb_tema.Location = new System.Drawing.Point(531, 110);
             this.cmb_tema.Name = "cmb_tema";
             this.cmb_tema.Size = new System.Drawing.Size(179, 21);
             this.cmb_tema.TabIndex = 40;
-            this.cmb_tema.ValueMember = "Название";
             this.cmb_tema.Click += new System.EventHandler(this.cmb_tema_Click);
             // 
             // txt_poiskfam
             // 
+            this.txt_poiskfam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_poiskfam.Location = new System.Drawing.Point(670, 22);
             this.txt_poiskfam.Name = "txt_poiskfam";
             this.txt_poiskfam.Size = new System.Drawing.Size(160, 20);
@@ -1239,6 +1262,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(667, 6);
             this.label17.Name = "label17";
@@ -1292,6 +1316,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmbox_predmet.Size = new System.Drawing.Size(151, 21);
             this.cmbox_predmet.TabIndex = 34;
             this.cmbox_predmet.ValueMember = "Код_предмета";
+            this.cmbox_predmet.TextChanged += new System.EventHandler(this.cmbox_predmet_TextChanged);
             this.cmbox_predmet.Click += new System.EventHandler(this.cmbox_predmet_Click);
             // 
             // cmb_fio
@@ -1493,6 +1518,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_clear_2
             // 
+            this.btn_clear_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_clear_2.Location = new System.Drawing.Point(590, 8);
             this.btn_clear_2.Name = "btn_clear_2";
             this.btn_clear_2.Size = new System.Drawing.Size(87, 29);
@@ -1537,6 +1563,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // cmb_predmet_4
             // 
+            this.cmb_predmet_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_predmet_4.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_4.DisplayMember = "Предмет";
             this.cmb_predmet_4.FormattingEnabled = true;
@@ -1546,9 +1573,11 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet_4.TabIndex = 47;
             this.cmb_predmet_4.ValueMember = "Код_предмета";
             this.cmb_predmet_4.TextChanged += new System.EventHandler(this.cmb_predmet_4_TextChanged);
+            this.cmb_predmet_4.Click += new System.EventHandler(this.cmb_predmet_4_Click);
             // 
             // label23
             // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label23.Location = new System.Drawing.Point(699, 42);
@@ -1559,6 +1588,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(699, 81);
             this.label22.Name = "label22";
@@ -1568,6 +1598,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // label20
             // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(699, 3);
             this.label20.Name = "label20";
@@ -1577,6 +1608,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // txt_poisktemy_2
             // 
+            this.txt_poisktemy_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_poisktemy_2.Location = new System.Drawing.Point(702, 97);
             this.txt_poisktemy_2.Name = "txt_poisktemy_2";
             this.txt_poisktemy_2.Size = new System.Drawing.Size(128, 20);
@@ -1585,6 +1617,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // txt_poiskfam_3
             // 
+            this.txt_poiskfam_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_poiskfam_3.Location = new System.Drawing.Point(702, 17);
             this.txt_poiskfam_3.Name = "txt_poiskfam_3";
             this.txt_poiskfam_3.Size = new System.Drawing.Size(128, 20);
@@ -1758,6 +1791,24 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.answersTestfullTableAdapter.ClearBeforeFill = true;
             // 
+            // practicalBindingSource
+            // 
+            this.practicalBindingSource.DataMember = "Practical";
+            this.practicalBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // practicalTableAdapter
+            // 
+            this.practicalTableAdapter.ClearBeforeFill = true;
+            // 
+            // testsBindingSource
+            // 
+            this.testsBindingSource.DataMember = "Tests";
+            this.testsBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // testsTableAdapter
+            // 
+            this.testsTableAdapter.ClearBeforeFill = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1817,6 +1868,8 @@ namespace Electronic_educational_and_methodical_complex
             ((System.ComponentModel.ISupportInitialize)(this.answersPracticfullBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.practicalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1984,5 +2037,9 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn путьDataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btn_clear_2;
+        private System.Windows.Forms.BindingSource practicalBindingSource;
+        private DataBaseDataSetTableAdapters.PracticalTableAdapter practicalTableAdapter;
+        private System.Windows.Forms.BindingSource testsBindingSource;
+        private DataBaseDataSetTableAdapters.TestsTableAdapter testsTableAdapter;
     }
 }

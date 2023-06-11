@@ -50,6 +50,15 @@ namespace Electronic_educational_and_methodical_complex
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
             this.predmetiTableAdapter.Fill(this.dataBaseDataSet.Predmeti);
             GetCon();
+            string query = "Select * from Groups where Код_группы > 1";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_group.DataSource = tb;
+            cmb_group.DisplayMember = "Группа";
+            con.Close();
         }
 
         private void btn_obzor_Click(object sender, EventArgs e)

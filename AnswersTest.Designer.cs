@@ -87,14 +87,11 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_tema.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmb_tema.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmb_tema.DataSource = this.testsBindingSource;
-            this.cmb_tema.DisplayMember = "Название";
             this.cmb_tema.FormattingEnabled = true;
             this.cmb_tema.Location = new System.Drawing.Point(139, 25);
             this.cmb_tema.Name = "cmb_tema";
             this.cmb_tema.Size = new System.Drawing.Size(121, 21);
             this.cmb_tema.TabIndex = 45;
-            this.cmb_tema.ValueMember = "Код_теста";
             // 
             // testsBindingSource
             // 
@@ -116,6 +113,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet.Size = new System.Drawing.Size(121, 21);
             this.cmb_predmet.TabIndex = 44;
             this.cmb_predmet.ValueMember = "Код_предмета";
+            this.cmb_predmet.TextChanged += new System.EventHandler(this.cmb_predmet_TextChanged);
             // 
             // predmetiBindingSource
             // 

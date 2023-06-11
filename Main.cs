@@ -91,6 +91,10 @@ namespace Electronic_educational_and_methodical_complex
         #region main_load
         public void Main_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Tests". При необходимости она может быть перемещена или удалена.
+            this.testsTableAdapter.Fill(this.dataBaseDataSet.Tests);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Practical". При необходимости она может быть перемещена или удалена.
+            this.practicalTableAdapter.Fill(this.dataBaseDataSet.Practical);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.AnswersTestfull". При необходимости она может быть перемещена или удалена.
             this.answersTestfullTableAdapter.Fill(this.dataBaseDataSet.AnswersTestfull);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.AnswersPracticfull". При необходимости она может быть перемещена или удалена.
@@ -209,7 +213,7 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void cmb_predmet_Click(object sender, EventArgs e)
         {
-            string query = "Select Предмет from Predmeti";
+            string query = "Select * from Predmeti";
             cmd = new OleDbCommand(query, con);
             con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
@@ -217,6 +221,7 @@ namespace Electronic_educational_and_methodical_complex
             adapter.Fill(tb);
             cmb_predmet.DataSource = tb;
             cmb_predmet.DisplayMember = "Предмет";
+            cmb_predmet.ValueMember = "Код_предмета";
             con.Close();
         }
         #endregion
@@ -363,7 +368,7 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void cmb_predmet_2_Click(object sender, EventArgs e)
         {
-            string query = "Select Предмет from Predmeti";
+            string query = "Select * from Predmeti";
             cmd = new OleDbCommand(query, con);
             con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
@@ -371,6 +376,7 @@ namespace Electronic_educational_and_methodical_complex
             adapter.Fill(tb);
             cmb_predmet_2.DataSource = tb;
             cmb_predmet_2.DisplayMember = "Предмет";
+            cmb_predmet_2.ValueMember = "Код_предмета";
             con.Close();
         }
         #endregion
@@ -403,7 +409,7 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void cmb_predmet_3_Click(object sender, EventArgs e)
         {
-            string query = "Select Предмет from Predmeti";
+            string query = "Select * from Predmeti";
             cmd = new OleDbCommand(query, con);
             con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
@@ -411,6 +417,7 @@ namespace Electronic_educational_and_methodical_complex
             adapter.Fill(tb);
             cmb_predmet_3.DataSource = tb;
             cmb_predmet_3.DisplayMember = "Предмет";
+            cmb_predmet_3.ValueMember = "Код_предмета";
             con.Close();
         }
         #endregion
@@ -629,7 +636,7 @@ namespace Electronic_educational_and_methodical_complex
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            AnswersPractical AnswersPractical = new AnswersPractical(k_user);
+            AnswersPractical AnswersPractical = new AnswersPractical(k_user, Groups);
             AnswersPractical.ShowDialog();
         }
 
@@ -652,36 +659,38 @@ namespace Electronic_educational_and_methodical_complex
 
         private void cmb_tema_Click(object sender, EventArgs e)
         {
-            if (cmb_vid.SelectedIndex == 1)
-            {
-                string query = "Select Название from Practical";
-                cmd = new OleDbCommand(query, con);
-                con.Open();
-                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-                DataTable tb = new DataTable();
-                adapter.Fill(tb);
-                cmb_tema.DataSource = tb;
-                cmb_tema.DisplayMember = "Название";
-                con.Close();
-            }
+            //if (cmb_vid.SelectedIndex == 1)
+            //{
+            //    string query = "Select Название, Код_практики from Practical";
+            //    cmd = new OleDbCommand(query, con);
+            //    con.Open();
+            //    OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            //    DataTable tb = new DataTable();
+            //    adapter.Fill(tb);
+            //    cmb_tema.DataSource = tb;
+            //    cmb_tema.DisplayMember = "Название";
+            //    cmb_tema.ValueMember = "Код_практики";
+            //    con.Close();
+            //}
 
-            if (cmb_vid.SelectedIndex == 2)
-            {
-                string query = "Select Название from Tests";
-                cmd = new OleDbCommand(query, con);
-                con.Open();
-                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-                DataTable tb = new DataTable();
-                adapter.Fill(tb);
-                cmb_tema.DataSource = tb;
-                cmb_tema.DisplayMember = "Название";
-                con.Close();
-            }
+            //if (cmb_vid.SelectedIndex == 2)
+            //{
+            //    string query = "Select Название, Код_теста from Tests";
+            //    cmd = new OleDbCommand(query, con);
+            //    con.Open();
+            //    OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            //    DataTable tb = new DataTable();
+            //    adapter.Fill(tb);
+            //    cmb_tema.DataSource = tb;
+            //    cmb_tema.DisplayMember = "Название";
+            //    cmb_tema.ValueMember = "Код_теста";
+            //    con.Close();
+            //}
         }
 
         private void btn_save_2_Click(object sender, EventArgs e)
         {
-            AnswersTest AnswersTest = new AnswersTest(k_user);
+            AnswersTest AnswersTest = new AnswersTest(k_user, Groups);
             AnswersTest.ShowDialog();
         }
 
@@ -757,6 +766,101 @@ namespace Electronic_educational_and_methodical_complex
             Clear(tabPage6);
         }
 
+        private void cmb_vid_TextChanged(object sender, EventArgs e)
+        {
+            if (cmb_vid.SelectedIndex == 0)
+            {
+                cmb_tema.DataSource = null;
+            }
+            if (cmb_vid.SelectedIndex == 1)
+            {
+                string query = "Select Название, Код_практики from Practical where Код_предмета = @k_predmeta";
+                cmd = new OleDbCommand(query, con);
+                cmd.Parameters.AddWithValue("@k_predmeta", cmbox_predmet.SelectedValue);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                cmb_tema.DataSource = null;
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                cmb_tema.ValueMember = "Название";
+                con.Close();
+            }
+            if (cmb_vid.SelectedIndex == 2)
+            {
+                string query = "Select Название, Код_теста from Tests where Код_предмета = @k_predmeta";
+                cmd = new OleDbCommand(query, con);
+                cmd.Parameters.AddWithValue("@k_predmeta", cmbox_predmet.SelectedValue);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                cmb_tema.DataSource = null;
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                cmb_tema.ValueMember = "Название";
+                con.Close();
+            }
+        }
+
+        private void cmb_predmet_4_Click(object sender, EventArgs e)
+        {
+            string query = "Select * from Predmeti";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_predmet_4.DataSource = tb;
+            cmb_predmet_4.DisplayMember = "Предмет";
+            cmb_predmet_4.ValueMember = "Код_предмета";
+            con.Close();
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbox_predmet_TextChanged(object sender, EventArgs e)
+        {
+            if (cmb_vid.SelectedIndex == 0)
+            {
+                cmb_tema.DataSource = null;
+            }
+            if (cmb_vid.SelectedIndex == 1)
+            {
+                string query = "Select Название, Код_практики from Practical where Код_предмета = @k_predmeta";
+                cmd = new OleDbCommand(query, con);
+                cmd.Parameters.AddWithValue("@k_predmeta", cmbox_predmet.SelectedValue);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                cmb_tema.DataSource = null;
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                cmb_tema.ValueMember = "Название";
+                con.Close();
+            }
+            if (cmb_vid.SelectedIndex == 2)
+            {
+                string query = "Select Название, Код_теста from Tests where Код_предмета = @k_predmeta";
+                cmd = new OleDbCommand(query, con);
+                cmd.Parameters.AddWithValue("@k_predmeta", cmbox_predmet.SelectedValue);
+                con.Open();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                DataTable tb = new DataTable();
+                cmb_tema.DataSource = null;
+                adapter.Fill(tb);
+                cmb_tema.DataSource = tb;
+                cmb_tema.DisplayMember = "Название";
+                cmb_tema.ValueMember = "Название";
+                con.Close();
+            }
+        }
+
         private void txt_poiskfam_2_TextChanged(object sender, EventArgs e)
         {
             if (Groups == "1")
@@ -817,7 +921,7 @@ namespace Electronic_educational_and_methodical_complex
         }
         private void cmb_group_Click(object sender, EventArgs e)
         {
-            string query = "Select Группа from Groups";
+            string query = "Select * from Groups";
             cmd = new OleDbCommand(query, con);
             con.Open();
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
@@ -825,19 +929,21 @@ namespace Electronic_educational_and_methodical_complex
             adapter.Fill(tb);
             cmb_group.DataSource = tb;
             cmb_group.DisplayMember = "Группа";
+            cmb_group.ValueMember = "Код_группы";
             con.Close();
         }
         private void cmbox_predmet_Click(object sender, EventArgs e)
         {
-            string query = "Select Предмет from Predmeti";
-            cmd = new OleDbCommand(query, con);
-            con.Open();
-            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-            DataTable tb = new DataTable();
-            adapter.Fill(tb);
-            cmbox_predmet.DataSource = tb;
-            cmbox_predmet.DisplayMember = "Предмет";
-            con.Close();
+            //string query = "Select * from Predmeti";
+            //cmd = new OleDbCommand(query, con);
+            //con.Open();
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            //DataTable tb = new DataTable();
+            //adapter.Fill(tb);
+            //cmbox_predmet.DataSource = tb;
+            //cmbox_predmet.DisplayMember = "Предмет";
+            //cmbox_predmet.ValueMember = "Код_предмета";
+            //con.Close();
         }
 #endregion
     }
