@@ -190,7 +190,6 @@ namespace Electronic_educational_and_methodical_complex
             this.uspfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.uspfullTableAdapter();
             this.answersPracticfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.AnswersPracticfullTableAdapter();
             this.answersTestfullTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.AnswersTestfullTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -296,6 +295,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(836, 6);
             this.pictureBox1.Name = "pictureBox1";
@@ -327,6 +327,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -492,6 +495,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -598,6 +604,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox2.Location = new System.Drawing.Point(836, 6);
             this.pictureBox2.Name = "pictureBox2";
@@ -665,6 +672,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -776,6 +786,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox3.Location = new System.Drawing.Point(836, 6);
             this.pictureBox3.Name = "pictureBox3";
@@ -834,6 +845,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox4.Location = new System.Drawing.Point(836, 6);
             this.pictureBox4.Name = "pictureBox4";
@@ -1035,6 +1047,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -1120,7 +1135,6 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.textBox1);
             this.tabPage5.Controls.Add(this.txt_poisktemy);
             this.tabPage5.Controls.Add(this.label21);
             this.tabPage5.Controls.Add(this.btn_export);
@@ -1234,6 +1248,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox5.Location = new System.Drawing.Point(836, 6);
             this.pictureBox5.Name = "pictureBox5";
@@ -1387,6 +1402,9 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView5.AllowUserToDeleteRows = false;
             this.dataGridView5.AllowUserToResizeColumns = false;
             this.dataGridView5.AllowUserToResizeRows = false;
+            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView5.AutoGenerateColumns = false;
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -1575,6 +1593,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox6.Location = new System.Drawing.Point(836, 3);
             this.pictureBox6.Name = "pictureBox6";
@@ -1586,6 +1605,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.dataGridView6.AllowUserToAddRows = false;
             this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView6.AutoGenerateColumns = false;
             this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView6.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -1735,13 +1757,6 @@ namespace Electronic_educational_and_methodical_complex
             // answersTestfullTableAdapter
             // 
             this.answersTestfullTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(437, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 46;
             // 
             // Main
             // 
@@ -1969,6 +1984,5 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn путьDataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btn_clear_2;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

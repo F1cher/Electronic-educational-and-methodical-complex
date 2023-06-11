@@ -154,7 +154,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(266, 75);
+            this.btn_save.Location = new System.Drawing.Point(266, 76);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(128, 38);
             this.btn_save.TabIndex = 10;
@@ -199,6 +199,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_pyt);
             this.Name = "AnswersPractical";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сохранение ответов по практике";
             this.Load += new System.EventHandler(this.Answers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).EndInit();

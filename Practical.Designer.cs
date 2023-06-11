@@ -129,6 +129,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -299,6 +302,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(592, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -332,6 +336,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.btn_changepractical);
             this.Controls.Add(this.btn_addpractical);
             this.Name = "Practical";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Управление практиками";
             this.Load += new System.EventHandler(this.Practical_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();

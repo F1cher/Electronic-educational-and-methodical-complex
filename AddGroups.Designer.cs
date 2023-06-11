@@ -95,6 +95,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -132,6 +135,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(428, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -154,6 +158,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.btn_changegroups);
             this.Controls.Add(this.btn_addgroups);
             this.Name = "AddGroups";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Управление группами";
             this.Load += new System.EventHandler(this.AddGroups_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

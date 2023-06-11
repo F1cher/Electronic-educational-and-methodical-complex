@@ -130,10 +130,10 @@ namespace Electronic_educational_and_methodical_complex
                 label20.Visible = false;
                 txt_poiskfam_3.Visible = false;
                 txt_poiskfam.Text = familia + " " + ima + " " + otches;
+                button_clear.Visible = false;
                 btn_uspadd.Visible = false;
                 btn_uspchange.Visible = false;
                 btn_uspdelete.Visible = false;
-                button_clear.Visible = false;
                 cmb_fio.Visible = false;
                 cmbox_predmet.Visible = false;
                 cmb_vid.Visible = false;
@@ -162,12 +162,11 @@ namespace Electronic_educational_and_methodical_complex
 
                 //Сортировка по фамилии в успеваемости
                 DataView famil = new DataView(this.dataBaseDataSet.uspfull);
-                famil.RowFilter = "ФИО LIKE '" + txt_poiskfam_3.Text + "%'";
+                famil.RowFilter = "ФИО LIKE '" + txt_poiskfam.Text + "%'";
                 this.uspfullBindingSource.DataSource = famil;
 
                 //Сортировка по фамилии в ответах
                 txt_poiskfam_3.Text = familia + ' ' + ima + ' ' + otches;
-
                 dataGridView6.DataSource = null;
             }
             else
@@ -313,7 +312,7 @@ namespace Electronic_educational_and_methodical_complex
                 cmd.ExecuteNonQuery();
                 con.Close();
                 this.studentsTableAdapter.Fill(this.dataBaseDataSet.Students);
-                toolStripStatusLabel1.Text = "Группа была удалена!";
+                toolStripStatusLabel1.Text = "Пользователь был удален!";
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -614,7 +613,8 @@ namespace Electronic_educational_and_methodical_complex
             cmbox_predmet.Text = dataGridView5.CurrentRow.Cells[2].Value.ToString();
             cmb_vid.Text = dataGridView5.CurrentRow.Cells[3].Value.ToString();
             cmb_tema.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
-            textBox1.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
+            //Починить
+            //textBox1.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
             txt_ocenka.Text = dataGridView5.CurrentRow.Cells[5].Value.ToString();
         }
         private void txt_poiskfam_TextChanged(object sender, EventArgs e)

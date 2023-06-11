@@ -34,7 +34,10 @@ namespace Electronic_educational_and_methodical_complex
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_obzor = new System.Windows.Forms.Button();
             this.cmb_tema = new System.Windows.Forms.ComboBox();
+            this.testsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataBaseDataSet = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
             this.cmb_predmet = new System.Windows.Forms.ComboBox();
+            this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,16 +45,13 @@ namespace Electronic_educational_and_methodical_complex
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dataBaseDataSet = new Electronic_educational_and_methodical_complex.DataBaseDataSet();
-            this.testsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testsTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.TestsTableAdapter();
-            this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.predmetiTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.PredmetiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox6
@@ -96,6 +96,16 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_tema.TabIndex = 45;
             this.cmb_tema.ValueMember = "Код_теста";
             // 
+            // testsBindingSource
+            // 
+            this.testsBindingSource.DataMember = "Tests";
+            this.testsBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // dataBaseDataSet
+            // 
+            this.dataBaseDataSet.DataSetName = "DataBaseDataSet";
+            this.dataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmb_predmet
             // 
             this.cmb_predmet.DataSource = this.predmetiBindingSource;
@@ -106,6 +116,11 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet.Size = new System.Drawing.Size(121, 21);
             this.cmb_predmet.TabIndex = 44;
             this.cmb_predmet.ValueMember = "Код_предмета";
+            // 
+            // predmetiBindingSource
+            // 
+            this.predmetiBindingSource.DataMember = "Predmeti";
+            this.predmetiBindingSource.DataSource = this.dataBaseDataSet;
             // 
             // label3
             // 
@@ -160,24 +175,9 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // dataBaseDataSet
-            // 
-            this.dataBaseDataSet.DataSetName = "DataBaseDataSet";
-            this.dataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // testsBindingSource
-            // 
-            this.testsBindingSource.DataMember = "Tests";
-            this.testsBindingSource.DataSource = this.dataBaseDataSet;
-            // 
             // testsTableAdapter
             // 
             this.testsTableAdapter.ClearBeforeFill = true;
-            // 
-            // predmetiBindingSource
-            // 
-            this.predmetiBindingSource.DataMember = "Predmeti";
-            this.predmetiBindingSource.DataSource = this.dataBaseDataSet;
             // 
             // predmetiTableAdapter
             // 
@@ -199,14 +199,15 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_pyt);
             this.Name = "AnswersTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сохранение ответов тестов";
             this.Load += new System.EventHandler(this.AnswersTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
