@@ -30,6 +30,7 @@ namespace Electronic_educational_and_methodical_complex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lectures));
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_deletelectures = new System.Windows.Forms.Button();
             this.btn_changelectures = new System.Windows.Forms.Button();
@@ -356,6 +357,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.btn_deletelectures);
             this.Controls.Add(this.btn_changelectures);
             this.Controls.Add(this.btn_addlectures);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lectures";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Управление лекциями";

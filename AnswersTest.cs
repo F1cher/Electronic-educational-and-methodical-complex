@@ -75,7 +75,6 @@ namespace Electronic_educational_and_methodical_complex
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Tests". При необходимости она может быть перемещена или удалена.
             this.testsTableAdapter.Fill(this.dataBaseDataSet.Tests);
             GetCon();
-            cmb_predmet.Text = "";
             cmb_tema.DataSource = null;
         }
 

@@ -30,6 +30,7 @@ namespace Electronic_educational_and_methodical_complex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -152,6 +153,7 @@ namespace Electronic_educational_and_methodical_complex
             this.оценкаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uspfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btn_deleteotv = new System.Windows.Forms.Button();
             this.btn_clear_2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rb_prac = new System.Windows.Forms.RadioButton();
@@ -1459,6 +1461,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.btn_deleteotv);
             this.tabPage6.Controls.Add(this.btn_clear_2);
             this.tabPage6.Controls.Add(this.groupBox1);
             this.tabPage6.Controls.Add(this.cmb_predmet_4);
@@ -1475,6 +1478,16 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Ответы";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btn_deleteotv
+            // 
+            this.btn_deleteotv.Location = new System.Drawing.Point(494, 8);
+            this.btn_deleteotv.Name = "btn_deleteotv";
+            this.btn_deleteotv.Size = new System.Drawing.Size(90, 29);
+            this.btn_deleteotv.TabIndex = 52;
+            this.btn_deleteotv.Text = "Удалить ответ";
+            this.btn_deleteotv.UseVisualStyleBackColor = true;
+            this.btn_deleteotv.Click += new System.EventHandler(this.btn_deleteotv_Click);
             // 
             // btn_clear_2
             // 
@@ -1775,6 +1788,7 @@ namespace Electronic_educational_and_methodical_complex
             this.ClientSize = new System.Drawing.Size(947, 581);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1997,5 +2011,6 @@ namespace Electronic_educational_and_methodical_complex
         private DataBaseDataSetTableAdapters.PracticalTableAdapter practicalTableAdapter;
         private System.Windows.Forms.BindingSource testsBindingSource;
         private DataBaseDataSetTableAdapters.TestsTableAdapter testsTableAdapter;
+        private System.Windows.Forms.Button btn_deleteotv;
     }
 }

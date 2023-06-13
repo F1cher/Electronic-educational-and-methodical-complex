@@ -41,7 +41,6 @@ namespace Electronic_educational_and_methodical_complex
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
             this.predmetiTableAdapter.Fill(this.dataBaseDataSet.Predmeti);
             GetCon();
-            cmb_predmet.Text = "";
             cmb_tema.DataSource = null;
         }
 

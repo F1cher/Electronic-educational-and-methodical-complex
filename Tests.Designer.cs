@@ -30,6 +30,7 @@ namespace Electronic_educational_and_methodical_complex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tests));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_group = new System.Windows.Forms.ComboBox();
@@ -335,6 +336,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.btn_deleteusers);
             this.Controls.Add(this.btn_changetests);
             this.Controls.Add(this.btn_addtests);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tests";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Управление тестами";

@@ -30,6 +30,7 @@ namespace Electronic_educational_and_methodical_complex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnswersPractical));
             this.txt_pyt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -92,6 +93,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_predmet.DataSource = this.predmetiBindingSource;
             this.cmb_predmet.DisplayMember = "Предмет";
+            this.cmb_predmet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_predmet.FormattingEnabled = true;
             this.cmb_predmet.Location = new System.Drawing.Point(12, 28);
             this.cmb_predmet.Name = "cmb_predmet";
@@ -114,6 +116,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_tema.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmb_tema.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_tema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tema.FormattingEnabled = true;
             this.cmb_tema.Location = new System.Drawing.Point(139, 28);
             this.cmb_tema.Name = "cmb_tema";
@@ -196,6 +199,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_pyt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AnswersPractical";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сохранение ответов по практике";

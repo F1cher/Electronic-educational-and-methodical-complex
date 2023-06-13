@@ -118,6 +118,10 @@ namespace Electronic_educational_and_methodical_complex
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataBaseDataSet.Predmeti". При необходимости она может быть перемещена или удалена.
             this.predmetiTableAdapter.Fill(this.dataBaseDataSet.Predmeti);
             GetCon();
+            cmb_predmet.SelectedIndex = -1;
+            cmb_predmet_2.SelectedIndex = -1;
+            cmb_predmet_3.SelectedIndex = -1;
+            cmb_predmet_4.SelectedIndex = -1;
 
             if (Access == "Студент")
             {
@@ -136,8 +140,10 @@ namespace Electronic_educational_and_methodical_complex
                 txt_poiskfam.Text = familia + " " + ima + " " + otches;
                 button_clear.Visible = false;
                 btn_uspadd.Visible = false;
+                btn_deleteotv.Visible = false;
                 btn_uspchange.Visible = false;
                 btn_uspdelete.Visible = false;
+                btn_clear_2.Visible = false;
                 cmb_fio.Visible = false;
                 cmbox_predmet.Visible = false;
                 cmb_vid.Visible = false;
@@ -607,7 +613,7 @@ namespace Electronic_educational_and_methodical_complex
                 cmd.ExecuteNonQuery();
                 con.Close();
                 this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
-                toolStripStatusLabel2.Text = "Пользователь был изменен!";
+                toolStripStatusLabel2.Text = "Оценка была изменена!";
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -626,7 +632,7 @@ namespace Electronic_educational_and_methodical_complex
                 cmd.ExecuteNonQuery();
                 con.Close();
                 this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
-                toolStripStatusLabel2.Text = "Группа была удалена!";
+                toolStripStatusLabel2.Text = "Оценка была удалена!";
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -639,8 +645,6 @@ namespace Electronic_educational_and_methodical_complex
             cmbox_predmet.Text = dataGridView5.CurrentRow.Cells[2].Value.ToString();
             cmb_vid.Text = dataGridView5.CurrentRow.Cells[3].Value.ToString();
             cmb_tema.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
-            //Починить
-            //textBox1.Text = dataGridView5.CurrentRow.Cells[4].Value.ToString();
             txt_ocenka.Text = dataGridView5.CurrentRow.Cells[5].Value.ToString();
         }
         private void txt_poiskfam_TextChanged(object sender, EventArgs e)
@@ -825,6 +829,48 @@ namespace Electronic_educational_and_methodical_complex
         private void label24_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_deleteotv_Click(object sender, EventArgs e)
+        {
+            if (rb_prac.Checked == true)
+            {
+                DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить ответ студента?", "Удалить ответ", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string query = "Delete From AnswersPractical Where Код_ответа=@k_otv";
+                    cmd = new OleDbCommand(query, con);
+                    cmd.Parameters.AddWithValue("@k_otv", dataGridView6.CurrentRow.Cells[0].Value);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    this.answersPracticfullTableAdapter.Fill(this.dataBaseDataSet.AnswersPracticfull);
+                    toolStripStatusLabel2.Text = "Ответ был удален!";
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            if (rb_test.Checked == true)
+            {
+                DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить ответ студента?", "Удалить ответ", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string query = "Delete From AnswersTest Where Код_ответа=@k_otv";
+                    cmd = new OleDbCommand(query, con);
+                    cmd.Parameters.AddWithValue("@k_otv", dataGridView6.CurrentRow.Cells[0].Value);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    this.answersTestfullTableAdapter.Fill(this.dataBaseDataSet.AnswersTestfull);
+                    toolStripStatusLabel2.Text = "Ответ был удален!";
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
         }
 
         private void cmbox_predmet_TextChanged(object sender, EventArgs e)

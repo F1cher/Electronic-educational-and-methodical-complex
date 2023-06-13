@@ -30,6 +30,7 @@ namespace Electronic_educational_and_methodical_complex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.txt_fam = new System.Windows.Forms.TextBox();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_otch = new System.Windows.Forms.TextBox();
@@ -83,6 +84,7 @@ namespace Electronic_educational_and_methodical_complex
             this.txt_login.Name = "txt_login";
             this.txt_login.Size = new System.Drawing.Size(138, 20);
             this.txt_login.TabIndex = 4;
+            this.txt_login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_login_KeyPress);
             // 
             // txt_pass
             // 
@@ -90,6 +92,7 @@ namespace Electronic_educational_and_methodical_complex
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(138, 20);
             this.txt_pass.TabIndex = 5;
+            this.txt_pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pass_KeyPress);
             // 
             // label1
             // 
@@ -169,6 +172,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.cmb_group.DataSource = this.groupsBindingSource;
             this.cmb_group.DisplayMember = "Группа";
+            this.cmb_group.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_group.FormattingEnabled = true;
             this.cmb_group.Location = new System.Drawing.Point(90, 133);
             this.cmb_group.Name = "cmb_group";
@@ -240,6 +244,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.txt_otch);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.txt_fam);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";

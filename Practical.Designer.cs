@@ -30,6 +30,7 @@ namespace Electronic_educational_and_methodical_complex
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Practical));
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_group = new System.Windows.Forms.ComboBox();
             this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -335,6 +336,7 @@ namespace Electronic_educational_and_methodical_complex
             this.Controls.Add(this.btn_deletepractical);
             this.Controls.Add(this.btn_changepractical);
             this.Controls.Add(this.btn_addpractical);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Practical";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Управление практиками";

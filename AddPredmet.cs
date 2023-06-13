@@ -66,7 +66,7 @@ namespace Electronic_educational_and_methodical_complex
             {
                 if (dataGridView1.Rows[i].Cells[1].Value.ToString() == txt_predmet.Text)
                 {
-                    MessageBox.Show("Группа с таким названием уже существует!");
+                    MessageBox.Show("Предмет с таким названием уже существует!");
                     return;
                 }
             }
@@ -91,7 +91,7 @@ namespace Electronic_educational_and_methodical_complex
             {
                 if (dataGridView1.Rows[i].Cells[1].Value.ToString() == txt_predmet.Text)
                 {
-                    MessageBox.Show("Группа с таким названием уже существует!");
+                    MessageBox.Show("Предмет с таким названием уже существует!");
                     return;
                 }
             }

@@ -42,6 +42,18 @@ namespace Electronic_educational_and_methodical_complex
                 return;
             }
 
+            if (txt_login.TextLength < 5)
+            {
+                MessageBox.Show("Логин должен быть больше 5 символов!");
+                return;
+            }
+
+            if (txt_pass.TextLength < 5)
+            {
+                MessageBox.Show("Пароль должен быть больше 5 символов!");
+                return;
+            }
+
             con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
             string query = "Select COUNT(*) from Users where Фамилия = @fam and Имя = @name and Отчество = @otch and Код_группы = @k_group and Логин = @login and Пароль = @pass";
             cmd = new OleDbCommand(query, con);
@@ -59,8 +71,31 @@ namespace Electronic_educational_and_methodical_complex
                 con.Close();
                 return;
             }
-            string query_2 = "Insert into Users (Фамилия, Имя, Отчество, Код_группы, Логин, Пароль, Доступ) values (@fam, @name, @otch, @k_group, @login, @pass, @access)";
+
+            string query_2 = "Select COUNT(*) from Users where Логин = @login";
             cmd = new OleDbCommand(query_2, con);
+            cmd.Parameters.AddWithValue("@login", txt_login.Text);
+            Int32 count_2 = (Int32)cmd.ExecuteScalar();
+            if (count_2 > 0)
+            {
+                MessageBox.Show("Пользователь с таким логином уже зарегистрирован!");
+                con.Close();
+                return;
+            }
+
+            string query_3 = "Select COUNT(*) from Users where Пароль = @Pass";
+            cmd = new OleDbCommand(query_3, con);
+            cmd.Parameters.AddWithValue("@Pass", txt_pass.Text);
+            Int32 count_3 = (Int32)cmd.ExecuteScalar();
+            if (count_3 > 0)
+            {
+                MessageBox.Show("Пользователь с таким паролем уже зарегистрирован!");
+                con.Close();
+                return;
+            }
+
+            string query_4 = "Insert into Users (Фамилия, Имя, Отчество, Код_группы, Логин, Пароль, Доступ) values (@fam, @name, @otch, @k_group, @login, @pass, @access)";
+            cmd = new OleDbCommand(query_4, con);
             cmd.Parameters.AddWithValue("@fam", txt_fam.Text);
             cmd.Parameters.AddWithValue("@name", txt_name.Text);
             cmd.Parameters.AddWithValue("@otch", txt_otch.Text);
@@ -84,6 +119,32 @@ namespace Electronic_educational_and_methodical_complex
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void txt_pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') || (e.KeyChar >= 'a' && e.KeyChar <= 'z') || (e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)Keys.Back)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Пароль должен состоять из букв латинского алфавита и цифр!");
+                e.Handled = true;
+            }
+        }
+
+        private void txt_login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 'A' && e.KeyChar <= 'Z') || (e.KeyChar >= 'a' && e.KeyChar <= 'z') || (e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)Keys.Back)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Логин должен состоять из букв латинского алфавита и цифр!");
+                e.Handled = true;
+            }
         }
     }
 }
