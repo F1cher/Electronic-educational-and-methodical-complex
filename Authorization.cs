@@ -31,7 +31,7 @@ namespace Electronic_educational_and_methodical_complex
             }
             string login = Login.Text;
             string pass = Pass.Text;
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
+            con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
             cmd = new OleDbCommand();
             con.Open();
             cmd.Connection = con;

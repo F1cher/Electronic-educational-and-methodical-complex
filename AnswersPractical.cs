@@ -25,7 +25,7 @@ namespace Electronic_educational_and_methodical_complex
         }
         void GetCon()
         {
-            con = new OleDbConnection(@"Provider=Microsoft.ACE.Oledb.12.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
+            con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\DataBase.mdb;Jet OLEDB:Database Password=53605360");
             ds = new DataSet();
         }
         private void btn_obzor_Click(object sender, EventArgs e)
