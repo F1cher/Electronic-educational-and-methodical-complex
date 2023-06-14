@@ -33,6 +33,7 @@ namespace Electronic_educational_and_methodical_complex
             con.Open();
             da.Fill(ds, "Groups");
             dataGridView1.DataSource = ds.Tables["Groups"];
+            dataGridView1.Columns[0].Visible = false;
             con.Close();
         }
         public void Clear()

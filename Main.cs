@@ -122,6 +122,10 @@ namespace Electronic_educational_and_methodical_complex
             cmb_predmet_2.SelectedIndex = -1;
             cmb_predmet_3.SelectedIndex = -1;
             cmb_predmet_4.SelectedIndex = -1;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView3.Columns[0].Visible = false;
+            dataGridView4.Columns[0].Visible = false;
+            dataGridView5.Columns[0].Visible = false;
 
             if (Access == "Студент")
             {
@@ -219,6 +223,7 @@ namespace Electronic_educational_and_methodical_complex
             Lectures Lectures = new Lectures();
             Lectures.ShowDialog();
             this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+            dataGridView2.Columns[0].Visible = false;
         }
         private void Add_groups_Click(object sender, EventArgs e)
         {
@@ -281,6 +286,7 @@ namespace Electronic_educational_and_methodical_complex
             cmd.ExecuteNonQuery();
             con.Close();
             this.studentsTableAdapter.Fill(this.dataBaseDataSet.Students);
+
             toolStripStatusLabel1.Text = "Пользователь был добавлен!";
         }
         private void btn_changeusers_Click(object sender, EventArgs e)
@@ -362,6 +368,7 @@ namespace Electronic_educational_and_methodical_complex
             Practical Practical = new Practical();
             Practical.ShowDialog();
             this.practicalfullTableAdapter.Fill(this.dataBaseDataSet.Practicalfull);
+            dataGridView3.Columns[0].Visible = false;
         }
         private void dataGridView3_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -413,6 +420,7 @@ namespace Electronic_educational_and_methodical_complex
             Tests Tests = new Tests();
             Tests.ShowDialog();
             this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
+            dataGridView4.Columns[0].Visible = false;
         }
         private void dataGridView4_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
