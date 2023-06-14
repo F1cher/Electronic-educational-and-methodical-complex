@@ -44,6 +44,11 @@ namespace Electronic_educational_and_methodical_complex
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодлекцииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturesAddBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -58,11 +63,6 @@ namespace Electronic_educational_and_methodical_complex
             this.label12 = new System.Windows.Forms.Label();
             this.txt_naz = new System.Windows.Forms.TextBox();
             this.lecturesAddTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.LecturesAddTableAdapter();
-            this.кодлекцииDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.predmetiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,6 +74,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_clear
             // 
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_clear.Location = new System.Drawing.Point(294, 12);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(87, 29);
@@ -84,6 +85,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_deletelectures
             // 
+            this.btn_deletelectures.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_deletelectures.Location = new System.Drawing.Point(201, 12);
             this.btn_deletelectures.Name = "btn_deletelectures";
             this.btn_deletelectures.Size = new System.Drawing.Size(87, 29);
@@ -94,6 +96,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_changelectures
             // 
+            this.btn_changelectures.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_changelectures.Location = new System.Drawing.Point(108, 12);
             this.btn_changelectures.Name = "btn_changelectures";
             this.btn_changelectures.Size = new System.Drawing.Size(87, 29);
@@ -104,6 +107,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_addlectures
             // 
+            this.btn_addlectures.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_addlectures.Location = new System.Drawing.Point(15, 12);
             this.btn_addlectures.Name = "btn_addlectures";
             this.btn_addlectures.Size = new System.Drawing.Size(87, 29);
@@ -138,12 +142,12 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.txt_tema.Location = new System.Drawing.Point(266, 134);
             this.txt_tema.Name = "txt_tema";
-            this.txt_tema.Size = new System.Drawing.Size(100, 20);
+            this.txt_tema.Size = new System.Drawing.Size(123, 20);
             this.txt_tema.TabIndex = 9;
             // 
             // txt_pyt
             // 
-            this.txt_pyt.Location = new System.Drawing.Point(372, 135);
+            this.txt_pyt.Location = new System.Drawing.Point(395, 134);
             this.txt_pyt.Name = "txt_pyt";
             this.txt_pyt.Size = new System.Drawing.Size(155, 20);
             this.txt_pyt.TabIndex = 10;
@@ -151,27 +155,30 @@ namespace Electronic_educational_and_methodical_complex
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 118);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.Location = new System.Drawing.Point(12, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Предмет";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 118);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label2.Location = new System.Drawing.Point(266, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(123, 17);
             this.label2.TabIndex = 12;
             this.label2.Text = "Название лекции";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(369, 119);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label3.Location = new System.Drawing.Point(396, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 13;
             this.label3.Text = "Путь";
             // 
@@ -199,105 +206,6 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView1.Size = new System.Drawing.Size(673, 311);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
-            // 
-            // lecturesAddBindingSource
-            // 
-            this.lecturesAddBindingSource.DataMember = "LecturesAdd";
-            this.lecturesAddBindingSource.DataSource = this.dataBaseDataSet;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 476);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(697, 22);
-            this.statusStrip1.TabIndex = 15;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // btn_obzor
-            // 
-            this.btn_obzor.Location = new System.Drawing.Point(533, 133);
-            this.btn_obzor.Name = "btn_obzor";
-            this.btn_obzor.Size = new System.Drawing.Size(75, 23);
-            this.btn_obzor.TabIndex = 16;
-            this.btn_obzor.Text = "Обзор";
-            this.btn_obzor.UseVisualStyleBackColor = true;
-            this.btn_obzor.Click += new System.EventHandler(this.btn_obzor_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // predmetiTableAdapter
-            // 
-            this.predmetiTableAdapter.ClearBeforeFill = true;
-            // 
-            // cmb_group
-            // 
-            this.cmb_group.DataSource = this.groupsBindingSource;
-            this.cmb_group.DisplayMember = "Группа";
-            this.cmb_group.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_group.FormattingEnabled = true;
-            this.cmb_group.Location = new System.Drawing.Point(139, 133);
-            this.cmb_group.Name = "cmb_group";
-            this.cmb_group.Size = new System.Drawing.Size(121, 21);
-            this.cmb_group.TabIndex = 17;
-            this.cmb_group.ValueMember = "Код_группы";
-            // 
-            // groupsBindingSource
-            // 
-            this.groupsBindingSource.DataMember = "Groups";
-            this.groupsBindingSource.DataSource = this.dataBaseDataSet;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Группа";
-            // 
-            // groupsTableAdapter
-            // 
-            this.groupsTableAdapter.ClearBeforeFill = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(592, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 114);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(422, 12);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Введите название лекции";
-            // 
-            // txt_naz
-            // 
-            this.txt_naz.Location = new System.Drawing.Point(410, 28);
-            this.txt_naz.Name = "txt_naz";
-            this.txt_naz.Size = new System.Drawing.Size(160, 20);
-            this.txt_naz.TabIndex = 20;
-            this.txt_naz.TextChanged += new System.EventHandler(this.txt_naz_TextChanged);
-            // 
-            // lecturesAddTableAdapter
-            // 
-            this.lecturesAddTableAdapter.ClearBeforeFill = true;
             // 
             // кодлекцииDataGridViewTextBoxColumn
             // 
@@ -334,6 +242,108 @@ namespace Electronic_educational_and_methodical_complex
             this.путьDataGridViewTextBoxColumn.HeaderText = "Путь";
             this.путьDataGridViewTextBoxColumn.Name = "путьDataGridViewTextBoxColumn";
             this.путьDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lecturesAddBindingSource
+            // 
+            this.lecturesAddBindingSource.DataMember = "LecturesAdd";
+            this.lecturesAddBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 476);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(697, 22);
+            this.statusStrip1.TabIndex = 15;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // btn_obzor
+            // 
+            this.btn_obzor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_obzor.Location = new System.Drawing.Point(556, 130);
+            this.btn_obzor.Name = "btn_obzor";
+            this.btn_obzor.Size = new System.Drawing.Size(75, 25);
+            this.btn_obzor.TabIndex = 16;
+            this.btn_obzor.Text = "Обзор";
+            this.btn_obzor.UseVisualStyleBackColor = true;
+            this.btn_obzor.Click += new System.EventHandler(this.btn_obzor_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // predmetiTableAdapter
+            // 
+            this.predmetiTableAdapter.ClearBeforeFill = true;
+            // 
+            // cmb_group
+            // 
+            this.cmb_group.DataSource = this.groupsBindingSource;
+            this.cmb_group.DisplayMember = "Группа";
+            this.cmb_group.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_group.FormattingEnabled = true;
+            this.cmb_group.Location = new System.Drawing.Point(139, 133);
+            this.cmb_group.Name = "cmb_group";
+            this.cmb_group.Size = new System.Drawing.Size(121, 21);
+            this.cmb_group.TabIndex = 17;
+            this.cmb_group.ValueMember = "Код_группы";
+            // 
+            // groupsBindingSource
+            // 
+            this.groupsBindingSource.DataMember = "Groups";
+            this.groupsBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label4.Location = new System.Drawing.Point(136, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Группа";
+            // 
+            // groupsTableAdapter
+            // 
+            this.groupsTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(592, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 114);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label12.Location = new System.Drawing.Point(406, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(180, 17);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Введите название лекции";
+            // 
+            // txt_naz
+            // 
+            this.txt_naz.Location = new System.Drawing.Point(415, 31);
+            this.txt_naz.Name = "txt_naz";
+            this.txt_naz.Size = new System.Drawing.Size(160, 20);
+            this.txt_naz.TabIndex = 20;
+            this.txt_naz.TextChanged += new System.EventHandler(this.txt_naz_TextChanged);
+            // 
+            // lecturesAddTableAdapter
+            // 
+            this.lecturesAddTableAdapter.ClearBeforeFill = true;
             // 
             // Lectures
             // 

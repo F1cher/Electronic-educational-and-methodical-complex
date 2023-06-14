@@ -39,6 +39,11 @@ namespace Electronic_educational_and_methodical_complex
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодпрактикиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.группаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.practicalAddBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,11 +61,8 @@ namespace Electronic_educational_and_methodical_complex
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.practicalAddTableAdapter = new Electronic_educational_and_methodical_complex.DataBaseDataSetTableAdapters.PracticalAddTableAdapter();
-            this.кодпрактикиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.предметDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.группаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.путьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_naz = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -73,9 +75,10 @@ namespace Electronic_educational_and_methodical_complex
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 121);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label4.Location = new System.Drawing.Point(136, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 33;
             this.label4.Text = "Группа";
             // 
@@ -103,9 +106,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_obzor
             // 
-            this.btn_obzor.Location = new System.Drawing.Point(610, 134);
+            this.btn_obzor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_obzor.Location = new System.Drawing.Point(567, 133);
             this.btn_obzor.Name = "btn_obzor";
-            this.btn_obzor.Size = new System.Drawing.Size(75, 23);
+            this.btn_obzor.Size = new System.Drawing.Size(75, 25);
             this.btn_obzor.TabIndex = 31;
             this.btn_obzor.Text = "Обзор";
             this.btn_obzor.UseVisualStyleBackColor = true;
@@ -151,135 +155,6 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
-            // practicalAddBindingSource
-            // 
-            this.practicalAddBindingSource.DataMember = "PracticalAdd";
-            this.practicalAddBindingSource.DataSource = this.dataBaseDataSet;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(446, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Путь";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Название практики";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Предмет";
-            // 
-            // txt_pyt
-            // 
-            this.txt_pyt.Location = new System.Drawing.Point(449, 136);
-            this.txt_pyt.Name = "txt_pyt";
-            this.txt_pyt.Size = new System.Drawing.Size(155, 20);
-            this.txt_pyt.TabIndex = 25;
-            // 
-            // txt_tema
-            // 
-            this.txt_tema.Location = new System.Drawing.Point(266, 137);
-            this.txt_tema.Name = "txt_tema";
-            this.txt_tema.Size = new System.Drawing.Size(177, 20);
-            this.txt_tema.TabIndex = 24;
-            // 
-            // cmb_predmet
-            // 
-            this.cmb_predmet.DataSource = this.predmetiBindingSource;
-            this.cmb_predmet.DisplayMember = "Предмет";
-            this.cmb_predmet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_predmet.FormattingEnabled = true;
-            this.cmb_predmet.Location = new System.Drawing.Point(12, 137);
-            this.cmb_predmet.Name = "cmb_predmet";
-            this.cmb_predmet.Size = new System.Drawing.Size(121, 21);
-            this.cmb_predmet.TabIndex = 23;
-            this.cmb_predmet.ValueMember = "Код_предмета";
-            // 
-            // predmetiBindingSource
-            // 
-            this.predmetiBindingSource.DataMember = "Predmeti";
-            this.predmetiBindingSource.DataSource = this.dataBaseDataSet;
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.Location = new System.Drawing.Point(294, 12);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(87, 29);
-            this.btn_clear.TabIndex = 22;
-            this.btn_clear.Text = "Очистить";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
-            // btn_deletepractical
-            // 
-            this.btn_deletepractical.Location = new System.Drawing.Point(201, 12);
-            this.btn_deletepractical.Name = "btn_deletepractical";
-            this.btn_deletepractical.Size = new System.Drawing.Size(87, 29);
-            this.btn_deletepractical.TabIndex = 21;
-            this.btn_deletepractical.Text = "Удалить";
-            this.btn_deletepractical.UseVisualStyleBackColor = true;
-            this.btn_deletepractical.Click += new System.EventHandler(this.btn_deletepractical_Click);
-            // 
-            // btn_changepractical
-            // 
-            this.btn_changepractical.Location = new System.Drawing.Point(108, 12);
-            this.btn_changepractical.Name = "btn_changepractical";
-            this.btn_changepractical.Size = new System.Drawing.Size(87, 29);
-            this.btn_changepractical.TabIndex = 20;
-            this.btn_changepractical.Text = "Изменить";
-            this.btn_changepractical.UseVisualStyleBackColor = true;
-            this.btn_changepractical.Click += new System.EventHandler(this.btn_changepractical_Click);
-            // 
-            // btn_addpractical
-            // 
-            this.btn_addpractical.Location = new System.Drawing.Point(15, 12);
-            this.btn_addpractical.Name = "btn_addpractical";
-            this.btn_addpractical.Size = new System.Drawing.Size(87, 29);
-            this.btn_addpractical.TabIndex = 19;
-            this.btn_addpractical.Text = "Добавить";
-            this.btn_addpractical.UseVisualStyleBackColor = true;
-            this.btn_addpractical.Click += new System.EventHandler(this.btn_addpractical_Click);
-            // 
-            // predmetiTableAdapter
-            // 
-            this.predmetiTableAdapter.ClearBeforeFill = true;
-            // 
-            // groupsTableAdapter
-            // 
-            this.groupsTableAdapter.ClearBeforeFill = true;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(592, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 114);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
-            // practicalAddTableAdapter
-            // 
-            this.practicalAddTableAdapter.ClearBeforeFill = true;
-            // 
             // кодпрактикиDataGridViewTextBoxColumn
             // 
             this.кодпрактикиDataGridViewTextBoxColumn.DataPropertyName = "Код_практики";
@@ -316,11 +191,167 @@ namespace Electronic_educational_and_methodical_complex
             this.путьDataGridViewTextBoxColumn.Name = "путьDataGridViewTextBoxColumn";
             this.путьDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // practicalAddBindingSource
+            // 
+            this.practicalAddBindingSource.DataMember = "PracticalAdd";
+            this.practicalAddBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label3.Location = new System.Drawing.Point(403, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 17);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Путь";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label2.Location = new System.Drawing.Point(263, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 17);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Название практики";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.Location = new System.Drawing.Point(9, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Предмет";
+            // 
+            // txt_pyt
+            // 
+            this.txt_pyt.Location = new System.Drawing.Point(406, 136);
+            this.txt_pyt.Name = "txt_pyt";
+            this.txt_pyt.Size = new System.Drawing.Size(155, 20);
+            this.txt_pyt.TabIndex = 25;
+            // 
+            // txt_tema
+            // 
+            this.txt_tema.Location = new System.Drawing.Point(266, 137);
+            this.txt_tema.Name = "txt_tema";
+            this.txt_tema.Size = new System.Drawing.Size(134, 20);
+            this.txt_tema.TabIndex = 24;
+            // 
+            // cmb_predmet
+            // 
+            this.cmb_predmet.DataSource = this.predmetiBindingSource;
+            this.cmb_predmet.DisplayMember = "Предмет";
+            this.cmb_predmet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_predmet.FormattingEnabled = true;
+            this.cmb_predmet.Location = new System.Drawing.Point(12, 137);
+            this.cmb_predmet.Name = "cmb_predmet";
+            this.cmb_predmet.Size = new System.Drawing.Size(121, 21);
+            this.cmb_predmet.TabIndex = 23;
+            this.cmb_predmet.ValueMember = "Код_предмета";
+            // 
+            // predmetiBindingSource
+            // 
+            this.predmetiBindingSource.DataMember = "Predmeti";
+            this.predmetiBindingSource.DataSource = this.dataBaseDataSet;
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_clear.Location = new System.Drawing.Point(294, 12);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(87, 29);
+            this.btn_clear.TabIndex = 22;
+            this.btn_clear.Text = "Очистить";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
+            // btn_deletepractical
+            // 
+            this.btn_deletepractical.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_deletepractical.Location = new System.Drawing.Point(201, 12);
+            this.btn_deletepractical.Name = "btn_deletepractical";
+            this.btn_deletepractical.Size = new System.Drawing.Size(87, 29);
+            this.btn_deletepractical.TabIndex = 21;
+            this.btn_deletepractical.Text = "Удалить";
+            this.btn_deletepractical.UseVisualStyleBackColor = true;
+            this.btn_deletepractical.Click += new System.EventHandler(this.btn_deletepractical_Click);
+            // 
+            // btn_changepractical
+            // 
+            this.btn_changepractical.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_changepractical.Location = new System.Drawing.Point(108, 12);
+            this.btn_changepractical.Name = "btn_changepractical";
+            this.btn_changepractical.Size = new System.Drawing.Size(87, 29);
+            this.btn_changepractical.TabIndex = 20;
+            this.btn_changepractical.Text = "Изменить";
+            this.btn_changepractical.UseVisualStyleBackColor = true;
+            this.btn_changepractical.Click += new System.EventHandler(this.btn_changepractical_Click);
+            // 
+            // btn_addpractical
+            // 
+            this.btn_addpractical.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_addpractical.Location = new System.Drawing.Point(15, 12);
+            this.btn_addpractical.Name = "btn_addpractical";
+            this.btn_addpractical.Size = new System.Drawing.Size(87, 29);
+            this.btn_addpractical.TabIndex = 19;
+            this.btn_addpractical.Text = "Добавить";
+            this.btn_addpractical.UseVisualStyleBackColor = true;
+            this.btn_addpractical.Click += new System.EventHandler(this.btn_addpractical_Click);
+            // 
+            // predmetiTableAdapter
+            // 
+            this.predmetiTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupsTableAdapter
+            // 
+            this.groupsTableAdapter.ClearBeforeFill = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Electronic_educational_and_methodical_complex.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(592, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 114);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // practicalAddTableAdapter
+            // 
+            this.practicalAddTableAdapter.ClearBeforeFill = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label12.Location = new System.Drawing.Point(392, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(194, 17);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Введите название практики";
+            // 
+            // txt_naz
+            // 
+            this.txt_naz.Location = new System.Drawing.Point(408, 32);
+            this.txt_naz.Name = "txt_naz";
+            this.txt_naz.Size = new System.Drawing.Size(160, 20);
+            this.txt_naz.TabIndex = 35;
+            this.txt_naz.TextChanged += new System.EventHandler(this.txt_naz_TextChanged);
+            // 
             // Practical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 498);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txt_naz);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmb_group);
@@ -387,5 +418,7 @@ namespace Electronic_educational_and_methodical_complex
         private System.Windows.Forms.DataGridViewTextBoxColumn группаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn путьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_naz;
     }
 }

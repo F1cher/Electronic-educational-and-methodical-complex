@@ -164,5 +164,12 @@ namespace Electronic_educational_and_methodical_complex
             txt_tema.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             txt_pyt.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
         }
+
+        private void txt_naz_TextChanged(object sender, EventArgs e)
+        {
+            DataView poisk = new DataView(this.dataBaseDataSet.PracticalAdd);
+            poisk.RowFilter = "Название LIKE '" + txt_naz.Text + "%'";
+            this.practicalAddBindingSource.DataSource = poisk;
+        }
     }
 }

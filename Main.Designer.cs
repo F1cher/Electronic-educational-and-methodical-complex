@@ -264,7 +264,7 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage1.Controls.Add(this.Add_lectures);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(937, 529);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Лекции";
@@ -274,16 +274,17 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(651, 6);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label12.Location = new System.Drawing.Point(650, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 13);
+            this.label12.Size = new System.Drawing.Size(180, 17);
             this.label12.TabIndex = 16;
             this.label12.Text = "Введите название лекции";
             // 
             // txt_naz
             // 
             this.txt_naz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_naz.Location = new System.Drawing.Point(654, 22);
+            this.txt_naz.Location = new System.Drawing.Point(658, 25);
             this.txt_naz.Name = "txt_naz";
             this.txt_naz.Size = new System.Drawing.Size(160, 20);
             this.txt_naz.TabIndex = 15;
@@ -301,9 +302,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Add_groups
             // 
+            this.Add_groups.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Add_groups.Location = new System.Drawing.Point(6, 47);
             this.Add_groups.Name = "Add_groups";
-            this.Add_groups.Size = new System.Drawing.Size(143, 29);
+            this.Add_groups.Size = new System.Drawing.Size(187, 29);
             this.Add_groups.TabIndex = 8;
             this.Add_groups.Text = "Управление группами";
             this.Add_groups.UseVisualStyleBackColor = true;
@@ -311,9 +313,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Add_predmet
             // 
+            this.Add_predmet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Add_predmet.Location = new System.Drawing.Point(6, 82);
             this.Add_predmet.Name = "Add_predmet";
-            this.Add_predmet.Size = new System.Drawing.Size(143, 29);
+            this.Add_predmet.Size = new System.Drawing.Size(187, 29);
             this.Add_predmet.TabIndex = 5;
             this.Add_predmet.Text = "Управление предметами";
             this.Add_predmet.UseVisualStyleBackColor = true;
@@ -396,10 +399,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label1.Location = new System.Drawing.Point(651, 47);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.Location = new System.Drawing.Point(650, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(134, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Выберите предмет";
             // 
@@ -409,7 +412,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet.DataSource = this.predmetiBindingSource;
             this.cmb_predmet.DisplayMember = "Предмет";
             this.cmb_predmet.FormattingEnabled = true;
-            this.cmb_predmet.Location = new System.Drawing.Point(654, 63);
+            this.cmb_predmet.Location = new System.Drawing.Point(657, 73);
             this.cmb_predmet.Name = "cmb_predmet";
             this.cmb_predmet.Size = new System.Drawing.Size(160, 21);
             this.cmb_predmet.TabIndex = 2;
@@ -423,9 +426,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Add_lectures
             // 
+            this.Add_lectures.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Add_lectures.Location = new System.Drawing.Point(6, 12);
             this.Add_lectures.Name = "Add_lectures";
-            this.Add_lectures.Size = new System.Drawing.Size(143, 29);
+            this.Add_lectures.Size = new System.Drawing.Size(187, 29);
             this.Add_lectures.TabIndex = 0;
             this.Add_lectures.Text = "Управление лекциями";
             this.Add_lectures.UseVisualStyleBackColor = true;
@@ -444,7 +448,7 @@ namespace Electronic_educational_and_methodical_complex
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(937, 529);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Практические задания";
@@ -452,9 +456,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_save
             // 
+            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_save.Location = new System.Drawing.Point(304, 12);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(109, 29);
+            this.btn_save.Size = new System.Drawing.Size(128, 29);
             this.btn_save.TabIndex = 21;
             this.btn_save.Text = "Сохранить ответы";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -464,16 +469,17 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(651, 6);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label13.Location = new System.Drawing.Point(636, 6);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(150, 13);
+            this.label13.Size = new System.Drawing.Size(194, 17);
             this.label13.TabIndex = 20;
             this.label13.Text = "Введите название практики";
             // 
             // txt_naz_2
             // 
             this.txt_naz_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_naz_2.Location = new System.Drawing.Point(654, 22);
+            this.txt_naz_2.Location = new System.Drawing.Point(655, 24);
             this.txt_naz_2.Name = "txt_naz_2";
             this.txt_naz_2.Size = new System.Drawing.Size(160, 20);
             this.txt_naz_2.TabIndex = 19;
@@ -500,7 +506,7 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView3.Location = new System.Drawing.Point(6, 127);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(923, 399);
+            this.dataGridView3.Size = new System.Drawing.Size(923, 402);
             this.dataGridView3.TabIndex = 16;
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
             this.dataGridView3.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEnter);
@@ -549,9 +555,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Add_predmet_2
             // 
+            this.Add_predmet_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Add_predmet_2.Location = new System.Drawing.Point(6, 47);
             this.Add_predmet_2.Name = "Add_predmet_2";
-            this.Add_predmet_2.Size = new System.Drawing.Size(143, 29);
+            this.Add_predmet_2.Size = new System.Drawing.Size(187, 29);
             this.Add_predmet_2.TabIndex = 15;
             this.Add_predmet_2.Text = "Управление предметами";
             this.Add_predmet_2.UseVisualStyleBackColor = true;
@@ -561,10 +568,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label10.Location = new System.Drawing.Point(651, 47);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label10.Location = new System.Drawing.Point(636, 47);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 13);
+            this.label10.Size = new System.Drawing.Size(134, 17);
             this.label10.TabIndex = 14;
             this.label10.Text = "Выберите предмет";
             // 
@@ -574,7 +581,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet_2.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_2.DisplayMember = "Предмет";
             this.cmb_predmet_2.FormattingEnabled = true;
-            this.cmb_predmet_2.Location = new System.Drawing.Point(654, 63);
+            this.cmb_predmet_2.Location = new System.Drawing.Point(655, 67);
             this.cmb_predmet_2.Name = "cmb_predmet_2";
             this.cmb_predmet_2.Size = new System.Drawing.Size(160, 21);
             this.cmb_predmet_2.TabIndex = 13;
@@ -583,9 +590,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Add_practical
             // 
+            this.Add_practical.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Add_practical.Location = new System.Drawing.Point(6, 12);
             this.Add_practical.Name = "Add_practical";
-            this.Add_practical.Size = new System.Drawing.Size(143, 29);
+            this.Add_practical.Size = new System.Drawing.Size(187, 29);
             this.Add_practical.TabIndex = 12;
             this.Add_practical.Text = "Управление практиками";
             this.Add_practical.UseVisualStyleBackColor = true;
@@ -621,9 +629,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_save_2
             // 
+            this.btn_save_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_save_2.Location = new System.Drawing.Point(304, 12);
             this.btn_save_2.Name = "btn_save_2";
-            this.btn_save_2.Size = new System.Drawing.Size(109, 29);
+            this.btn_save_2.Size = new System.Drawing.Size(128, 29);
             this.btn_save_2.TabIndex = 26;
             this.btn_save_2.Text = "Сохранить ответы";
             this.btn_save_2.UseVisualStyleBackColor = true;
@@ -633,16 +642,17 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(651, 6);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label14.Location = new System.Drawing.Point(660, 6);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(131, 13);
+            this.label14.Size = new System.Drawing.Size(170, 17);
             this.label14.TabIndex = 25;
             this.label14.Text = "Введите название теста";
             // 
             // txt_naz_3
             // 
             this.txt_naz_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_naz_3.Location = new System.Drawing.Point(654, 22);
+            this.txt_naz_3.Location = new System.Drawing.Point(663, 26);
             this.txt_naz_3.Name = "txt_naz_3";
             this.txt_naz_3.Size = new System.Drawing.Size(160, 20);
             this.txt_naz_3.TabIndex = 24;
@@ -669,7 +679,7 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView4.Location = new System.Drawing.Point(6, 127);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(923, 399);
+            this.dataGridView4.Size = new System.Drawing.Size(923, 402);
             this.dataGridView4.TabIndex = 21;
             this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
             this.dataGridView4.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellEnter);
@@ -723,9 +733,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Add_predmet_3
             // 
+            this.Add_predmet_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Add_predmet_3.Location = new System.Drawing.Point(6, 47);
             this.Add_predmet_3.Name = "Add_predmet_3";
-            this.Add_predmet_3.Size = new System.Drawing.Size(143, 29);
+            this.Add_predmet_3.Size = new System.Drawing.Size(187, 29);
             this.Add_predmet_3.TabIndex = 20;
             this.Add_predmet_3.Text = "Управление предметами";
             this.Add_predmet_3.UseVisualStyleBackColor = true;
@@ -735,10 +746,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label11.Location = new System.Drawing.Point(651, 47);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label11.Location = new System.Drawing.Point(660, 49);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.Size = new System.Drawing.Size(134, 17);
             this.label11.TabIndex = 19;
             this.label11.Text = "Выберите предмет";
             // 
@@ -748,7 +759,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet_3.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_3.DisplayMember = "Предмет";
             this.cmb_predmet_3.FormattingEnabled = true;
-            this.cmb_predmet_3.Location = new System.Drawing.Point(654, 63);
+            this.cmb_predmet_3.Location = new System.Drawing.Point(663, 69);
             this.cmb_predmet_3.Name = "cmb_predmet_3";
             this.cmb_predmet_3.Size = new System.Drawing.Size(160, 21);
             this.cmb_predmet_3.TabIndex = 18;
@@ -757,9 +768,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // Add_tests
             // 
+            this.Add_tests.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Add_tests.Location = new System.Drawing.Point(6, 12);
             this.Add_tests.Name = "Add_tests";
-            this.Add_tests.Size = new System.Drawing.Size(143, 29);
+            this.Add_tests.Size = new System.Drawing.Size(187, 29);
             this.Add_tests.TabIndex = 17;
             this.Add_tests.Text = "Управление тестами";
             this.Add_tests.UseVisualStyleBackColor = true;
@@ -810,7 +822,7 @@ namespace Electronic_educational_and_methodical_complex
             // txt_poiskfam_2
             // 
             this.txt_poiskfam_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_poiskfam_2.Location = new System.Drawing.Point(670, 25);
+            this.txt_poiskfam_2.Location = new System.Drawing.Point(653, 24);
             this.txt_poiskfam_2.Name = "txt_poiskfam_2";
             this.txt_poiskfam_2.Size = new System.Drawing.Size(160, 20);
             this.txt_poiskfam_2.TabIndex = 41;
@@ -820,9 +832,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(667, 9);
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label24.Location = new System.Drawing.Point(667, 6);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(100, 13);
+            this.label24.Size = new System.Drawing.Size(129, 17);
             this.label24.TabIndex = 40;
             this.label24.Text = "Введите фамилию";
             this.label24.Click += new System.EventHandler(this.label24_Click);
@@ -855,70 +868,70 @@ namespace Electronic_educational_and_methodical_complex
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label9.Location = new System.Drawing.Point(645, 84);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label9.Location = new System.Drawing.Point(645, 79);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 21;
             this.label9.Text = "Доступ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label8.Location = new System.Drawing.Point(539, 84);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label8.Location = new System.Drawing.Point(539, 80);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.Size = new System.Drawing.Size(57, 17);
             this.label8.TabIndex = 20;
             this.label8.Text = "Пароль";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label7.Location = new System.Drawing.Point(436, 84);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label7.Location = new System.Drawing.Point(433, 80);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.Size = new System.Drawing.Size(47, 17);
             this.label7.TabIndex = 19;
             this.label7.Text = "Логин";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label6.Location = new System.Drawing.Point(334, 84);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label6.Location = new System.Drawing.Point(329, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(55, 17);
             this.label6.TabIndex = 18;
             this.label6.Text = "Группа";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label5.Location = new System.Drawing.Point(223, 84);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label5.Location = new System.Drawing.Point(223, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 17;
             this.label5.Text = "Отчество";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label4.Location = new System.Drawing.Point(117, 84);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label4.Location = new System.Drawing.Point(117, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(35, 17);
             this.label4.TabIndex = 16;
             this.label4.Text = "Имя";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label3.Location = new System.Drawing.Point(11, 84);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label3.Location = new System.Drawing.Point(11, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "Фамилия";
             // 
@@ -989,6 +1002,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_clear
             // 
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_clear.Location = new System.Drawing.Point(285, 6);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(87, 29);
@@ -999,6 +1013,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_deleteusers
             // 
+            this.btn_deleteusers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_deleteusers.Location = new System.Drawing.Point(192, 6);
             this.btn_deleteusers.Name = "btn_deleteusers";
             this.btn_deleteusers.Size = new System.Drawing.Size(87, 29);
@@ -1009,6 +1024,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_changeusers
             // 
+            this.btn_changeusers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_changeusers.Location = new System.Drawing.Point(99, 6);
             this.btn_changeusers.Name = "btn_changeusers";
             this.btn_changeusers.Size = new System.Drawing.Size(87, 29);
@@ -1019,6 +1035,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_addusers
             // 
+            this.btn_addusers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_addusers.Location = new System.Drawing.Point(6, 6);
             this.btn_addusers.Name = "btn_addusers";
             this.btn_addusers.Size = new System.Drawing.Size(87, 29);
@@ -1051,7 +1068,7 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView1.Location = new System.Drawing.Point(6, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(923, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(923, 381);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
@@ -1151,7 +1168,7 @@ namespace Electronic_educational_and_methodical_complex
             // txt_poisktemy
             // 
             this.txt_poisktemy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_poisktemy.Location = new System.Drawing.Point(670, 61);
+            this.txt_poisktemy.Location = new System.Drawing.Point(670, 69);
             this.txt_poisktemy.Name = "txt_poisktemy";
             this.txt_poisktemy.Size = new System.Drawing.Size(160, 20);
             this.txt_poisktemy.TabIndex = 45;
@@ -1160,17 +1177,19 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(667, 45);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label21.Location = new System.Drawing.Point(667, 49);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(116, 13);
+            this.label21.Size = new System.Drawing.Size(151, 17);
             this.label21.TabIndex = 44;
             this.label21.Text = "Введите тему работы";
             // 
             // btn_export
             // 
-            this.btn_export.Location = new System.Drawing.Point(475, 6);
+            this.btn_export.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_export.Location = new System.Drawing.Point(450, 6);
             this.btn_export.Name = "btn_export";
-            this.btn_export.Size = new System.Drawing.Size(151, 29);
+            this.btn_export.Size = new System.Drawing.Size(173, 29);
             this.btn_export.TabIndex = 43;
             this.btn_export.Text = "Экспортировать в Word";
             this.btn_export.UseVisualStyleBackColor = true;
@@ -1179,10 +1198,10 @@ namespace Electronic_educational_and_methodical_complex
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label18.Location = new System.Drawing.Point(375, 94);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label18.Location = new System.Drawing.Point(375, 90);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 13);
+            this.label18.Size = new System.Drawing.Size(86, 17);
             this.label18.TabIndex = 42;
             this.label18.Text = "Вид работы";
             // 
@@ -1217,7 +1236,7 @@ namespace Electronic_educational_and_methodical_complex
             // txt_poiskfam
             // 
             this.txt_poiskfam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_poiskfam.Location = new System.Drawing.Point(670, 22);
+            this.txt_poiskfam.Location = new System.Drawing.Point(670, 26);
             this.txt_poiskfam.Name = "txt_poiskfam";
             this.txt_poiskfam.Size = new System.Drawing.Size(160, 20);
             this.txt_poiskfam.TabIndex = 39;
@@ -1227,9 +1246,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label17.Location = new System.Drawing.Point(667, 6);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(100, 13);
+            this.label17.Size = new System.Drawing.Size(129, 17);
             this.label17.TabIndex = 38;
             this.label17.Text = "Введите фамилию";
             // 
@@ -1261,10 +1281,10 @@ namespace Electronic_educational_and_methodical_complex
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label16.Location = new System.Drawing.Point(218, 94);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label16.Location = new System.Drawing.Point(218, 90);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.Size = new System.Drawing.Size(66, 17);
             this.label16.TabIndex = 35;
             this.label16.Text = "Предмет";
             // 
@@ -1307,30 +1327,30 @@ namespace Electronic_educational_and_methodical_complex
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label2.Location = new System.Drawing.Point(713, 94);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label2.Location = new System.Drawing.Point(713, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 32;
             this.label2.Text = "Оценка";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label15.Location = new System.Drawing.Point(528, 94);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label15.Location = new System.Drawing.Point(528, 90);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 13);
+            this.label15.Size = new System.Drawing.Size(95, 17);
             this.label15.TabIndex = 31;
             this.label15.Text = "Тема работы";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label19.Location = new System.Drawing.Point(3, 94);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label19.Location = new System.Drawing.Point(6, 90);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(34, 13);
+            this.label19.Size = new System.Drawing.Size(42, 17);
             this.label19.TabIndex = 27;
             this.label19.Text = "ФИО";
             // 
@@ -1345,6 +1365,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // button_clear
             // 
+            this.button_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.button_clear.Location = new System.Drawing.Point(285, 6);
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(87, 29);
@@ -1355,6 +1376,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_uspdelete
             // 
+            this.btn_uspdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_uspdelete.Location = new System.Drawing.Point(192, 6);
             this.btn_uspdelete.Name = "btn_uspdelete";
             this.btn_uspdelete.Size = new System.Drawing.Size(87, 29);
@@ -1365,6 +1387,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_uspchange
             // 
+            this.btn_uspchange.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_uspchange.Location = new System.Drawing.Point(99, 6);
             this.btn_uspchange.Name = "btn_uspchange";
             this.btn_uspchange.Size = new System.Drawing.Size(87, 29);
@@ -1375,6 +1398,7 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_uspadd
             // 
+            this.btn_uspadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.btn_uspadd.Location = new System.Drawing.Point(6, 6);
             this.btn_uspadd.Name = "btn_uspadd";
             this.btn_uspadd.Size = new System.Drawing.Size(87, 29);
@@ -1407,7 +1431,7 @@ namespace Electronic_educational_and_methodical_complex
             this.dataGridView5.Location = new System.Drawing.Point(3, 138);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.Size = new System.Drawing.Size(931, 366);
+            this.dataGridView5.Size = new System.Drawing.Size(931, 369);
             this.dataGridView5.TabIndex = 0;
             this.dataGridView5.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellEnter);
             // 
@@ -1481,9 +1505,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             // btn_deleteotv
             // 
-            this.btn_deleteotv.Location = new System.Drawing.Point(494, 8);
+            this.btn_deleteotv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_deleteotv.Location = new System.Drawing.Point(432, 8);
             this.btn_deleteotv.Name = "btn_deleteotv";
-            this.btn_deleteotv.Size = new System.Drawing.Size(90, 29);
+            this.btn_deleteotv.Size = new System.Drawing.Size(112, 29);
             this.btn_deleteotv.TabIndex = 52;
             this.btn_deleteotv.Text = "Удалить ответ";
             this.btn_deleteotv.UseVisualStyleBackColor = true;
@@ -1492,7 +1517,8 @@ namespace Electronic_educational_and_methodical_complex
             // btn_clear_2
             // 
             this.btn_clear_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_clear_2.Location = new System.Drawing.Point(590, 8);
+            this.btn_clear_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btn_clear_2.Location = new System.Drawing.Point(550, 8);
             this.btn_clear_2.Name = "btn_clear_2";
             this.btn_clear_2.Size = new System.Drawing.Size(87, 29);
             this.btn_clear_2.TabIndex = 51;
@@ -1506,16 +1532,17 @@ namespace Electronic_educational_and_methodical_complex
             this.groupBox1.Controls.Add(this.rb_test);
             this.groupBox1.Location = new System.Drawing.Point(6, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(152, 63);
+            this.groupBox1.Size = new System.Drawing.Size(183, 64);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             // 
             // rb_prac
             // 
             this.rb_prac.AutoSize = true;
-            this.rb_prac.Location = new System.Drawing.Point(6, 19);
+            this.rb_prac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.rb_prac.Location = new System.Drawing.Point(6, 13);
             this.rb_prac.Name = "rb_prac";
-            this.rb_prac.Size = new System.Drawing.Size(142, 17);
+            this.rb_prac.Size = new System.Drawing.Size(179, 21);
             this.rb_prac.TabIndex = 48;
             this.rb_prac.TabStop = true;
             this.rb_prac.Text = "Практические задания";
@@ -1525,9 +1552,10 @@ namespace Electronic_educational_and_methodical_complex
             // rb_test
             // 
             this.rb_test.AutoSize = true;
-            this.rb_test.Location = new System.Drawing.Point(6, 42);
+            this.rb_test.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.rb_test.Location = new System.Drawing.Point(6, 36);
             this.rb_test.Name = "rb_test";
-            this.rb_test.Size = new System.Drawing.Size(57, 17);
+            this.rb_test.Size = new System.Drawing.Size(67, 21);
             this.rb_test.TabIndex = 49;
             this.rb_test.TabStop = true;
             this.rb_test.Text = "Тесты";
@@ -1540,7 +1568,7 @@ namespace Electronic_educational_and_methodical_complex
             this.cmb_predmet_4.DataSource = this.predmetiBindingSource;
             this.cmb_predmet_4.DisplayMember = "Предмет";
             this.cmb_predmet_4.FormattingEnabled = true;
-            this.cmb_predmet_4.Location = new System.Drawing.Point(702, 57);
+            this.cmb_predmet_4.Location = new System.Drawing.Point(699, 71);
             this.cmb_predmet_4.Name = "cmb_predmet_4";
             this.cmb_predmet_4.Size = new System.Drawing.Size(128, 21);
             this.cmb_predmet_4.TabIndex = 47;
@@ -1551,10 +1579,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label23.Location = new System.Drawing.Point(699, 42);
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label23.Location = new System.Drawing.Point(696, 51);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 13);
+            this.label23.Size = new System.Drawing.Size(134, 17);
             this.label23.TabIndex = 46;
             this.label23.Text = "Выберите предмет";
             // 
@@ -1562,9 +1590,10 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(699, 81);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label22.Location = new System.Drawing.Point(679, 95);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(116, 13);
+            this.label22.Size = new System.Drawing.Size(151, 17);
             this.label22.TabIndex = 45;
             this.label22.Text = "Введите тему работы";
             // 
@@ -1572,16 +1601,17 @@ namespace Electronic_educational_and_methodical_complex
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(699, 3);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label20.Location = new System.Drawing.Point(701, 8);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(100, 13);
+            this.label20.Size = new System.Drawing.Size(129, 17);
             this.label20.TabIndex = 42;
             this.label20.Text = "Введите фамилию";
             // 
             // txt_poisktemy_2
             // 
             this.txt_poisktemy_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_poisktemy_2.Location = new System.Drawing.Point(702, 97);
+            this.txt_poisktemy_2.Location = new System.Drawing.Point(699, 115);
             this.txt_poisktemy_2.Name = "txt_poisktemy_2";
             this.txt_poisktemy_2.Size = new System.Drawing.Size(128, 20);
             this.txt_poisktemy_2.TabIndex = 41;
@@ -1590,7 +1620,7 @@ namespace Electronic_educational_and_methodical_complex
             // txt_poiskfam_3
             // 
             this.txt_poiskfam_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_poiskfam_3.Location = new System.Drawing.Point(702, 17);
+            this.txt_poiskfam_3.Location = new System.Drawing.Point(699, 28);
             this.txt_poiskfam_3.Name = "txt_poiskfam_3";
             this.txt_poiskfam_3.Size = new System.Drawing.Size(128, 20);
             this.txt_poiskfam_3.TabIndex = 39;
@@ -1624,10 +1654,10 @@ namespace Electronic_educational_and_methodical_complex
             this.названиеDataGridViewTextBoxColumn3,
             this.путьDataGridViewTextBoxColumn3});
             this.dataGridView6.DataSource = this.answersTestfullBindingSource;
-            this.dataGridView6.Location = new System.Drawing.Point(0, 123);
+            this.dataGridView6.Location = new System.Drawing.Point(0, 167);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.Size = new System.Drawing.Size(934, 403);
+            this.dataGridView6.Size = new System.Drawing.Size(934, 362);
             this.dataGridView6.TabIndex = 0;
             this.dataGridView6.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellDoubleClick);
             this.dataGridView6.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellEnter);
@@ -1788,6 +1818,7 @@ namespace Electronic_educational_and_methodical_complex
             this.ClientSize = new System.Drawing.Size(947, 581);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
