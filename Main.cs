@@ -881,6 +881,40 @@ namespace Electronic_educational_and_methodical_complex
             }
         }
 
+        private void обновитьДанныеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.lecturesfullTableAdapter.Fill(this.dataBaseDataSet.Lecturesfull);
+            dataGridView2.Columns[0].Visible = false;
+            this.practicalfullTableAdapter.Fill(this.dataBaseDataSet.Practicalfull);
+            dataGridView3.Columns[0].Visible = false;
+            this.testsfullTableAdapter.Fill(this.dataBaseDataSet1.Testsfull);
+            dataGridView4.Columns[0].Visible = false;
+            this.uspfullTableAdapter.Fill(this.dataBaseDataSet.uspfull);
+            dataGridView5.Columns[0].Visible = false;
+            string query = "Select * from Predmeti";
+            cmd = new OleDbCommand(query, con);
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            DataTable tb = new DataTable();
+            adapter.Fill(tb);
+            cmb_predmet.DataSource = tb;
+            cmb_predmet_2.DataSource = tb;
+            cmb_predmet_3.DataSource = tb;
+            cmb_predmet_4.DataSource = tb;
+            cmbox_predmet.DataSource = tb;
+            cmb_predmet.DisplayMember = "Предмет";
+            cmb_predmet_2.DisplayMember = "Предмет";
+            cmb_predmet_3.DisplayMember = "Предмет";
+            cmb_predmet_4.DisplayMember = "Предмет";
+            cmbox_predmet.DisplayMember = "Предмет";
+            cmb_predmet.ValueMember = "Код_предмета";
+            cmb_predmet_2.ValueMember = "Код_предмета";
+            cmb_predmet_3.ValueMember = "Код_предмета";
+            cmb_predmet_4.ValueMember = "Код_предмета";
+            cmbox_predmet.ValueMember = "Код_предмета";
+            con.Close();
+        }
+
         private void cmbox_predmet_TextChanged(object sender, EventArgs e)
         {
             if (cmb_vid.SelectedIndex == 0)
@@ -907,7 +941,7 @@ namespace Electronic_educational_and_methodical_complex
                 string query = "Select Название, Код_теста from Tests where Код_предмета = @k_predmeta";
                 cmd = new OleDbCommand(query, con);
                 cmd.Parameters.AddWithValue("@k_predmeta", cmbox_predmet.SelectedValue);
-                con.Open();
+                //con.Open();
                 OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
                 DataTable tb = new DataTable();
                 cmb_tema.DataSource = null;
